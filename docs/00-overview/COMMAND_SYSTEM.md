@@ -1,0 +1,13 @@
+MoveBubbleCommand
+
+↓
+
+History
+
+↓
+
+Undo
+
+↓
+
+Redo
