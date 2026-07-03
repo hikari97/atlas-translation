@@ -1,0 +1,11 @@
+export type { BoundingBox } from './BoundingBox';
+export type { Circle } from './Circle';
+export type { Geometry } from './Geometry';
+export type { Line } from './Line';
+export type { Matrix } from './Matrix';
+export type { Point } from './Point';
+export type { Polygon } from './Polygon';
+export type { Rectangle } from './Rectangle';
+export type { Size } from './Size';
+export type { Transform } from './Transform';
+export type { Vector } from './Vector';

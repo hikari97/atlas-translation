@@ -1,0 +1,10 @@
+export type { Bubble } from './Bubble';
+export type { BubbleConfidence } from './BubbleConfidence';
+export type { BubbleContent } from './BubbleContent';
+export type { BubbleGeometry } from './BubbleGeometry';
+export type { BubbleMetadata } from './BubbleMetadata';
+export type { BubbleOCR } from './BubbleOCR';
+export type { BubbleReference } from './BubbleReference';
+export type { BubbleStyle } from './BubbleStyle';
+export type { BubbleTag } from './BubbleTag';
+export type { BubbleTranslation } from './BubbleTranslation';

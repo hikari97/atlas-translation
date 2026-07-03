@@ -1,0 +1,10 @@
+export type { Plugin } from './Plugin';
+export type { PluginAuthor } from './PluginAuthor';
+export type { PluginCapability } from './PluginCapability';
+export type { PluginConfiguration } from './PluginConfiguration';
+export type { PluginDependency } from './PluginDependency';
+export type { PluginManifest } from './PluginManifest';
+export type { PluginMetadata } from './PluginMetadata';
+export type { PluginPermission } from './PluginPermission';
+export type { PluginReference } from './PluginReference';
+export type { PluginVersion } from './PluginVersion';

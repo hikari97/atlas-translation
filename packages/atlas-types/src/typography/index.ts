@@ -1,0 +1,9 @@
+export type { Typography } from './Typography';
+export type { TypographyAlignment } from './TypographyAlignment';
+export type { TypographyDecoration } from './TypographyDecoration';
+export type { TypographyReference } from './TypographyReference';
+export type { TypographyShadow } from './TypographyShadow';
+export type { TypographySpacing } from './TypographySpacing';
+export type { TypographyStroke } from './TypographyStroke';
+export type { TypographyStyle } from './TypographyStyle';
+export type { TypographyTransform } from './TypographyTransform';

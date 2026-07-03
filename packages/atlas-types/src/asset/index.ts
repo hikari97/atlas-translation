@@ -1,0 +1,9 @@
+export type { Asset } from './Asset';
+export type { AssetChecksum } from './AssetChecksum';
+export type { AssetLocation } from './AssetLocation';
+export type { AssetMetadata } from './AssetMetadata';
+export type { AssetPermission } from './AssetPermission';
+export type { AssetReference } from './AssetReference';
+export type { AssetSource } from './AssetSource';
+export type { AssetTag } from './AssetTag';
+export type { AssetVersion } from './AssetVersion';
