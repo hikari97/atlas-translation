@@ -1,7 +1,7 @@
 ---
 id: TASK-002
 title: Module Types
-status: Draft
+status: Completed
 priority: High
 story_points: 5
 sprint: SPRINT-004-backend

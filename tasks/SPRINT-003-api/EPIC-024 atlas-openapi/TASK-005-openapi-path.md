@@ -3,7 +3,7 @@ id: TASK-005
 
 title: Implement OpenAPI Path
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-005 — Implement OpenAPI Path
@@ -96,7 +96,7 @@ Atlas treats a path as a first-class resource abstraction rather than simply a U
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPIPath.ts
 
@@ -212,7 +212,7 @@ OpenAPIPath becomes the standardized API resource abstraction across the Atlas A
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -227,11 +227,11 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPIPath implemented.
-- [ ] Supports multiple operations.
-- [ ] Supports path parameters.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPIPath implemented.
+- [x] Supports multiple operations.
+- [x] Supports path parameters.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

@@ -3,7 +3,7 @@ id: TASK-001
 
 title: Implement WebSocket Core
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-001 — Implement WebSocket Core
@@ -103,7 +103,7 @@ WebSocketCore acts as the root coordination layer.
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketCore.ts
 
@@ -211,7 +211,7 @@ WebSocketCore becomes the root abstraction for every WebSocket capability within
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -226,12 +226,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketCore implemented.
-- [ ] Supports lifecycle.
-- [ ] Supports configuration.
-- [ ] Supports metadata.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketCore implemented.
+- [x] Supports lifecycle.
+- [x] Supports configuration.
+- [x] Supports metadata.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

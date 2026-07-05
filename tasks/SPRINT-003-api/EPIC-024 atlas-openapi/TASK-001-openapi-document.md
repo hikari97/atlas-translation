@@ -3,7 +3,7 @@ id: TASK-001
 
 title: Implement OpenAPI Document
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-001 — Implement OpenAPI Document
@@ -97,7 +97,7 @@ Concrete formats such as JSON and YAML are intentionally excluded from this task
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPIDocument.ts
 
@@ -212,7 +212,7 @@ OpenAPIDocument becomes the root abstraction representing every OpenAPI specific
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -227,11 +227,11 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPIDocument implemented.
-- [ ] Supports specification metadata.
-- [ ] Supports specification composition.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPIDocument implemented.
+- [x] Supports specification metadata.
+- [x] Supports specification composition.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

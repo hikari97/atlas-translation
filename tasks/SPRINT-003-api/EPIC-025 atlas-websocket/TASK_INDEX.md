@@ -13,9 +13,9 @@ The tasks are organized according to the Atlas realtime architecture and impleme
 | Metric      | Value |
 | ----------- | ----: |
 | Total Tasks |    18 |
-| Ready       |    18 |
+| Ready       |     0 |
 | In Progress |     0 |
-| Completed   |     0 |
+| Completed   |    18 |
 
 ---
 
@@ -23,24 +23,24 @@ The tasks are organized according to the Atlas realtime architecture and impleme
 
 | ID       | Title                       | Priority | Story Points | Status |
 | -------- | --------------------------- | -------- | -----------: | ------ |
-| TASK-001 | WebSocket Core              | Critical |           21 | Ready  |
-| TASK-002 | WebSocket Connection        | Critical |           21 | Ready  |
-| TASK-003 | WebSocket Session           | Critical |           21 | Ready  |
-| TASK-004 | WebSocket Endpoint          | Critical |           21 | Ready  |
-| TASK-005 | WebSocket Message           | Critical |           21 | Ready  |
-| TASK-006 | WebSocket Request           | Critical |           21 | Ready  |
-| TASK-007 | WebSocket Response          | Critical |           21 | Ready  |
-| TASK-008 | WebSocket Event             | Critical |           21 | Ready  |
-| TASK-009 | WebSocket Channel           | Critical |           21 | Ready  |
-| TASK-010 | WebSocket Subscription      | Critical |           21 | Ready  |
-| TASK-011 | WebSocket Middleware        | Critical |           21 | Ready  |
-| TASK-012 | WebSocket Context           | Critical |           21 | Ready  |
-| TASK-013 | WebSocket Authentication    | High     |           21 | Ready  |
-| TASK-014 | WebSocket Authorization     | High     |           21 | Ready  |
-| TASK-015 | WebSocket Protocol          | High     |           21 | Ready  |
-| TASK-016 | WebSocket Runtime Builder   | High     |           21 | Ready  |
-| TASK-017 | WebSocket Transport Adapter | High     |           21 | Ready  |
-| TASK-018 | WebSocket Registry          | High     |           21 | Ready  |
+| TASK-001 | WebSocket Core              | Critical |           21 | Done   |
+| TASK-002 | WebSocket Connection        | Critical |           21 | Done   |
+| TASK-003 | WebSocket Session           | Critical |           21 | Done   |
+| TASK-004 | WebSocket Endpoint          | Critical |           21 | Done   |
+| TASK-005 | WebSocket Message           | Critical |           21 | Done   |
+| TASK-006 | WebSocket Request           | Critical |           21 | Done   |
+| TASK-007 | WebSocket Response          | Critical |           21 | Done   |
+| TASK-008 | WebSocket Event             | Critical |           21 | Done   |
+| TASK-009 | WebSocket Channel           | Critical |           21 | Done   |
+| TASK-010 | WebSocket Subscription      | Critical |           21 | Done   |
+| TASK-011 | WebSocket Middleware        | Critical |           21 | Done   |
+| TASK-012 | WebSocket Context           | Critical |           21 | Done   |
+| TASK-013 | WebSocket Authentication    | High     |           21 | Done   |
+| TASK-014 | WebSocket Authorization     | High     |           21 | Done   |
+| TASK-015 | WebSocket Protocol          | High     |           21 | Done   |
+| TASK-016 | WebSocket Runtime Builder   | High     |           21 | Done   |
+| TASK-017 | WebSocket Transport Adapter | High     |           21 | Done   |
+| TASK-018 | WebSocket Registry          | High     |           21 | Done   |
 
 ---
 

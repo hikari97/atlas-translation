@@ -3,7 +3,7 @@ id: TASK-003
 
 title: Implement OpenAPI Info
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-003 — Implement OpenAPI Info
@@ -96,7 +96,7 @@ It acts as the primary identity of the specification and is consumed by document
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPIInfo.ts
 
@@ -217,7 +217,7 @@ OpenAPIInfo becomes the standardized API identity abstraction across the Atlas A
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -232,12 +232,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPIInfo implemented.
-- [ ] Supports API identity.
-- [ ] Supports contact metadata.
-- [ ] Supports licensing metadata.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPIInfo implemented.
+- [x] Supports API identity.
+- [x] Supports contact metadata.
+- [x] Supports licensing metadata.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

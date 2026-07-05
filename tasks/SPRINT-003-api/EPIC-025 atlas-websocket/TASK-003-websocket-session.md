@@ -3,7 +3,7 @@ id: TASK-003
 
 title: Implement WebSocket Session
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-003 — Implement WebSocket Session
@@ -98,7 +98,7 @@ Likewise, a session may survive temporary connection interruptions.
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketSession.ts
 
@@ -217,7 +217,7 @@ WebSocketSession becomes the standardized logical communication abstraction thro
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -232,12 +232,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketSession implemented.
-- [ ] Supports session lifecycle.
-- [ ] Supports session attributes.
-- [ ] Supports metadata.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketSession implemented.
+- [x] Supports session lifecycle.
+- [x] Supports session attributes.
+- [x] Supports metadata.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

@@ -3,7 +3,7 @@ id: TASK-001
 
 title: Implement Runtime Core
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-001 — Implement Runtime Core
@@ -93,7 +93,7 @@ Rather than relying directly on framework-specific runtimes, Atlas defines a reu
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 RuntimeCore.ts
 
@@ -199,7 +199,7 @@ RuntimeCore becomes the root abstraction for every Atlas backend application.
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -214,12 +214,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] RuntimeCore implemented.
-- [ ] Supports lifecycle.
-- [ ] Supports metadata.
-- [ ] Supports extension points.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] RuntimeCore implemented.
+- [x] Supports lifecycle.
+- [x] Supports metadata.
+- [x] Supports extension points.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

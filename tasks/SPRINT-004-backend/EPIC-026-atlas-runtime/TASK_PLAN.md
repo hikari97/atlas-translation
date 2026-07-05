@@ -88,7 +88,7 @@ Each generated task should include:
 packages/atlas-runtime/**
 ```
 
-For Sprint 004 backend runtime tasks, use the existing local convention if nearby tasks use `atlas-runtime/**` instead of `packages/atlas-runtime/**`.
+For Sprint 004 backend runtime tasks, use `packages/atlas-runtime/**` so implementation stays aligned with the monorepo package structure.
 
 ## Default Files Forbidden
 

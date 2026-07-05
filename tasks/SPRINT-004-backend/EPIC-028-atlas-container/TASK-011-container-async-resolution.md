@@ -1,7 +1,7 @@
 ---
 id: TASK-011
 title: Container Async Resolution
-status: Draft
+status: Completed
 priority: High
 story_points: 8
 sprint: SPRINT-004-backend

@@ -3,7 +3,7 @@ id: TASK-007
 
 title: Implement WebSocket Response
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-007 — Implement WebSocket Response
@@ -95,7 +95,7 @@ Every response is linked to a request through a correlation identifier while rem
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketResponse.ts
 
@@ -210,7 +210,7 @@ WebSocketResponse becomes the standardized outbound result abstraction throughou
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -225,12 +225,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketResponse implemented.
-- [ ] Supports response metadata.
-- [ ] Supports correlation identifiers.
-- [ ] Supports response status.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketResponse implemented.
+- [x] Supports response metadata.
+- [x] Supports correlation identifiers.
+- [x] Supports response status.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

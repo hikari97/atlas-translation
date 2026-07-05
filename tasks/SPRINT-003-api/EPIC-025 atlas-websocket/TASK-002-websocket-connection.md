@@ -3,7 +3,7 @@ id: TASK-002
 
 title: Implement WebSocket Connection
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-002 — Implement WebSocket Connection
@@ -102,7 +102,7 @@ can expose different APIs while sharing the same domain model.
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketConnection.ts
 
@@ -217,7 +217,7 @@ WebSocketConnection becomes the standardized transport abstraction throughout th
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -232,12 +232,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketConnection implemented.
-- [ ] Supports connection lifecycle.
-- [ ] Supports connection states.
-- [ ] Supports transport capabilities.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketConnection implemented.
+- [x] Supports connection lifecycle.
+- [x] Supports connection states.
+- [x] Supports transport capabilities.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

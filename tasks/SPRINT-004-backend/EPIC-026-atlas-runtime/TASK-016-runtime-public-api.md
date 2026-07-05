@@ -3,7 +3,7 @@ id: TASK-016
 
 title: Build Runtime Public API
 
-status: Ready
+status: Completed
 
 priority: Medium
 
@@ -95,7 +95,7 @@ This task consolidates runtime exports after core runtime abstractions are imple
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 index.ts
 
@@ -200,7 +200,7 @@ Runtime Public API becomes the consumer-facing contract for all Atlas runtime pa
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -215,12 +215,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] Runtime public API implemented.
-- [ ] Exports all completed runtime contracts.
-- [ ] Avoids private import paths.
-- [ ] Documents public package usage.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] Runtime public API implemented.
+- [x] Exports all completed runtime contracts.
+- [x] Avoids private import paths.
+- [x] Documents public package usage.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

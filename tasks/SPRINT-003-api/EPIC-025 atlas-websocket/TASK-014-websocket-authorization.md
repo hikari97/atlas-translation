@@ -3,7 +3,7 @@ id: TASK-014
 
 title: Implement WebSocket Authorization
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-014 — Implement WebSocket Authorization
@@ -98,7 +98,7 @@ Authorization implementations remain the responsibility of EPIC-023 `atlas-authe
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketAuthorization.ts
 
@@ -210,7 +210,7 @@ WebSocketAuthorization becomes the standardized authorization abstraction throug
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -225,12 +225,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketAuthorization implemented.
-- [ ] Supports authorization policies.
-- [ ] Supports authorization metadata.
-- [ ] Supports authorization context.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketAuthorization implemented.
+- [x] Supports authorization policies.
+- [x] Supports authorization metadata.
+- [x] Supports authorization context.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

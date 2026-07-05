@@ -3,7 +3,7 @@ id: TASK-009
 
 title: Implement Runtime Event
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -104,7 +104,7 @@ Examples include
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 RuntimeEvent.ts
 
@@ -228,7 +228,7 @@ RuntimeEvent becomes the standardized event representation throughout the Atlas 
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -243,13 +243,13 @@ None
 
 # Acceptance Criteria
 
-- [ ] RuntimeEvent implemented.
-- [ ] Supports event identity.
-- [ ] Supports event source.
-- [ ] Supports event type.
-- [ ] Supports payload metadata.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] RuntimeEvent implemented.
+- [x] Supports event identity.
+- [x] Supports event source.
+- [x] Supports event type.
+- [x] Supports payload metadata.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

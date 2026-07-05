@@ -3,7 +3,7 @@ id: TASK-012
 
 title: Implement WebSocket Context
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-012 — Implement WebSocket Context
@@ -96,7 +96,7 @@ The context becomes the primary interaction surface throughout the WebSocket pro
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketContext.ts
 
@@ -221,7 +221,7 @@ WebSocketContext becomes the standardized execution context across the Atlas rea
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -236,12 +236,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketContext implemented.
-- [ ] Supports shared execution state.
-- [ ] Supports metadata propagation.
-- [ ] Supports custom attributes.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketContext implemented.
+- [x] Supports shared execution state.
+- [x] Supports metadata propagation.
+- [x] Supports custom attributes.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

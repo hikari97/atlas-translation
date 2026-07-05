@@ -129,7 +129,7 @@ Only after completing all previous steps.
 Implement only the task specified in:
 
 ```
-task/CURRENT_TASK.md
+tasks/CURRENT_TASK.md
 ```
 
 Do not continue to the next task automatically.

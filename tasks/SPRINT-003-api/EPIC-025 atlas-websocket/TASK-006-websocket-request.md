@@ -3,7 +3,7 @@ id: TASK-006
 
 title: Implement WebSocket Request
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-006 — Implement WebSocket Request
@@ -95,7 +95,7 @@ Requests are transport-independent and may be processed synchronously or asynchr
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketRequest.ts
 
@@ -207,7 +207,7 @@ WebSocketRequest becomes the standardized inbound command abstraction across the
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -222,12 +222,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketRequest implemented.
-- [ ] Supports request metadata.
-- [ ] Supports correlation identifiers.
-- [ ] Supports routing information.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketRequest implemented.
+- [x] Supports request metadata.
+- [x] Supports correlation identifiers.
+- [x] Supports routing information.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

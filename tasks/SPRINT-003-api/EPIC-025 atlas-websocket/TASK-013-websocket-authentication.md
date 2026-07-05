@@ -3,7 +3,7 @@ id: TASK-013
 
 title: Implement WebSocket Authentication
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-013 — Implement WebSocket Authentication
@@ -95,7 +95,7 @@ Authentication implementations remain the responsibility of EPIC-023 `atlas-auth
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketAuthentication.ts
 
@@ -206,7 +206,7 @@ WebSocketAuthentication becomes the standardized authentication abstraction thro
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -221,12 +221,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketAuthentication implemented.
-- [ ] Supports authentication lifecycle.
-- [ ] Supports authentication metadata.
-- [ ] Supports authentication state.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketAuthentication implemented.
+- [x] Supports authentication lifecycle.
+- [x] Supports authentication metadata.
+- [x] Supports authentication state.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

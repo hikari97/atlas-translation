@@ -1,7 +1,7 @@
 ---
 title: Current Development Context
 version: 1.0
-last_updated: 2026-07-01
+last_updated: 2026-07-05
 ---
 
 ---
@@ -10,25 +10,25 @@ last_updated: 2026-07-01
 
 ## Current Sprint
 
-Sprint-001
+Sprint-005
 
-Foundation Packages
+Frontend Application
 
 ---
 
 ## Current Epic
 
-EPIC-001
+EPIC-045
 
-Atlas Types
+Workspace Dashboard UI
 
 ---
 
 ## Current Task
 
-TASK-0001
+TASK-001
 
-Initialize atlas-types Package
+Dashboard Route
 
 Status: Ready
 
@@ -36,24 +36,20 @@ Status: Ready
 
 # Goal
 
-Create the initial structure of the `atlas-types` package.
-
-Only initialize the package.
-
-Do not implement domain models.
+Implement the workspace dashboard page route and metrics UI inside apps/web.
 
 ---
 
 # Current Package
 
-packages/atlas-types
+apps/web
 
 ---
 
 # Allowed Files
 
 ```text
-packages/atlas-types/**
+apps/web/**
 ```
 
 ---
@@ -67,26 +63,29 @@ plugins/**
 
 schemas/**
 
-packages/atlas-document/**
+packages/atlas-http/**
 
-packages/atlas-command/**
+packages/atlas-router/**
 
-packages/atlas-events/**
+packages/atlas-request/**
 
-packages/atlas-core/**
+packages/atlas-response/**
+
+apps/web/src/pages/index.tsx
+
+packages/atlas-container/**
+
+packages/atlas-database/**
 ```
 
 ---
 
 # Acceptance Criteria
 
-- Package builds successfully.
-- TypeScript strict mode enabled.
-- Zero runtime dependencies.
-- Public API exports successfully.
-- ESM build generated.
-- CommonJS build generated.
-- Declaration files generated.
+- Dashboard route configured.
+- Dashboard cards and layout implemented.
+- Recent projects table rendered.
+- TypeScript strict mode passes.
 
 ---
 
@@ -108,11 +107,7 @@ Read before implementation:
 
 7. tasks/README.md
 
-8. tasks/sprint-001/README.md
-
-9. tasks/sprint-001/EPIC-001-atlas-types/README.md
-
-10. tasks/sprint-001/EPIC-001-atlas-types/TASK-0001.md
+8. tasks/SPRINT-005-frontend/EPIC-045-web-app-foundation/TASK-009-web-loading-empty-states.md
 
 ---
 
@@ -124,7 +119,7 @@ Read before implementation:
 - Respect package boundaries.
 - Keep implementation production-ready.
 - Use strict TypeScript.
-- Keep zero runtime dependencies.
+- Keep provider independence.
 
 ---
 
@@ -142,8 +137,8 @@ The task is complete when:
 
 # Next Task
 
-TASK-0002
+TASK-002
 
-Implement Common Types
+Dashboard Summary Cards
 
 Do NOT implement this task yet.

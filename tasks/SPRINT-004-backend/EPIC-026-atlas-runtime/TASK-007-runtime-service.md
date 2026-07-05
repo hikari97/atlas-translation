@@ -3,7 +3,7 @@ id: TASK-007
 
 title: Implement Runtime Service
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-007 — Implement Runtime Service
@@ -103,7 +103,7 @@ Atlas models each of these as managed runtime services with a common lifecycle.
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 RuntimeService.ts
 
@@ -214,7 +214,7 @@ RuntimeService becomes the standardized managed service abstraction throughout t
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -229,12 +229,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] RuntimeService implemented.
-- [ ] Supports service lifecycle.
-- [ ] Supports capabilities.
-- [ ] Supports metadata.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] RuntimeService implemented.
+- [x] Supports service lifecycle.
+- [x] Supports capabilities.
+- [x] Supports metadata.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

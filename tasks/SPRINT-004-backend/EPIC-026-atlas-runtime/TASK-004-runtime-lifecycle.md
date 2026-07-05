@@ -3,7 +3,7 @@ id: TASK-004
 
 title: Implement Runtime Lifecycle
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-004 — Implement Runtime Lifecycle
@@ -105,7 +105,7 @@ Atlas models startup as an ordered lifecycle rather than a single `start()` oper
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 RuntimeLifecycle.ts
 
@@ -239,7 +239,7 @@ RuntimeLifecycle becomes the standardized lifecycle abstraction across the Atlas
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -254,12 +254,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] RuntimeLifecycle implemented.
-- [ ] Supports lifecycle phases.
-- [ ] Supports lifecycle hooks.
-- [ ] Supports state transitions.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] RuntimeLifecycle implemented.
+- [x] Supports lifecycle phases.
+- [x] Supports lifecycle hooks.
+- [x] Supports state transitions.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

@@ -3,7 +3,7 @@ id: TASK-013
 
 title: Implement Runtime Discovery
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -102,7 +102,7 @@ Examples include
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 RuntimeDiscovery.ts
 
@@ -210,7 +210,7 @@ RuntimeDiscovery becomes the standardized discovery abstraction throughout the A
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -225,13 +225,13 @@ None
 
 # Acceptance Criteria
 
-- [ ] RuntimeDiscovery implemented.
-- [ ] Supports discovery queries.
-- [ ] Supports discovery results.
-- [ ] Supports discovered records.
-- [ ] Supports discovery metadata.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] RuntimeDiscovery implemented.
+- [x] Supports discovery queries.
+- [x] Supports discovery results.
+- [x] Supports discovered records.
+- [x] Supports discovery metadata.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

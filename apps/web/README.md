@@ -38,3 +38,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+## Import Boundaries
+
+To maintain clean separation between frontend and backend:
+- Direct imports from `apps/api/**` or `apps/ai-worker/**` are forbidden in UI components.
+- Use provider-independent API boundaries or frontend request layer.
+- Enforced via ESLint `no-restricted-imports` rule in `eslint.config.mjs`.

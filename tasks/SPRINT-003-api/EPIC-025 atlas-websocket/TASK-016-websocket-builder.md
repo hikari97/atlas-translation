@@ -3,7 +3,7 @@ id: TASK-016
 
 title: Implement WebSocket Runtime Builder
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-016 — Implement WebSocket Runtime Builder
@@ -102,7 +102,7 @@ Instead of manually wiring every component, Atlas provides a runtime builder res
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketRuntimeBuilder.ts
 
@@ -216,7 +216,7 @@ WebSocketRuntimeBuilder becomes the standardized runtime composition abstraction
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -231,12 +231,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketRuntimeBuilder implemented.
-- [ ] Supports runtime composition.
-- [ ] Supports builder extensions.
-- [ ] Supports lifecycle management.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketRuntimeBuilder implemented.
+- [x] Supports runtime composition.
+- [x] Supports builder extensions.
+- [x] Supports lifecycle management.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

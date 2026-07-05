@@ -1,7 +1,7 @@
 ---
 id: TASK-017
 title: Config Test Coverage
-status: Draft
+status: Completed
 priority: High
 story_points: 5
 sprint: SPRINT-004-backend

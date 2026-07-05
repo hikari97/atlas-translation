@@ -3,7 +3,7 @@ id: TASK-008
 
 title: Implement OpenAPI Request Body
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-008 — Implement OpenAPI Request Body
@@ -96,7 +96,7 @@ Atlas models request bodies as reusable API contracts independent from transport
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPIRequestBody.ts
 
@@ -213,7 +213,7 @@ OpenAPIRequestBody becomes the standardized payload contract abstraction across 
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -228,11 +228,11 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPIRequestBody implemented.
-- [ ] Supports multiple media types.
-- [ ] Supports schema references.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPIRequestBody implemented.
+- [x] Supports multiple media types.
+- [x] Supports schema references.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

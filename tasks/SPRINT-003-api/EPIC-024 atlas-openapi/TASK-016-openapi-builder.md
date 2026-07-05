@@ -3,7 +3,7 @@ id: TASK-016
 
 title: Implement OpenAPI Document Builder
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-016 — Implement OpenAPI Document Builder
@@ -100,7 +100,7 @@ Rather than manually constructing the entire document, Atlas provides a builder 
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPIDocumentBuilder.ts
 
@@ -219,7 +219,7 @@ OpenAPIDocumentBuilder becomes the standardized document construction abstractio
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -234,11 +234,11 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPIDocumentBuilder implemented.
-- [ ] Supports fluent document construction.
-- [ ] Supports builder extensions.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPIDocumentBuilder implemented.
+- [x] Supports fluent document construction.
+- [x] Supports builder extensions.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

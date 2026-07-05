@@ -3,7 +3,7 @@ id: TASK-011
 
 title: Implement Runtime Pipeline
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -105,7 +105,7 @@ Examples include
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 RuntimePipeline.ts
 
@@ -224,7 +224,7 @@ RuntimePipeline becomes the standardized runtime orchestration abstraction throu
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -239,13 +239,13 @@ None
 
 # Acceptance Criteria
 
-- [ ] RuntimePipeline implemented.
-- [ ] Supports pipeline identity.
-- [ ] Supports ordered stages.
-- [ ] Supports hook composition.
-- [ ] Supports execution context and result.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] RuntimePipeline implemented.
+- [x] Supports pipeline identity.
+- [x] Supports ordered stages.
+- [x] Supports hook composition.
+- [x] Supports execution context and result.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

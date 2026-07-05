@@ -3,7 +3,7 @@ id: TASK-008
 
 title: Implement WebSocket Event
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-008 — Implement WebSocket Event
@@ -101,7 +101,7 @@ Atlas models events as transport-independent envelopes capable of being delivere
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketEvent.ts
 
@@ -217,7 +217,7 @@ WebSocketEvent becomes the standardized realtime event abstraction across the At
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -232,12 +232,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketEvent implemented.
-- [ ] Supports multiple event categories.
-- [ ] Supports metadata.
-- [ ] Supports routing information.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketEvent implemented.
+- [x] Supports multiple event categories.
+- [x] Supports metadata.
+- [x] Supports routing information.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

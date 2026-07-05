@@ -3,7 +3,7 @@ id: TASK-018
 
 title: Runtime Documentation and Release Ready
 
-status: Ready
+status: Completed
 
 priority: Medium
 
@@ -94,7 +94,7 @@ Consumers need clear documentation describing what the runtime package provides,
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 README.md
 
@@ -205,7 +205,7 @@ Runtime Documentation becomes the release reference for the Atlas runtime packag
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -220,12 +220,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] Runtime documentation completed.
-- [ ] Public API documented.
-- [ ] Architecture boundaries documented.
-- [ ] Testing commands documented.
-- [ ] Release checklist completed.
-- [ ] Provider independent.
+- [x] Runtime documentation completed.
+- [x] Public API documented.
+- [x] Architecture boundaries documented.
+- [x] Testing commands documented.
+- [x] Release checklist completed.
+- [x] Provider independent.
 
 ---
 

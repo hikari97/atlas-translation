@@ -3,7 +3,7 @@ id: TASK-017
 
 title: Runtime Testing
 
-status: Ready
+status: Completed
 
 priority: Medium
 
@@ -95,7 +95,7 @@ This task verifies the package through lightweight tests and scans appropriate f
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 tests/
 
@@ -199,7 +199,7 @@ Runtime Testing becomes the quality gate for the Atlas runtime package.
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -214,12 +214,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] Runtime tests implemented.
-- [ ] Type tests cover public runtime contracts.
-- [ ] Public API import tests pass.
-- [ ] Forbidden dependency scans documented or automated.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] Runtime tests implemented.
+- [x] Type tests cover public runtime contracts.
+- [x] Public API import tests pass.
+- [x] Forbidden dependency scans documented or automated.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

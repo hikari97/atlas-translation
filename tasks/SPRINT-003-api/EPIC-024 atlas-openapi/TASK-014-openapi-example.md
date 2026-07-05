@@ -3,7 +3,7 @@ id: TASK-014
 
 title: Implement OpenAPI Example
 
-status: Ready
+status: Completed
 
 priority: Medium
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-014 — Implement OpenAPI Example
@@ -96,7 +96,7 @@ Atlas models examples as reusable resources that can be referenced across the sp
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPIExample.ts
 
@@ -213,7 +213,7 @@ OpenAPIExample becomes the standardized reusable example abstraction across the 
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -228,11 +228,11 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPIExample implemented.
-- [ ] Supports reusable examples.
-- [ ] Supports external examples.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPIExample implemented.
+- [x] Supports reusable examples.
+- [x] Supports external examples.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

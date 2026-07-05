@@ -4,19 +4,19 @@
 
 ## Sprint
 
-SPRINT-001 — Foundation
+SPRINT-004 — Backend
 
 ---
 
 ## Current Epic
 
-EPIC-003 — atlas-command
+EPIC-026 — atlas-runtime
 
 ---
 
 ## Current Task
 
-TASK-0001 — Initialize Package
+TASK-001 — Implement Runtime Core
 
 ---
 
@@ -40,16 +40,32 @@ None
 
 ## Dependencies
 
-EPIC-001 — Completed
+EPIC-016 — Completed
 
-EPIC-002 — Completed
+EPIC-017 — Completed
+
+EPIC-018 — Completed
+
+EPIC-019 — Completed
+
+EPIC-020 — Completed
+
+EPIC-021 — Completed
+
+EPIC-022 — Completed
+
+EPIC-023 — Completed
+
+EPIC-024 — Completed
+
+EPIC-025 — Completed
 
 ---
 
 ## Notes
 
-Implement only TASK-0001.
+Implement only TASK-001.
 
-Do not continue to TASK-0002.
+Do not continue to TASK-002.
 
-Stop after TASK-0001 is complete.
+Stop after TASK-001 is complete.

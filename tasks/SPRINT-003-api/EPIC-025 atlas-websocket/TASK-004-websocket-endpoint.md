@@ -3,7 +3,7 @@ id: TASK-004
 
 title: Implement WebSocket Endpoint
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-004 — Implement WebSocket Endpoint
@@ -101,7 +101,7 @@ Atlas models endpoints as service abstractions instead of transport-specific rou
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketEndpoint.ts
 
@@ -210,7 +210,7 @@ WebSocketEndpoint becomes the standardized realtime service abstraction across t
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -225,12 +225,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketEndpoint implemented.
-- [ ] Supports endpoint metadata.
-- [ ] Supports endpoint lifecycle.
-- [ ] Supports capability discovery.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketEndpoint implemented.
+- [x] Supports endpoint metadata.
+- [x] Supports endpoint lifecycle.
+- [x] Supports capability discovery.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

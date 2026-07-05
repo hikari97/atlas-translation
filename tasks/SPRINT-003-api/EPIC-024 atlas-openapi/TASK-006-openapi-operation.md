@@ -3,7 +3,7 @@ id: TASK-006
 
 title: Implement OpenAPI Operation
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-006 — Implement OpenAPI Operation
@@ -96,7 +96,7 @@ Atlas treats operations as domain actions instead of simple HTTP methods.
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPIOperation.ts
 
@@ -212,7 +212,7 @@ OpenAPIOperation becomes the standardized API action abstraction across the Atla
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -227,11 +227,11 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPIOperation implemented.
-- [ ] Supports HTTP methods.
-- [ ] Supports operation metadata.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPIOperation implemented.
+- [x] Supports HTTP methods.
+- [x] Supports operation metadata.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

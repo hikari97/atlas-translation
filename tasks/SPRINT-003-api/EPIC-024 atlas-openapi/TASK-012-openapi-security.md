@@ -3,7 +3,7 @@ id: TASK-012
 
 title: Implement OpenAPI Security
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-012 — Implement OpenAPI Security
@@ -97,7 +97,7 @@ Atlas OpenAPI only documents and models those security requirements.
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPISecurity.ts
 
@@ -211,7 +211,7 @@ OpenAPISecurity becomes the standardized security specification abstraction acro
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -226,12 +226,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPISecurity implemented.
-- [ ] Supports reusable security schemes.
-- [ ] Supports security requirements.
-- [ ] Supports OAuth scopes.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPISecurity implemented.
+- [x] Supports reusable security schemes.
+- [x] Supports security requirements.
+- [x] Supports OAuth scopes.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

@@ -1,6 +1,6 @@
 # Atlas Studio — EPIC Status
 
-> Last Updated: 2026-07-01
+> Last Updated: 2026-07-05
 >
 > Current Version: Planning Phase
 >
@@ -31,18 +31,21 @@ Status Definitions
 | EPIC-001 | atlas-types         | 🟩 Completed |     100% |
 | EPIC-002 | atlas-document      | 🟩 Completed |     100% |
 | EPIC-003 | atlas-command       | 🟩 Completed |     100% |
-| EPIC-004 | atlas-events        | ⬜ Planned   |       0% |
-| EPIC-005 | atlas-core          | ⬜ Planned   |       0% |
-| EPIC-006 | atlas-renderer      | ⬜ Planned   |       0% |
-| EPIC-007 | atlas-plugin        | ⬜ Planned   |       0% |
-| EPIC-008 | atlas-storage       | ⬜ Planned   |       0% |
-| EPIC-009 | atlas-collaboration | ⬜ Planned   |       0% |
-| EPIC-010 | atlas-export        | ⬜ Planned   |       0% |
-| EPIC-011 | atlas-import        | ⬜ Planned   |       0% |
-| EPIC-012 | atlas-ui            | ⬜ Planned   |       0% |
-| EPIC-013 | atlas-devtools      | ⬜ Planned   |       0% |
-| EPIC-014 | atlas-cli           | ⬜ Planned   |       0% |
-| EPIC-015 | atlas-app           | ⬜ Planned   |       0% |
+| EPIC-004 | atlas-events        | 🟩 Completed |     100% |
+| EPIC-005 | atlas-core          | 🟩 Completed |     100% |
+| EPIC-006 | atlas-plugin        | 🟩 Completed |     100% |
+| EPIC-007 | atlas-renderer      | 🟩 Completed |     100% |
+| EPIC-008 | atlas-ui            | 🟩 Completed |     100% |
+| EPIC-009 | atlas-interaction   | 🟩 Completed |     100% |
+| EPIC-010 | atlas-selection     | 🟩 Completed |     100% |
+| EPIC-011 | atlas-history       | 🟩 Completed |     100% |
+| EPIC-012 | atlas-input         | 🟩 Completed |     100% |
+| EPIC-013 | atlas-editor        | 🟩 Completed |     100% |
+| EPIC-014 | atlas-translation   | 🟩 Completed |     100% |
+| EPIC-015 | atlas-collaboration | 🟩 Completed |     100% |
+| EPIC-024 | atlas-openapi       | 🟩 Completed |     100% |
+| EPIC-025 | atlas-websocket     | 🟩 Completed |     100% |
+| EPIC-026 | atlas-runtime       | 🟦 In Progress |       0% |
 
 ---
 
@@ -51,7 +54,7 @@ Status Definitions
 Milestone
 
 ```
-████████████░░░░░░░░░░░░░░░░░░░ 20%
+████████████████████░░░░░░░░░░░ 62%
 ```
 
 Completed
@@ -59,15 +62,29 @@ Completed
 - ✅ atlas-types
 - ✅ atlas-document
 - ✅ atlas-command
+- ✅ atlas-events
+- ✅ atlas-core
+- ✅ atlas-plugin
+- ✅ atlas-renderer
+- ✅ atlas-ui
+- ✅ atlas-interaction
+- ✅ atlas-selection
+- ✅ atlas-history
+- ✅ atlas-input
+- ✅ atlas-editor
+- ✅ atlas-translation
+- ✅ atlas-collaboration
+- ✅ atlas-openapi
+- ✅ atlas-websocket
 
 Current Focus
 
-- ⏳ atlas-events
+- ⏳ atlas-runtime
 
 Next
 
-- atlas-core
-- atlas-renderer
+- atlas-config
+- atlas-container
 
 ---
 
@@ -110,23 +127,28 @@ atlas-app
 | EPIC-001 | 2026-07-01      |
 | EPIC-002 | 2026-07-01      |
 | EPIC-003 | 2026-07-01      |
+| EPIC-004 | 2026-07-05      |
+| EPIC-005 | 2026-07-05      |
+| EPIC-006 | 2026-07-05      |
+| EPIC-007 | 2026-07-05      |
+| EPIC-008 | 2026-07-05      |
+| EPIC-009 | 2026-07-05      |
+| EPIC-010 | 2026-07-05      |
+| EPIC-011 | 2026-07-05      |
+| EPIC-012 | 2026-07-05      |
+| EPIC-013 | 2026-07-05      |
+| EPIC-014 | 2026-07-05      |
+| EPIC-015 | 2026-07-05      |
+| EPIC-024 | 2026-07-05      |
+| EPIC-025 | 2026-07-05      |
 
 ---
 
 # Upcoming Epics
 
-1. EPIC-004 — atlas-events
-2. EPIC-005 — atlas-core
-3. EPIC-006 — atlas-renderer
-4. EPIC-007 — atlas-plugin
-5. EPIC-008 — atlas-storage
-6. EPIC-009 — atlas-collaboration
-7. EPIC-010 — atlas-export
-8. EPIC-011 — atlas-import
-9. EPIC-012 — atlas-ui
-10. EPIC-013 — atlas-devtools
-11. EPIC-014 — atlas-cli
-12. EPIC-015 — atlas-app
+1. EPIC-026 — atlas-runtime
+2. EPIC-027 — atlas-config
+3. EPIC-028 — atlas-container
 
 ---
 

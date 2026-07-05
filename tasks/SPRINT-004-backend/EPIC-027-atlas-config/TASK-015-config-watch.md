@@ -1,7 +1,7 @@
 ---
 id: TASK-015
 title: Config Watch
-status: Draft
+status: Completed
 priority: High
 story_points: 5
 sprint: SPRINT-004-backend

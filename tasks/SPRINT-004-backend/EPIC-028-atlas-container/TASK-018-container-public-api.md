@@ -1,7 +1,7 @@
 ---
 id: TASK-018
 title: Container Public API
-status: Draft
+status: Completed
 priority: High
 story_points: 5
 sprint: SPRINT-004-backend

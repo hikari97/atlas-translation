@@ -3,7 +3,7 @@ id: TASK-017
 
 title: Implement OpenAPI Specification Generator
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-017 — Implement OpenAPI Specification Generator
@@ -96,7 +96,7 @@ Generation targets may evolve over time without affecting Atlas domain models.
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPISpecificationGenerator.ts
 
@@ -202,7 +202,7 @@ OpenAPISpecificationGenerator becomes the standardized specification generation 
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -217,11 +217,11 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPISpecificationGenerator implemented.
-- [ ] Supports specification generation.
-- [ ] Supports generation pipeline.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPISpecificationGenerator implemented.
+- [x] Supports specification generation.
+- [x] Supports generation pipeline.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

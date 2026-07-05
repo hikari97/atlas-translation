@@ -3,7 +3,7 @@ id: TASK-018
 
 title: Implement OpenAPI Tool Adapter
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-018 — Implement OpenAPI Tool Adapter
@@ -97,7 +97,7 @@ OpenAPIToolAdapter bridges these two worlds while keeping Atlas isolated from im
 # Deliverables
 
 ```text
-atlas-openapi/
+packages/atlas-openapi/
 
 OpenAPIToolAdapter.ts
 
@@ -221,7 +221,7 @@ OpenAPIToolAdapter becomes the standardized integration point between Atlas Open
 # Files Allowed
 
 ```text
-atlas-openapi/**
+packages/atlas-openapi/**
 ```
 
 ---
@@ -236,12 +236,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] OpenAPIToolAdapter implemented.
-- [ ] Supports adapter registration.
-- [ ] Supports lifecycle management.
-- [ ] Supports capability discovery.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] OpenAPIToolAdapter implemented.
+- [x] Supports adapter registration.
+- [x] Supports lifecycle management.
+- [x] Supports capability discovery.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

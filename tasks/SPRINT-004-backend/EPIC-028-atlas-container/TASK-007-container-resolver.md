@@ -1,7 +1,7 @@
 ---
 id: TASK-007
 title: Container Resolver
-status: Draft
+status: Completed
 priority: High
 story_points: 8
 sprint: SPRINT-004-backend

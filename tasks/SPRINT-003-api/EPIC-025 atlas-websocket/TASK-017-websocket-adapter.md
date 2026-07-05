@@ -3,7 +3,7 @@ id: TASK-017
 
 title: Implement WebSocket Transport Adapter
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-017 — Implement WebSocket Transport Adapter
@@ -103,7 +103,7 @@ Atlas hides these differences behind a common transport adapter abstraction.
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketTransportAdapter.ts
 
@@ -215,7 +215,7 @@ WebSocketTransportAdapter becomes the standardized transport integration abstrac
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -230,12 +230,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketTransportAdapter implemented.
-- [ ] Supports runtime lifecycle.
-- [ ] Supports transport capabilities.
-- [ ] Supports runtime integration.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketTransportAdapter implemented.
+- [x] Supports runtime lifecycle.
+- [x] Supports transport capabilities.
+- [x] Supports runtime integration.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

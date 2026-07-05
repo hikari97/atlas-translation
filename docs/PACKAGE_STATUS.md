@@ -1,6 +1,6 @@
 # Atlas Studio — Package Status
 
-**Last Updated:** 2026-07-01
+**Last Updated:** 2026-07-05
 
 ---
 
@@ -32,12 +32,14 @@ It serves as the primary dashboard for tracking engineering progress, package ma
 | EPIC-002 | atlas-document  | ✅ Complete    |  30 / 30 | Pending |
 | EPIC-003 | atlas-command   | ✅ Complete    |  30 / 30 | Pending |
 | EPIC-004 | atlas-events    | ✅ Complete    |  30 / 30 | Pending |
-| EPIC-005 | atlas-core      | ⏳ Not Started |   0 / 30 | —       |
-| EPIC-006 | atlas-plugin    | ⏳ Not Started |   0 / 30 | —       |
-| EPIC-007 | atlas-renderer  | ⏳ Not Started |   0 / 30 | —       |
-| EPIC-008 | atlas-ui        | ⏳ Not Started |   0 / 30 | —       |
-| EPIC-009 | atlas-workspace | ⏳ Not Started |   0 / 30 | —       |
-| EPIC-010 | atlas-cli       | ⏳ Not Started |   0 / 30 | —       |
+| EPIC-005 | atlas-core      | ✅ Complete    |  24 / 24 | Pending |
+| EPIC-006 | atlas-plugin    | ✅ Complete    |  18 / 18 | Pending |
+| EPIC-007 | atlas-renderer  | ✅ Complete    |  18 / 18 | Pending |
+| EPIC-008 | atlas-ui        | ✅ Complete    |  18 / 18 | Pending |
+| EPIC-009 | atlas-workspace | ✅ Complete    |  18 / 18 | Pending |
+| EPIC-024 | atlas-openapi   | ✅ Complete    |  18 / 18 | Pending |
+| EPIC-025 | atlas-websocket | ✅ Complete    |  18 / 18 | Pending |
+| EPIC-026 | atlas-runtime   | ⏳ Not Started |   0 / 18 | —       |
 
 ---
 
@@ -45,15 +47,15 @@ It serves as the primary dashboard for tracking engineering progress, package ma
 
 | Metric         | Value |
 | -------------- | ----: |
-| Total Packages |    10 |
-| Completed      |     4 |
-| In Progress    |     0 |
-| Remaining      |     6 |
+| Total Packages |    28 |
+| Completed      |    23 |
+| In Progress    |     1 |
+| Remaining      |     5 |
 
 Overall Progress
 
 ```text
-████████░░░░░░░░░░░░░░░░ 40%
+████████████████████░░░░ 82%
 ```
 
 ---
@@ -99,19 +101,19 @@ atlas-plugin     atlas-renderer
 Current Package
 
 ```
-EPIC-005 — atlas-core
+EPIC-026 — atlas-runtime
 ```
 
 Status
 
 ```
-Ready to Start
+Ready to Start TASK-001
 ```
 
 Estimated Tasks
 
 ```
-30 Tasks
+18 Tasks
 ```
 
 ---
@@ -197,25 +199,25 @@ Tasks
 
 | Metric              | Value |
 | ------------------- | ----: |
-| Completed Tasks     |   120 |
-| Remaining Tasks     |   180 |
-| Total Planned Tasks |   300 |
+| Completed Tasks     |   858 |
+| Remaining Tasks     |   326 |
+| Total Planned Tasks |  1184 |
 
 ---
 
 # Next Milestone
 
 ```
-EPIC-005
+EPIC-026
 
 Package:
-atlas-core
+atlas-runtime
 
 Status:
-Ready
+Ready to Start TASK-001
 
 Estimated Tasks:
-30
+18
 ```
 
 ---

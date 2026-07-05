@@ -3,7 +3,7 @@ id: TASK-014
 
 title: Implement Runtime Diagnostics
 
-status: Ready
+status: Completed
 
 priority: High
 
@@ -103,7 +103,7 @@ Examples include
 # Deliverables
 
 ```text
-atlas-runtime/
+packages/atlas-runtime/
 
 RuntimeDiagnostics.ts
 
@@ -210,7 +210,7 @@ RuntimeDiagnostics becomes the standardized diagnostics abstraction throughout t
 # Files Allowed
 
 ```text
-atlas-runtime/**
+packages/atlas-runtime/**
 ```
 
 ---
@@ -225,13 +225,13 @@ None
 
 # Acceptance Criteria
 
-- [ ] RuntimeDiagnostics implemented.
-- [ ] Supports diagnostic status.
-- [ ] Supports diagnostic severity.
-- [ ] Supports diagnostic checks.
-- [ ] Supports diagnostic reports.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] RuntimeDiagnostics implemented.
+- [x] Supports diagnostic status.
+- [x] Supports diagnostic severity.
+- [x] Supports diagnostic checks.
+- [x] Supports diagnostic reports.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

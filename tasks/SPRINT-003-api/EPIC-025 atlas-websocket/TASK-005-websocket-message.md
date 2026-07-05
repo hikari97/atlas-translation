@@ -3,7 +3,7 @@ id: TASK-005
 
 title: Implement WebSocket Message
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -21,7 +21,7 @@ reviewer:
 
 created_at: 2026-07-03
 
-updated_at: 2026-07-03
+updated_at: 2026-07-05
 ---
 
 # TASK-005 — Implement WebSocket Message
@@ -96,7 +96,7 @@ This abstraction provides a unified messaging model for every realtime interacti
 # Deliverables
 
 ```text
-atlas-websocket/
+packages/atlas-websocket/
 
 WebSocketMessage.ts
 
@@ -208,7 +208,7 @@ WebSocketMessage becomes the standardized communication abstraction across the A
 # Files Allowed
 
 ```text
-atlas-websocket/**
+packages/atlas-websocket/**
 ```
 
 ---
@@ -223,12 +223,12 @@ None
 
 # Acceptance Criteria
 
-- [ ] WebSocketMessage implemented.
-- [ ] Supports message metadata.
-- [ ] Supports routing metadata.
-- [ ] Supports extensible payloads.
-- [ ] Provider independent.
-- [ ] TypeScript strict mode passes.
+- [x] WebSocketMessage implemented.
+- [x] Supports message metadata.
+- [x] Supports routing metadata.
+- [x] Supports extensible payloads.
+- [x] Provider independent.
+- [x] TypeScript strict mode passes.
 
 ---
 

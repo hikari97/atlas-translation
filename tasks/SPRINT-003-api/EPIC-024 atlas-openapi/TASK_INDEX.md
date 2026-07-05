@@ -13,9 +13,9 @@ The tasks are organized according to the OpenAPI architecture and implementation
 | Metric      | Value |
 | ----------- | ----: |
 | Total Tasks |    18 |
-| Ready       |    18 |
+| Ready       |     0 |
 | In Progress |     0 |
-| Completed   |     0 |
+| Completed   |    18 |
 
 ---
 
@@ -23,24 +23,24 @@ The tasks are organized according to the OpenAPI architecture and implementation
 
 | ID       | Title                           | Priority | Story Points | Status |
 | -------- | ------------------------------- | -------- | -----------: | ------ |
-| TASK-001 | OpenAPI Document                | Critical |           21 | Ready  |
-| TASK-002 | OpenAPI Version                 | Critical |            8 | Ready  |
-| TASK-003 | OpenAPI Info                    | Critical |           13 | Ready  |
-| TASK-004 | OpenAPI Server                  | High     |           13 | Ready  |
-| TASK-005 | OpenAPI Path                    | Critical |           21 | Ready  |
-| TASK-006 | OpenAPI Operation               | Critical |           21 | Ready  |
-| TASK-007 | OpenAPI Parameter               | High     |           21 | Ready  |
-| TASK-008 | OpenAPI Request Body            | Critical |           21 | Ready  |
-| TASK-009 | OpenAPI Response                | Critical |           21 | Ready  |
-| TASK-010 | OpenAPI Schema                  | Critical |           34 | Ready  |
-| TASK-011 | OpenAPI Components              | Critical |           21 | Ready  |
-| TASK-012 | OpenAPI Security                | High     |           21 | Ready  |
-| TASK-013 | OpenAPI Tag                     | Medium   |           13 | Ready  |
-| TASK-014 | OpenAPI Example                 | Medium   |           13 | Ready  |
-| TASK-015 | OpenAPI Specification Validator | High     |           21 | Ready  |
-| TASK-016 | OpenAPI Document Builder        | High     |           21 | Ready  |
-| TASK-017 | OpenAPI Specification Generator | High     |           21 | Ready  |
-| TASK-018 | OpenAPI Tool Adapter            | High     |           21 | Ready  |
+| TASK-001 | OpenAPI Document                | Critical |           21 | Done   |
+| TASK-002 | OpenAPI Version                 | Critical |            8 | Done   |
+| TASK-003 | OpenAPI Info                    | Critical |           13 | Done   |
+| TASK-004 | OpenAPI Server                  | High     |           13 | Done   |
+| TASK-005 | OpenAPI Path                    | Critical |           21 | Done   |
+| TASK-006 | OpenAPI Operation               | Critical |           21 | Done   |
+| TASK-007 | OpenAPI Parameter               | High     |           21 | Done   |
+| TASK-008 | OpenAPI Request Body            | Critical |           21 | Done   |
+| TASK-009 | OpenAPI Response                | Critical |           21 | Done   |
+| TASK-010 | OpenAPI Schema                  | Critical |           34 | Done   |
+| TASK-011 | OpenAPI Components              | Critical |           21 | Done   |
+| TASK-012 | OpenAPI Security                | High     |           21 | Done   |
+| TASK-013 | OpenAPI Tag                     | Medium   |           13 | Done   |
+| TASK-014 | OpenAPI Example                 | Medium   |           13 | Done   |
+| TASK-015 | OpenAPI Specification Validator | High     |           21 | Done   |
+| TASK-016 | OpenAPI Document Builder        | High     |           21 | Done   |
+| TASK-017 | OpenAPI Specification Generator | High     |           21 | Done   |
+| TASK-018 | OpenAPI Tool Adapter            | High     |           21 | Done   |
 
 ---
 
