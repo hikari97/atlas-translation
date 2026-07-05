@@ -1,6 +1,6 @@
 ---
 title: EPIC-046-project-management-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: project-management-ui
 owner: H.Makki

@@ -1,7 +1,7 @@
 ---
 id: TASK-002
 title: Projects List
-status: Ready
+status: Completed
 priority: High
 story_points: 5
 sprint: SPRINT-005-frontend
@@ -140,14 +140,14 @@ If a dependency is missing or incompatible, stop and report it instead of invent
 
 # Acceptance Criteria
 
-- [ ] `Projects List` is implemented inside the allowed frontend paths.
-- [ ] The implementation is accessible and keyboard-aware where relevant.
-- [ ] The implementation uses typed state/data boundaries.
-- [ ] No forbidden files are modified.
-- [ ] No real backend, database, AI, or provider integration is introduced.
-- [ ] Tests cover success cases and relevant edge/failure states.
-- [ ] TypeScript validation passes or unavailable commands are reported.
-- [ ] Existing public frontend APIs are not broken unless this task explicitly requires it.
+- [x] `Projects List` is implemented inside the allowed frontend paths.
+- [x] The implementation is accessible and keyboard-aware where relevant.
+- [x] The implementation uses typed state/data boundaries.
+- [x] No forbidden files are modified.
+- [x] No real backend, database, AI, or provider integration is introduced.
+- [x] Tests cover success cases and relevant edge/failure states.
+- [x] TypeScript validation passes or unavailable commands are reported.
+- [x] Existing public frontend APIs are not broken unless this task explicitly requires it.
 
 ---
 
@@ -201,11 +201,11 @@ If neither package-local scripts nor workspace filters exist yet, report the mis
 
 # Definition of Done
 
-- [ ] Implementation is complete.
-- [ ] Tests are added or updated.
-- [ ] Validation commands were run or reported as unavailable.
-- [ ] No forbidden files were modified.
-- [ ] Final report lists changed files, commands run, validation results, and unfinished items.
+- [x] Implementation is complete.
+- [x] Tests are added or updated.
+- [x] Validation commands were run or reported as unavailable.
+- [x] No forbidden files were modified.
+- [x] Final report lists changed files, commands run, validation results, and unfinished items.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: EPIC-045-workspace-dashboard-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: workspace-dashboard-ui
 owner: H.Makki

@@ -1,6 +1,6 @@
 ---
 title: EPIC-053-bubble-text-editor-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: bubble-text-editor-ui
 owner: H.Makki

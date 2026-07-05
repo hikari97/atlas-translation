@@ -1,6 +1,6 @@
 ---
 title: EPIC-047-asset-import-library-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: asset-import-library-ui
 owner: H.Makki

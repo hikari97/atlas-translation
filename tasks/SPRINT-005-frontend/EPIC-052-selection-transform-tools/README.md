@@ -1,6 +1,6 @@
 ---
 title: EPIC-052-selection-transform-tools
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: selection-transform-tools
 owner: H.Makki

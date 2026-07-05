@@ -1,6 +1,6 @@
 ---
 title: EPIC-050-page-navigation-thumbnails
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: page-navigation-thumbnails
 owner: H.Makki

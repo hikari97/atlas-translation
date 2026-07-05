@@ -1,6 +1,6 @@
 ---
 title: EPIC-051-layer-panel-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: layer-panel-ui
 owner: H.Makki

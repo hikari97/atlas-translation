@@ -18,9 +18,9 @@ Frontend Application
 
 ## Current Epic
 
-EPIC-045
+EPIC-053
 
-Workspace Dashboard UI
+Bubble Text Editor UI
 
 ---
 
@@ -28,7 +28,7 @@ Workspace Dashboard UI
 
 TASK-001
 
-Dashboard Route
+Bubble Editor Foundation
 
 Status: Ready
 
@@ -36,7 +36,7 @@ Status: Ready
 
 # Goal
 
-Implement the workspace dashboard page route and metrics UI inside apps/web.
+Implement the speech bubble inspector editor, text mapping, and review workflow UI inside apps/web.
 
 ---
 
@@ -71,7 +71,7 @@ packages/atlas-request/**
 
 packages/atlas-response/**
 
-apps/web/src/pages/index.tsx
+apps/web/src/components/editor/InspectorPanel.tsx
 
 packages/atlas-container/**
 
@@ -82,9 +82,9 @@ packages/atlas-database/**
 
 # Acceptance Criteria
 
-- Dashboard route configured.
-- Dashboard cards and layout implemented.
-- Recent projects table rendered.
+- Bubble inspector UI panel implemented.
+- Original and translated text editor areas set up.
+- Bubble state status workflow dropdown supported.
 - TypeScript strict mode passes.
 
 ---
@@ -107,7 +107,7 @@ Read before implementation:
 
 7. tasks/README.md
 
-8. tasks/SPRINT-005-frontend/EPIC-045-web-app-foundation/TASK-009-web-loading-empty-states.md
+8. tasks/SPRINT-005-frontend/EPIC-053-web-app-foundation/TASK-009-web-loading-empty-states.md
 
 ---
 
@@ -139,6 +139,6 @@ The task is complete when:
 
 TASK-002
 
-Dashboard Summary Cards
+Bubble Text Editor UI
 
 Do NOT implement this task yet.

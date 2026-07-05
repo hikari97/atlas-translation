@@ -9,6 +9,7 @@ export interface NavigationItem {
 export const navigationConfig: readonly NavigationItem[] = [
   { label: 'Dashboard', path: '/' },
   { label: 'Projects', path: '/projects' },
+  { label: 'Asset Library', path: '/library' },
   { label: 'Settings', path: '/settings' },
 ];
 

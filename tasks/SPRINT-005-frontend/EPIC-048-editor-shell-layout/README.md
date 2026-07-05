@@ -1,6 +1,6 @@
 ---
 title: EPIC-048-editor-shell-layout
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: editor-shell-layout
 owner: H.Makki

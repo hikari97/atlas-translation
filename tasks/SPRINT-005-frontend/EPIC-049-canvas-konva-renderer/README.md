@@ -1,6 +1,6 @@
 ---
 title: EPIC-049-canvas-konva-renderer
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: canvas-konva-renderer
 owner: H.Makki
