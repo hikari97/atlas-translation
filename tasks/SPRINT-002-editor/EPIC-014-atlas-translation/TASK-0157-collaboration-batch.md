@@ -3,7 +3,7 @@ id: TASK-0157
 
 title: Implement BatchCollaboration
 
-status: Ready
+status: Completed
 
 priority: High
 

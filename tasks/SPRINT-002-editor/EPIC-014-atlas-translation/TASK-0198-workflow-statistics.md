@@ -3,7 +3,7 @@ id: TASK-0198
 
 title: Implement WorkflowStatistics
 
-status: Ready
+status: Completed
 
 priority: Medium
 

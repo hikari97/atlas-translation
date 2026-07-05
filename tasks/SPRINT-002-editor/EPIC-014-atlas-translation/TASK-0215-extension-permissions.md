@@ -3,7 +3,7 @@ id: TASK-0215
 
 title: Implement ExtensionPermissions
 
-status: Ready
+status: Completed
 
 priority: Critical
 

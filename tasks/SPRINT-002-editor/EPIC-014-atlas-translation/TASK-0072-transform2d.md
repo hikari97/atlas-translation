@@ -3,7 +3,7 @@ id: TASK-0072
 
 title: Implement Transform2D
 
-status: Ready
+status: Completed
 
 priority: Critical
 

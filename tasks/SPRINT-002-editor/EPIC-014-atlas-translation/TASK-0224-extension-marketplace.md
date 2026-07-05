@@ -3,7 +3,7 @@ id: TASK-0224
 
 title: Implement ExtensionMarketplace
 
-status: Ready
+status: Completed
 
 priority: Critical
 

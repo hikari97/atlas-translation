@@ -174,5 +174,5 @@ EPIC-010
 Status
 
 ```text
-Planning
+Completed
 ```

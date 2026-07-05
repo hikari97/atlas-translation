@@ -3,7 +3,7 @@ id: EPIC-005
 
 title: Atlas Core Runtime Framework
 
-status: Ready
+status: Completed
 
 priority: Critical
 
@@ -11,7 +11,7 @@ owner: H.Makki
 
 package: atlas-core
 
-estimated_tasks: 30
+estimated_tasks: 24
 
 estimated_sprints: 6
 
@@ -318,10 +318,10 @@ By the end of this epic the package will provide:
 | Quality Engineering |     4 |
 | Release             |     2 |
 
-Total
+Total implemented from task files
 
 ```
-30 Tasks
+24 Tasks
 ```
 
 ---
@@ -349,7 +349,7 @@ RISKS.md
 
 The epic is complete when:
 
-- All 30 tasks are completed.
+- All 24 task files are completed.
 - Public API is stable.
 - Documentation is complete.
 - Tests pass successfully.

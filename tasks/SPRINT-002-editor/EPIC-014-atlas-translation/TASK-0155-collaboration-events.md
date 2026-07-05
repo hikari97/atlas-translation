@@ -3,7 +3,7 @@ id: TASK-0155
 
 title: Implement Collaboration Events
 
-status: Ready
+status: Completed
 
 priority: High
 

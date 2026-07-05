@@ -3,7 +3,7 @@ id: TASK-0061
 
 title: Implement EditorSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

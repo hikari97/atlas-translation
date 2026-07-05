@@ -3,7 +3,7 @@ id: TASK-0164
 
 title: Implement CloudOptions
 
-status: Ready
+status: Completed
 
 priority: Medium
 

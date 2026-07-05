@@ -3,7 +3,7 @@ id: TASK-0002
 
 title: Implement TranslationRequest
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0206
 
 title: Implement WorkflowAnalytics
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0010
 
 title: Implement PipelineContext
 
-status: Ready
+status: Completed
 
 priority: Critical
 

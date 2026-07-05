@@ -3,7 +3,7 @@ id: TASK-0111
 
 title: Implement ExportProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

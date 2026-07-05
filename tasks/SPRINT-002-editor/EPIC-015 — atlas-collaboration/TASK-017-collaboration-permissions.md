@@ -3,7 +3,7 @@ id: TASK-017
 
 title: Implement Collaboration Permissions
 
-status: Ready
+status: Completed
 
 priority: High
 

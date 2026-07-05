@@ -3,7 +3,7 @@ id: TASK-0147
 
 title: Implement BatchHistory
 
-status: Ready
+status: Completed
 
 priority: High
 

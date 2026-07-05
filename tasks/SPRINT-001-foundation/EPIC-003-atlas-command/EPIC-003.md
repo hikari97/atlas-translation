@@ -3,7 +3,7 @@ id: EPIC-003
 
 title: Build atlas-command
 
-status: Ready
+status: Completed
 
 priority: Critical
 

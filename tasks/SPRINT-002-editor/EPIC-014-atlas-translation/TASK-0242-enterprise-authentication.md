@@ -3,7 +3,7 @@ id: TASK-0242
 
 title: Implement EnterpriseAuthentication
 
-status: Ready
+status: Completed
 
 priority: Critical
 

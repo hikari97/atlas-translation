@@ -3,7 +3,7 @@ id: TASK-0149
 
 title: Implement HistoryStatistics
 
-status: Ready
+status: Completed
 
 priority: Medium
 

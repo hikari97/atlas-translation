@@ -3,7 +3,7 @@ id: TASK-0044
 
 title: Implement WorkflowTransition
 
-status: Ready
+status: Completed
 
 priority: High
 

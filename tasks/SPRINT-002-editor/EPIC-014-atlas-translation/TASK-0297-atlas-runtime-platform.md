@@ -3,7 +3,7 @@ id: TASK-0297
 
 title: Implement AtlasRuntimePlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

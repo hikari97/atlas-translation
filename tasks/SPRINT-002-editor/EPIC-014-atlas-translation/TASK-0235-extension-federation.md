@@ -3,7 +3,7 @@ id: TASK-0235
 
 title: Implement ExtensionFederation
 
-status: Ready
+status: Completed
 
 priority: Critical
 

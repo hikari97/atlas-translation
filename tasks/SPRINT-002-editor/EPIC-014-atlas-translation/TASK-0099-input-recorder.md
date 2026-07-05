@@ -3,7 +3,7 @@ id: TASK-0099
 
 title: Implement InputRecorder
 
-status: Ready
+status: Completed
 
 priority: Medium
 

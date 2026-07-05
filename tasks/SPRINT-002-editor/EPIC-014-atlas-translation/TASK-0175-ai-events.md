@@ -3,7 +3,7 @@ id: TASK-0175
 
 title: Implement AI Events
 
-status: Ready
+status: Completed
 
 priority: High
 

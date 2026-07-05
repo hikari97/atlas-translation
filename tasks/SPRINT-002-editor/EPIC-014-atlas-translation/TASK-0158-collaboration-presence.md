@@ -3,7 +3,7 @@ id: TASK-0158
 
 title: Implement CollaborationPresence
 
-status: Ready
+status: Completed
 
 priority: Critical
 

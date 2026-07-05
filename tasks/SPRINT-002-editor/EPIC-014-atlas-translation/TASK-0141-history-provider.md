@@ -3,7 +3,7 @@ id: TASK-0141
 
 title: Implement HistoryProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

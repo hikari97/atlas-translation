@@ -3,7 +3,7 @@ id: TASK-0106
 
 title: Implement Plugin Events
 
-status: Ready
+status: Completed
 
 priority: Medium
 

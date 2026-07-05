@@ -94,4 +94,4 @@ EPIC dinyatakan selesai apabila:
 
 ## Status
 
-🟡 Planned
+🟢 Completed

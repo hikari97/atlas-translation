@@ -3,7 +3,7 @@ id: TASK-0134
 
 title: Implement AssetOptions
 
-status: Ready
+status: Completed
 
 priority: Medium
 

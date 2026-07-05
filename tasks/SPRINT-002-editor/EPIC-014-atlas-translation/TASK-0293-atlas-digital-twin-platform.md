@@ -3,7 +3,7 @@ id: TASK-0293
 
 title: Implement AtlasDigitalTwinPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

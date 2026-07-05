@@ -3,7 +3,7 @@ id: TASK-0015
 
 title: Implement PipelineExecutor
 
-status: Ready
+status: Completed
 
 priority: Critical
 

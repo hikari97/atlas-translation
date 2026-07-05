@@ -3,7 +3,7 @@ id: TASK-0238
 
 title: Implement ExtensionPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

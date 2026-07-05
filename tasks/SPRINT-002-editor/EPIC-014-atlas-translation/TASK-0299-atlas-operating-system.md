@@ -3,7 +3,7 @@ id: TASK-0299
 
 title: Implement AtlasOperatingSystem
 
-status: Ready
+status: Completed
 
 priority: Critical
 

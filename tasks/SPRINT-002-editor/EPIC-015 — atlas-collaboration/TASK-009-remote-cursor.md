@@ -3,7 +3,7 @@ id: TASK-009
 
 title: Implement Remote Cursor
 
-status: Ready
+status: Completed
 
 priority: High
 

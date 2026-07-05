@@ -3,7 +3,7 @@ id: TASK-0267
 
 title: Implement AtlasGlobalPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

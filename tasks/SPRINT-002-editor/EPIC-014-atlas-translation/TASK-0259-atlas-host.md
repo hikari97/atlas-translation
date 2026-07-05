@@ -3,7 +3,7 @@ id: TASK-0259
 
 title: Implement AtlasHost
 
-status: Ready
+status: Completed
 
 priority: Critical
 

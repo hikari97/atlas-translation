@@ -163,3 +163,11 @@ The collaboration abstractions are designed to integrate with future implementat
 - Enterprise collaboration platforms
 
 without requiring changes to the Atlas Collaboration public API.
+
+---
+
+# Current Status
+
+Completed.
+
+`packages/atlas-collaboration` now provides provider-independent collaboration contracts for sessions, presence, awareness, shared documents, synchronization, conflict resolution, remote cursor and selection state, comments, suggestions, review, annotations, shared clipboard, follow-user state, permissions, events, and history.

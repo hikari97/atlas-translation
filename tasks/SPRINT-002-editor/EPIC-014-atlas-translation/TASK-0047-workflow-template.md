@@ -3,7 +3,7 @@ id: TASK-0047
 
 title: Implement WorkflowTemplate
 
-status: Ready
+status: Completed
 
 priority: Medium
 

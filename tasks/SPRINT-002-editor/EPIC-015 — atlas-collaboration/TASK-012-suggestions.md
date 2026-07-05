@@ -3,7 +3,7 @@ id: TASK-012
 
 title: Implement Suggestions
 
-status: Ready
+status: Completed
 
 priority: High
 

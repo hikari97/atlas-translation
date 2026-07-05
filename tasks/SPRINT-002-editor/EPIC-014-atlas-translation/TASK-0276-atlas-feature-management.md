@@ -3,7 +3,7 @@ id: TASK-0276
 
 title: Implement AtlasFeatureManagement
 
-status: Ready
+status: Completed
 
 priority: Critical
 

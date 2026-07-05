@@ -3,7 +3,7 @@ id: TASK-0078
 
 title: Implement GroupObject
 
-status: Ready
+status: Completed
 
 priority: High
 

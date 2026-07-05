@@ -3,7 +3,7 @@ id: TASK-0275
 
 title: Implement AtlasEdition
 
-status: Ready
+status: Completed
 
 priority: Critical
 

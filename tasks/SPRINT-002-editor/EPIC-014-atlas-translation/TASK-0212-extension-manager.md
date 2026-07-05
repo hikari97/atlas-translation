@@ -3,7 +3,7 @@ id: TASK-0212
 
 title: Implement ExtensionManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

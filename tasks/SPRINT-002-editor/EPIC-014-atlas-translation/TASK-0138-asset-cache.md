@@ -3,7 +3,7 @@ id: TASK-0138
 
 title: Implement AssetCache
 
-status: Ready
+status: Completed
 
 priority: Critical
 

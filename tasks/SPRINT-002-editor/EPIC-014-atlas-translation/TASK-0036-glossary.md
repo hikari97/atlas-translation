@@ -3,7 +3,7 @@ id: TASK-0036
 
 title: Implement Glossary
 
-status: Ready
+status: Completed
 
 priority: Critical
 

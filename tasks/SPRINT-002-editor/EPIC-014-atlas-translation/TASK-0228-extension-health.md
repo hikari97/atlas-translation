@@ -3,7 +3,7 @@ id: TASK-0228
 
 title: Implement ExtensionHealth
 
-status: Ready
+status: Completed
 
 priority: High
 

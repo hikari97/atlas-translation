@@ -3,7 +3,7 @@ id: TASK-0043
 
 title: Implement WorkflowStep
 
-status: Ready
+status: Completed
 
 priority: Critical
 

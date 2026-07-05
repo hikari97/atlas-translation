@@ -3,7 +3,7 @@ id: TASK-0160
 
 title: Implement CollaborationStatistics
 
-status: Ready
+status: Completed
 
 priority: Medium
 

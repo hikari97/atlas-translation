@@ -3,7 +3,7 @@ id: TASK-0183
 
 title: Implement AITokenizer
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0066
 
 title: Implement EditorCommand
 
-status: Ready
+status: Completed
 
 priority: Critical
 

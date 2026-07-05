@@ -3,7 +3,7 @@ id: TASK-0263
 
 title: Implement AtlasControlPlane
 
-status: Ready
+status: Completed
 
 priority: Critical
 

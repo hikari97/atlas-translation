@@ -3,7 +3,7 @@ id: TASK-0244
 
 title: Implement EnterpriseSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

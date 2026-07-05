@@ -3,7 +3,7 @@ id: TASK-0153
 
 title: Implement CollaborationPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

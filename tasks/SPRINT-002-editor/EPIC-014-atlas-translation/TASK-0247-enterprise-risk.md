@@ -3,7 +3,7 @@ id: TASK-0247
 
 title: Implement EnterpriseRisk
 
-status: Ready
+status: Completed
 
 priority: Critical
 

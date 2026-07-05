@@ -3,7 +3,7 @@ id: TASK-0168
 
 title: Implement CloudSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

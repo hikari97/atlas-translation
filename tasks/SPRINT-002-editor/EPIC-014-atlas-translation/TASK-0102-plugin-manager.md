@@ -3,7 +3,7 @@ id: TASK-0102
 
 title: Implement PluginManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

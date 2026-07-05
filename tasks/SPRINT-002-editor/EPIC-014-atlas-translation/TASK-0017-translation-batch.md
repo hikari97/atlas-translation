@@ -3,7 +3,7 @@ id: TASK-0017
 
 title: Implement TranslationBatch
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@
 id: TASK-0002
 title: Implement AtlasDocument Root
 
-status: Ready
+status: Completed
 
 priority: Critical
 

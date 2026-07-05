@@ -3,7 +3,7 @@ id: TASK-0095
 
 title: Implement ShortcutManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

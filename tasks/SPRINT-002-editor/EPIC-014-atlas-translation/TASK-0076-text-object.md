@@ -3,7 +3,7 @@ id: TASK-0076
 
 title: Implement TextObject
 
-status: Ready
+status: Completed
 
 priority: Critical
 

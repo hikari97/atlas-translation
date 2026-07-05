@@ -3,7 +3,7 @@ id: TASK-0013
 
 title: Implement PipelineSnapshot
 
-status: Ready
+status: Completed
 
 priority: Medium
 

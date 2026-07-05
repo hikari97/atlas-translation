@@ -3,7 +3,7 @@ id: TASK-0197
 
 title: Implement WorkflowSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

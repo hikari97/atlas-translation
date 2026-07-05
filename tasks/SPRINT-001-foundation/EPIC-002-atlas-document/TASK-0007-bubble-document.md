@@ -3,7 +3,7 @@
 id: TASK-0007
 title: Implement BubbleDocument
 
-status: Ready
+status: Completed
 
 priority: Critical
 

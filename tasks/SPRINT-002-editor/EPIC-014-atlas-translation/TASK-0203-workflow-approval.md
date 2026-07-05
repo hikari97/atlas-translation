@@ -3,7 +3,7 @@ id: TASK-0203
 
 title: Implement WorkflowApproval
 
-status: Ready
+status: Completed
 
 priority: Critical
 

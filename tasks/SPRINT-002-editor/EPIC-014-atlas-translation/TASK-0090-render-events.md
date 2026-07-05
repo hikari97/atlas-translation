@@ -3,7 +3,7 @@ id: TASK-0090
 
 title: Implement Render Events
 
-status: Ready
+status: Completed
 
 priority: Medium
 

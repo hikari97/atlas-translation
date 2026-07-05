@@ -3,7 +3,7 @@ id: TASK-0062
 
 title: Implement EditorDocument
 
-status: Ready
+status: Completed
 
 priority: Critical
 

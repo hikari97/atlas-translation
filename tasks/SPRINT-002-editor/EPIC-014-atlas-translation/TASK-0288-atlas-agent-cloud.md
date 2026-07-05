@@ -3,7 +3,7 @@ id: TASK-0288
 
 title: Implement AtlasAgentCloud
 
-status: Ready
+status: Completed
 
 priority: Critical
 

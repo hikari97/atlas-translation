@@ -3,7 +3,7 @@ id: TASK-0055
 
 title: Implement ProjectSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

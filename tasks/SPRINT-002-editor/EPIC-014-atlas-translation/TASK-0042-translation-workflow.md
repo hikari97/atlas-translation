@@ -3,7 +3,7 @@ id: TASK-0042
 
 title: Implement TranslationWorkflow
 
-status: Ready
+status: Completed
 
 priority: Critical
 

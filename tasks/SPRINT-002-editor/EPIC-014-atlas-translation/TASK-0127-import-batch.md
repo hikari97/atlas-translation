@@ -3,7 +3,7 @@ id: TASK-0127
 
 title: Implement BatchImport
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0081
 
 title: Implement Renderer
 
-status: Ready
+status: Completed
 
 priority: Critical
 

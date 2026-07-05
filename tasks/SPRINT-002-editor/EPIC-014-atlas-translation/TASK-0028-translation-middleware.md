@@ -3,7 +3,7 @@ id: TASK-0028
 
 title: Implement TranslationMiddleware
 
-status: Ready
+status: Completed
 
 priority: Critical
 

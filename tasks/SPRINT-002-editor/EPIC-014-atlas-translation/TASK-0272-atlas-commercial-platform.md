@@ -3,7 +3,7 @@ id: TASK-0272
 
 title: Implement AtlasCommercialPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

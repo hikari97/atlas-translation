@@ -3,7 +3,7 @@ id: TASK-0217
 
 title: Implement ExtensionManifest
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0237
 
 title: Implement ExtensionGovernance
 
-status: Ready
+status: Completed
 
 priority: Critical
 

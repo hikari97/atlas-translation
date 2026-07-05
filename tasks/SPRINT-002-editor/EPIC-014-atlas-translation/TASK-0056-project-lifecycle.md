@@ -3,7 +3,7 @@ id: TASK-0056
 
 title: Implement ProjectLifecycle
 
-status: Ready
+status: Completed
 
 priority: High
 

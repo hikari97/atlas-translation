@@ -3,7 +3,7 @@ id: TASK-0014
 
 title: Implement PipelineState
 
-status: Ready
+status: Completed
 
 priority: Medium
 

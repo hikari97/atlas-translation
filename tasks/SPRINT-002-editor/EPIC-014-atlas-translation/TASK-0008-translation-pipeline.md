@@ -3,7 +3,7 @@ id: TASK-0008
 
 title: Implement TranslationPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

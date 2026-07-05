@@ -13,14 +13,55 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./foundation": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./workspace": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./editor": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./translation": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./resource": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./platform": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "ARCHITECTURE.md",
+    "API.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "TESTING.md",
+    "RELEASE_CHECKLIST.md",
+    "RELEASE_NOTES.md",
+    "REVIEW_REPORT.md",
+    "VERSION.md",
+    "docs"
   ],
   "scripts": {
     "build": "tsup",
+    "test:types": "tsc -p tsconfig.test.json",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {},

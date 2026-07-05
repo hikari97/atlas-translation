@@ -3,7 +3,7 @@ id: TASK-0115
 
 title: Implement Export Events
 
-status: Ready
+status: Completed
 
 priority: Medium
 

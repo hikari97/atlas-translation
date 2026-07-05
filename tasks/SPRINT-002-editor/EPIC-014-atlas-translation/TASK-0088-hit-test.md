@@ -3,7 +3,7 @@ id: TASK-0088
 
 title: Implement HitTestEngine
 
-status: Ready
+status: Completed
 
 priority: Critical
 

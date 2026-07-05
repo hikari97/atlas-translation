@@ -3,7 +3,7 @@ id: TASK-0159
 
 title: Implement CollaborationSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

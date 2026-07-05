@@ -3,7 +3,7 @@ id: TASK-0270
 
 title: Implement AtlasPlatformSDK
 
-status: Ready
+status: Completed
 
 priority: Critical
 

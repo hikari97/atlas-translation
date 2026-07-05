@@ -3,7 +3,7 @@ id: TASK-0246
 
 title: Implement EnterpriseCompliance
 
-status: Ready
+status: Completed
 
 priority: Critical
 

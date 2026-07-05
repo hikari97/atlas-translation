@@ -3,7 +3,7 @@ id: TASK-0094
 
 title: Implement FocusManager
 
-status: Ready
+status: Completed
 
 priority: High
 

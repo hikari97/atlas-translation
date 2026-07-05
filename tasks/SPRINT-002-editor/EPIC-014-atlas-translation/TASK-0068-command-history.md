@@ -3,7 +3,7 @@ id: TASK-0068
 
 title: Implement CommandHistory
 
-status: Ready
+status: Completed
 
 priority: High
 

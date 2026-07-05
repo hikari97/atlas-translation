@@ -3,7 +3,7 @@ id: TASK-0126
 
 title: Implement ImportProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

@@ -3,7 +3,7 @@ id: TASK-010
 
 title: Implement Remote Selection
 
-status: Ready
+status: Completed
 
 priority: High
 

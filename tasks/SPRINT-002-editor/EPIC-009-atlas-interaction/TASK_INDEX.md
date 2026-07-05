@@ -8,11 +8,11 @@ This document lists all implementation tasks for **EPIC-009 — atlas-interactio
 
 | ID        | Task                           | Status |
 | --------- | ------------------------------ | ------ |
-| TASK-0001 | Implement Interaction Manager  | Ready  |
-| TASK-0002 | Implement Interaction Session  | Ready  |
-| TASK-0003 | Implement Interaction State    | Ready  |
-| TASK-0004 | Implement Interaction Context  | Ready  |
-| TASK-0005 | Implement Interaction Registry | Ready  |
+| TASK-0001 | Implement Interaction Manager  | Done   |
+| TASK-0002 | Implement Interaction Session  | Done   |
+| TASK-0003 | Implement Interaction State    | Done   |
+| TASK-0004 | Implement Interaction Context  | Done   |
+| TASK-0005 | Implement Interaction Registry | Done   |
 
 ---
 
@@ -20,11 +20,11 @@ This document lists all implementation tasks for **EPIC-009 — atlas-interactio
 
 | ID        | Task                       | Status |
 | --------- | -------------------------- | ------ |
-| TASK-0006 | Implement Pointer Event    | Ready  |
-| TASK-0007 | Implement Pointer Capture  | Ready  |
-| TASK-0008 | Implement Pointer Tracker  | Ready  |
-| TASK-0009 | Implement Pointer Router   | Ready  |
-| TASK-0010 | Implement Pointer Hit Test | Ready  |
+| TASK-0006 | Implement Pointer Event    | Done   |
+| TASK-0007 | Implement Pointer Capture  | Done   |
+| TASK-0008 | Implement Pointer Tracker  | Done   |
+| TASK-0009 | Implement Pointer Router   | Done   |
+| TASK-0010 | Implement Pointer Hit Test | Done   |
 
 ---
 
@@ -32,11 +32,11 @@ This document lists all implementation tasks for **EPIC-009 — atlas-interactio
 
 | ID        | Task                          | Status |
 | --------- | ----------------------------- | ------ |
-| TASK-0011 | Implement Mouse Interaction   | Ready  |
-| TASK-0012 | Implement Click Interaction   | Ready  |
-| TASK-0013 | Implement Double Click        | Ready  |
-| TASK-0014 | Implement Hover Interaction   | Ready  |
-| TASK-0015 | Implement Context Interaction | Ready  |
+| TASK-0011 | Implement Mouse Interaction   | Done   |
+| TASK-0012 | Implement Click Interaction   | Done   |
+| TASK-0013 | Implement Double Click        | Done   |
+| TASK-0014 | Implement Hover Interaction   | Done   |
+| TASK-0015 | Implement Context Interaction | Done   |
 
 ---
 
@@ -44,11 +44,11 @@ This document lists all implementation tasks for **EPIC-009 — atlas-interactio
 
 | ID        | Task                           | Status |
 | --------- | ------------------------------ | ------ |
-| TASK-0016 | Implement Keyboard Interaction | Ready  |
-| TASK-0017 | Implement Modifier Keys        | Ready  |
-| TASK-0018 | Implement Key Sequence         | Ready  |
-| TASK-0019 | Implement Shortcut Dispatcher  | Ready  |
-| TASK-0020 | Implement IME Interaction      | Ready  |
+| TASK-0016 | Implement Keyboard Interaction | Done   |
+| TASK-0017 | Implement Modifier Keys        | Done   |
+| TASK-0018 | Implement Key Sequence         | Done   |
+| TASK-0019 | Implement Shortcut Dispatcher  | Done   |
+| TASK-0020 | Implement IME Interaction      | Done   |
 
 ---
 
@@ -56,11 +56,11 @@ This document lists all implementation tasks for **EPIC-009 — atlas-interactio
 
 | ID        | Task                       | Status |
 | --------- | -------------------------- | ------ |
-| TASK-0021 | Implement Drag Session     | Ready  |
-| TASK-0022 | Implement Drop Session     | Ready  |
-| TASK-0023 | Implement Drag Preview     | Ready  |
-| TASK-0024 | Implement Drag Constraints | Ready  |
-| TASK-0025 | Implement Auto Scroll      | Ready  |
+| TASK-0021 | Implement Drag Session     | Done   |
+| TASK-0022 | Implement Drop Session     | Done   |
+| TASK-0023 | Implement Drag Preview     | Done   |
+| TASK-0024 | Implement Drag Constraints | Done   |
+| TASK-0025 | Implement Auto Scroll      | Done   |
 
 ---
 
@@ -68,11 +68,11 @@ This document lists all implementation tasks for **EPIC-009 — atlas-interactio
 
 | ID        | Task                         | Status |
 | --------- | ---------------------------- | ------ |
-| TASK-0026 | Implement Resize Session     | Ready  |
-| TASK-0027 | Implement Resize Constraints | Ready  |
-| TASK-0028 | Implement Resize Preview     | Ready  |
-| TASK-0029 | Implement Aspect Ratio Lock  | Ready  |
-| TASK-0030 | Implement Resize Anchors     | Ready  |
+| TASK-0026 | Implement Resize Session     | Done   |
+| TASK-0027 | Implement Resize Constraints | Done   |
+| TASK-0028 | Implement Resize Preview     | Done   |
+| TASK-0029 | Implement Aspect Ratio Lock  | Done   |
+| TASK-0030 | Implement Resize Anchors     | Done   |
 
 ---
 
@@ -80,11 +80,11 @@ This document lists all implementation tasks for **EPIC-009 — atlas-interactio
 
 | ID        | Task                         | Status |
 | --------- | ---------------------------- | ------ |
-| TASK-0031 | Implement Gesture Recognizer | Ready  |
-| TASK-0032 | Implement Pan Gesture        | Ready  |
-| TASK-0033 | Implement Zoom Gesture       | Ready  |
-| TASK-0034 | Implement Rotate Gesture     | Ready  |
-| TASK-0035 | Implement Long Press         | Ready  |
+| TASK-0031 | Implement Gesture Recognizer | Done   |
+| TASK-0032 | Implement Pan Gesture        | Done   |
+| TASK-0033 | Implement Zoom Gesture       | Done   |
+| TASK-0034 | Implement Rotate Gesture     | Done   |
+| TASK-0035 | Implement Long Press         | Done   |
 
 ---
 
@@ -92,11 +92,11 @@ This document lists all implementation tasks for **EPIC-009 — atlas-interactio
 
 | ID        | Task                                | Status |
 | --------- | ----------------------------------- | ------ |
-| TASK-0036 | Implement Multi Pointer             | Ready  |
-| TASK-0037 | Implement Interaction Pipeline      | Ready  |
-| TASK-0038 | Implement Interaction Events        | Ready  |
-| TASK-0039 | Implement Accessibility Interaction | Ready  |
-| TASK-0040 | Implement Interaction Diagnostics   | Ready  |
+| TASK-0036 | Implement Multi Pointer             | Done   |
+| TASK-0037 | Implement Interaction Pipeline      | Done   |
+| TASK-0038 | Implement Interaction Events        | Done   |
+| TASK-0039 | Implement Accessibility Interaction | Done   |
+| TASK-0040 | Implement Interaction Diagnostics   | Done   |
 
 ---
 

@@ -3,7 +3,7 @@ id: TASK-0161
 
 title: Implement CloudProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

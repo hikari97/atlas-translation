@@ -3,7 +3,7 @@ id: TASK-0257
 
 title: Implement AtlasBootstrap
 
-status: Ready
+status: Completed
 
 priority: Critical
 

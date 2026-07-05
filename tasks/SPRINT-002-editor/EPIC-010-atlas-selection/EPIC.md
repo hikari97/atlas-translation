@@ -8,7 +8,7 @@ title: Atlas Selection
 
 package: atlas-selection
 
-status: Planning
+status: Completed
 
 priority: Critical
 
@@ -16,7 +16,7 @@ owner: H.Makki
 
 created_at: 2026-07-01
 
-updated_at: 2026-07-01
+updated_at: 2026-07-04
 
 ---
 
@@ -85,9 +85,8 @@ Atlas Selection depends on:
 
 ```text
 atlas-core
-atlas-utils
-atlas-event
-atlas-state
+atlas-types
+atlas-events
 atlas-interaction
 ```
 
@@ -279,13 +278,13 @@ TASK-0040.md
 Current Progress
 
 ```text
-0 / 40 Tasks
+40 / 40 Tasks
 ```
 
 Current Status
 
 ```text
-Planning
+Completed
 ```
 
 ---

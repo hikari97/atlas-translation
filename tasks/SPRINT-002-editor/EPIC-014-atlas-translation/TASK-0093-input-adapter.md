@@ -3,7 +3,7 @@ id: TASK-0093
 
 title: Implement InputAdapter
 
-status: Ready
+status: Completed
 
 priority: Critical
 

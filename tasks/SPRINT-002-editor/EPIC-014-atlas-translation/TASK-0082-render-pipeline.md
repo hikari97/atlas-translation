@@ -3,7 +3,7 @@ id: TASK-0082
 
 title: Implement RenderPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

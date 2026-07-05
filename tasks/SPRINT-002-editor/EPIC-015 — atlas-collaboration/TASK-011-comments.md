@@ -3,7 +3,7 @@ id: TASK-011
 
 title: Implement Comments
 
-status: Ready
+status: Completed
 
 priority: High
 

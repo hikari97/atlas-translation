@@ -3,7 +3,7 @@ id: TASK-006
 
 title: Implement Shared Document
 
-status: Ready
+status: Completed
 
 priority: Critical
 

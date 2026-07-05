@@ -3,7 +3,7 @@ id: TASK-0163
 
 title: Implement CloudPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0193
 
 title: Implement WorkflowPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

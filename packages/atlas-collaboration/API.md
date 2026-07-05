@@ -1,0 +1,21 @@
+# API
+
+- `CollaborationCore`
+- `CollaborationSession`
+- `Presence`
+- `Awareness`
+- `CollaborationUser`
+- `SharedDocument`
+- `SynchronizationSnapshot`
+- `ConflictResolution`
+- `RemoteCursor`
+- `RemoteSelection`
+- `Comment`
+- `Suggestion`
+- `Review`
+- `Annotation`
+- `SharedClipboard`
+- `FollowUser`
+- `CollaborationPermissions`
+- `CollaborationEvent`
+- `CollaborationHistory`

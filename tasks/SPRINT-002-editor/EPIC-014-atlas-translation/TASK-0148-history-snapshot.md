@@ -3,7 +3,7 @@ id: TASK-0148
 
 title: Implement HistorySnapshot
 
-status: Ready
+status: Completed
 
 priority: Critical
 

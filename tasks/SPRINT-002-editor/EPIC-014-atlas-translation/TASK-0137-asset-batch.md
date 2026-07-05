@@ -3,7 +3,7 @@ id: TASK-0137
 
 title: Implement BatchAsset
 
-status: Ready
+status: Completed
 
 priority: High
 

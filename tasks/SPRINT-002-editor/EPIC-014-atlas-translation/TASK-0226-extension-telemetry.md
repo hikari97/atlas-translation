@@ -3,7 +3,7 @@ id: TASK-0226
 
 title: Implement ExtensionTelemetry
 
-status: Ready
+status: Completed
 
 priority: High
 

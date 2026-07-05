@@ -3,7 +3,7 @@ id: TASK-0253
 
 title: Implement AtlasCLI
 
-status: Ready
+status: Completed
 
 priority: Critical
 

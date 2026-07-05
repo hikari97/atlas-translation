@@ -3,7 +3,7 @@ id: TASK-0107
 
 title: Implement Plugin Settings
 
-status: Ready
+status: Completed
 
 priority: Medium
 

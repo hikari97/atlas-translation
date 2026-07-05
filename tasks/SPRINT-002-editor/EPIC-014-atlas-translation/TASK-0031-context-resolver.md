@@ -3,7 +3,7 @@ id: TASK-0031
 
 title: Implement ContextResolver
 
-status: Ready
+status: Completed
 
 priority: High
 

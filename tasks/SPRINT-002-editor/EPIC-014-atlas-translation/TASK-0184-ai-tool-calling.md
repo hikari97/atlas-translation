@@ -3,7 +3,7 @@ id: TASK-0184
 
 title: Implement AIToolCalling
 
-status: Ready
+status: Completed
 
 priority: Critical
 

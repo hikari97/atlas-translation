@@ -10,6 +10,18 @@ Membangun AI-first Translation Engine yang mampu menerjemahkan ratusan gambar ma
 
 ---
 
+# Implementation Status
+
+Status: Completed
+
+Implementation:
+
+- `packages/atlas-translation`
+
+The package implements the translation-engine contracts and orchestration primitives while keeping provider execution, rendering, editor mutation, UI, cloud infrastructure, and enterprise identity concerns outside this package.
+
+---
+
 # Roadmap
 
 ```text

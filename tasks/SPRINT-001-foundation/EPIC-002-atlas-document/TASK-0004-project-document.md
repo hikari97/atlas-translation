@@ -3,7 +3,7 @@
 id: TASK-0004
 title: Implement ProjectDocument
 
-status: Ready
+status: Completed
 
 priority: Critical
 

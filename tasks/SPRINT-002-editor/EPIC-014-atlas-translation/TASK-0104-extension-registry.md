@@ -3,7 +3,7 @@ id: TASK-0104
 
 title: Implement ExtensionRegistry
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0034
 
 title: Implement ProviderConfiguration
 
-status: Ready
+status: Completed
 
 priority: High
 

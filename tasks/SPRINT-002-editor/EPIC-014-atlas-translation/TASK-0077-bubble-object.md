@@ -3,7 +3,7 @@ id: TASK-0077
 
 title: Implement BubbleObject
 
-status: Ready
+status: Completed
 
 priority: Critical
 

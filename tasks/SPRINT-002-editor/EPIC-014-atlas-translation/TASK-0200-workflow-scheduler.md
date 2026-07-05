@@ -3,7 +3,7 @@ id: TASK-0200
 
 title: Implement WorkflowScheduler
 
-status: Ready
+status: Completed
 
 priority: Critical
 

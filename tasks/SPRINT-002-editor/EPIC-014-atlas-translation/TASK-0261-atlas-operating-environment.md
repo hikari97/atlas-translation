@@ -3,7 +3,7 @@ id: TASK-0261
 
 title: Implement AtlasOperatingEnvironment
 
-status: Ready
+status: Completed
 
 priority: Critical
 

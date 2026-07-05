@@ -3,7 +3,7 @@ id: TASK-0271
 
 title: Implement AtlasDeveloperPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

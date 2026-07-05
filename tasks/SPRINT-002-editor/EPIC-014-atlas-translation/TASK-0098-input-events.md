@@ -3,7 +3,7 @@ id: TASK-0098
 
 title: Implement Input Events
 
-status: Ready
+status: Completed
 
 priority: Medium
 

@@ -3,7 +3,7 @@ id: TASK-0058
 
 title: Implement ProjectHistory
 
-status: Ready
+status: Completed
 
 priority: Medium
 

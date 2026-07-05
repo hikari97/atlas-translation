@@ -3,7 +3,7 @@ id: TASK-0262
 
 title: Implement AtlasDistributedKernel
 
-status: Ready
+status: Completed
 
 priority: Critical
 

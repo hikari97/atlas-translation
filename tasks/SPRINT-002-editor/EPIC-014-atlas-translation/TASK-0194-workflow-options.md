@@ -3,7 +3,7 @@ id: TASK-0194
 
 title: Implement WorkflowOptions
 
-status: Ready
+status: Completed
 
 priority: Medium
 

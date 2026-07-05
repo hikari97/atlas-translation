@@ -3,7 +3,7 @@ id: TASK-0239
 
 title: Implement EnterpriseProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

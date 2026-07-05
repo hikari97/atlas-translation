@@ -3,7 +3,7 @@ id: TASK-0221
 
 title: Implement ExtensionInstaller
 
-status: Ready
+status: Completed
 
 priority: Critical
 

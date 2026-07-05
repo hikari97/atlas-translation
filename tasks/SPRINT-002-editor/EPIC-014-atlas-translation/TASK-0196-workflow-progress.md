@@ -3,7 +3,7 @@ id: TASK-0196
 
 title: Implement WorkflowProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

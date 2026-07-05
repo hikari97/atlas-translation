@@ -3,7 +3,7 @@ id: TASK-0150
 
 title: Implement HistorySession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

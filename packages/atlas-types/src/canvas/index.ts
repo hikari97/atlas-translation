@@ -1,0 +1,10 @@
+export type { Canvas } from './Canvas';
+export type { CanvasBounds } from './CanvasBounds';
+export type { CanvasGrid } from './CanvasGrid';
+export type { CanvasGuide } from './CanvasGuide';
+export type { CanvasOverlay } from './CanvasOverlay';
+export type { CanvasReference } from './CanvasReference';
+export type { CanvasRuler } from './CanvasRuler';
+export type { CanvasSnap } from './CanvasSnap';
+export type { CanvasState } from './CanvasState';
+export type { CanvasViewport } from './CanvasViewport';

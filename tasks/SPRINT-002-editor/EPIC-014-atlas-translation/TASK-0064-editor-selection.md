@@ -3,7 +3,7 @@ id: TASK-0064
 
 title: Implement EditorSelection
 
-status: Ready
+status: Completed
 
 priority: Critical
 

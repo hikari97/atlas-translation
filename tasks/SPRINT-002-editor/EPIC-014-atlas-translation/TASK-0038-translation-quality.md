@@ -3,7 +3,7 @@ id: TASK-0038
 
 title: Implement TranslationQuality
 
-status: Ready
+status: Completed
 
 priority: High
 

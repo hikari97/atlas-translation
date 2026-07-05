@@ -3,7 +3,7 @@ id: TASK-0022
 
 title: Implement TranslationProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

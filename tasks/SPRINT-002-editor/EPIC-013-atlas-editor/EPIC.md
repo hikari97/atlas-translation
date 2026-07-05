@@ -6,7 +6,7 @@ id: EPIC-013
 
 title: Atlas Editor Runtime
 
-status: Planned
+status: Completed
 
 priority: Critical
 
@@ -321,6 +321,37 @@ The implementation is considered successful when:
 - runtime overhead remains minimal
 - APIs remain stable
 - all integrations pass automated tests
+
+---
+
+# Completion Summary
+
+Status: Completed
+
+Implemented package:
+
+- `packages/atlas-editor`
+
+Completed scope:
+
+- editor runtime and lifecycle
+- editor manager
+- immutable runtime state snapshots
+- workspace, document, tool, mode, and session managers
+- command-driven active workspace, document, tool, mode, and session changes
+- command, history, renderer, input, selection, and plugin integration adapters
+- runtime diagnostics, metrics, benchmark, and performance budget validation
+- public API, architecture, performance, release, and review documentation
+
+Validation completed:
+
+- `npm run typecheck`
+- `npm run test:types`
+- `npm run build`
+- smoke import and command dispatch
+- package dry-run
+- forbidden `any` scan
+- internal package import scan
 
 ---
 

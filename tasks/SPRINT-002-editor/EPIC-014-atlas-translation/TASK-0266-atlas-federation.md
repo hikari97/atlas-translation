@@ -3,7 +3,7 @@ id: TASK-0266
 
 title: Implement AtlasFederation
 
-status: Ready
+status: Completed
 
 priority: Critical
 

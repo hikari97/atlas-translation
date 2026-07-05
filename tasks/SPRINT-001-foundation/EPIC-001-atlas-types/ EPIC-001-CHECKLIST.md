@@ -2,7 +2,7 @@
 id: EPIC-001-CHECKLIST
 epic: EPIC-001
 title: Atlas Types
-status: Planning
+status: Completed
 
 created_at: 2026-07-01
 updated_at: 2026-07-01
@@ -25,64 +25,64 @@ The checklist is the primary progress tracker for the epic.
 Overall Progress
 
 ```text
-0 / 25 Tasks Completed
-0%
+25 / 25 Tasks Completed
+100%
 ```
 
 ---
 
 # Foundation
 
-- [ ] TASK-0001 — Initialize Package
-- [ ] TASK-0002 — Common Types
-- [ ] TASK-0003 — Geometry Types
-- [ ] TASK-0004 — Shared Enums
+- [x] TASK-0001 — Initialize Package
+- [x] TASK-0002 — Common Types
+- [x] TASK-0003 — Geometry Types
+- [x] TASK-0004 — Shared Enums
 
 ---
 
 # Workspace
 
-- [ ] TASK-0005 — Workspace Domain
-- [ ] TASK-0006 — Project Domain
-- [ ] TASK-0007 — Page Domain
+- [x] TASK-0005 — Workspace Domain
+- [x] TASK-0006 — Project Domain
+- [x] TASK-0007 — Page Domain
 
 ---
 
 # Editor
 
-- [ ] TASK-0008 — Layer Domain
-- [ ] TASK-0009 — Bubble Domain
-- [ ] TASK-0010 — Translation Domain
-- [ ] TASK-0011 — Typography Domain
-- [ ] TASK-0012 — Font Domain
-- [ ] TASK-0018 — Editor Domain
-- [ ] TASK-0019 — Selection Domain
-- [ ] TASK-0020 — Canvas Domain
+- [x] TASK-0008 — Layer Domain
+- [x] TASK-0009 — Bubble Domain
+- [x] TASK-0010 — Translation Domain
+- [x] TASK-0011 — Typography Domain
+- [x] TASK-0012 — Font Domain
+- [x] TASK-0018 — Editor Domain
+- [x] TASK-0019 — Selection Domain
+- [x] TASK-0020 — Canvas Domain
 
 ---
 
 # Resources
 
-- [ ] TASK-0013 — Asset Domain
-- [ ] TASK-0014 — Image Domain
+- [x] TASK-0013 — Asset Domain
+- [x] TASK-0014 — Image Domain
 
 ---
 
 # Platform
 
-- [ ] TASK-0015 — Plugin Domain
-- [ ] TASK-0016 — Workflow Domain
-- [ ] TASK-0017 — History Domain
-- [ ] TASK-0021 — Export Domain
+- [x] TASK-0015 — Plugin Domain
+- [x] TASK-0016 — Workflow Domain
+- [x] TASK-0017 — History Domain
+- [x] TASK-0021 — Export Domain
 
 ---
 
 # Release
 
-- [ ] TASK-0022 — Public API Architecture
-- [ ] TASK-0023 — Documentation
-- [ ] TASK-0024 — Package Quality Assurance & Testing
-- [ ] TASK-0025 — Engineering Review & Release Readiness
+- [x] TASK-0022 — Public API Architecture
+- [x] TASK-0023 — Documentation
+- [x] TASK-0024 — Package Quality Assurance & Testing
+- [x] TASK-0025 — Engineering Review & Release Readiness
 
 ---
 
@@ -90,25 +90,25 @@ Overall Progress
 
 | Milestone           | Requirement                                  | Status |
 | ------------------- | -------------------------------------------- | ------ |
-| Foundation Complete | TASK-0001 → TASK-0004                        | ☐      |
-| Workspace Complete  | TASK-0005 → TASK-0007                        | ☐      |
-| Editor Complete     | TASK-0008 → TASK-0012, TASK-0018 → TASK-0020 | ☐      |
-| Resources Complete  | TASK-0013 → TASK-0014                        | ☐      |
-| Platform Complete   | TASK-0015 → TASK-0017, TASK-0021             | ☐      |
-| Package Ready       | TASK-0022 → TASK-0025                        | ☐      |
-| EPIC Complete       | All tasks completed                          | ☐      |
+| Foundation Complete | TASK-0001 → TASK-0004                        | ☑      |
+| Workspace Complete  | TASK-0005 → TASK-0007                        | ☑      |
+| Editor Complete     | TASK-0008 → TASK-0012, TASK-0018 → TASK-0020 | ☑      |
+| Resources Complete  | TASK-0013 → TASK-0014                        | ☑      |
+| Platform Complete   | TASK-0015 → TASK-0017, TASK-0021             | ☑      |
+| Package Ready       | TASK-0022 → TASK-0025                        | ☑      |
+| EPIC Complete       | All tasks completed                          | ☑      |
 
 ---
 
 # Current Task
 
-None
+EPIC completed
 
 ---
 
 # Next Task
 
-TASK-0001 — Initialize Package
+EPIC-002 — atlas-document
 
 ---
 

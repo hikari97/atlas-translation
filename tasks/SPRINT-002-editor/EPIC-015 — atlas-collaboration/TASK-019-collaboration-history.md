@@ -3,7 +3,7 @@ id: TASK-019
 
 title: Implement Collaboration History
 
-status: Ready
+status: Completed
 
 priority: Medium
 

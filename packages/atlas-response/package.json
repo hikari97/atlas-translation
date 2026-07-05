@@ -1,0 +1,45 @@
+{
+  "name": "@atlas/atlas-response",
+  "version": "0.1.0",
+  "description": "Provider-independent response contracts for Atlas Studio.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "ARCHITECTURE.md",
+    "API.md",
+    "PERFORMANCE.md",
+    "RELEASE_CERTIFICATION.md",
+    "REVIEW_REPORT.md",
+    "examples"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test:types": "tsc -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "@atlas/atlas-http": "file:../atlas-http",
+    "@atlas/atlas-request": "file:../atlas-request",
+    "@atlas/atlas-types": "file:../atlas-types"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

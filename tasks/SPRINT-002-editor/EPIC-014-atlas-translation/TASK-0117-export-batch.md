@@ -3,7 +3,7 @@ id: TASK-0117
 
 title: Implement BatchExport
 
-status: Ready
+status: Completed
 
 priority: High
 

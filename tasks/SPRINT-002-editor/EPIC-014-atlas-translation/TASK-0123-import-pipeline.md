@@ -3,7 +3,7 @@ id: TASK-0123
 
 title: Implement ImportPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

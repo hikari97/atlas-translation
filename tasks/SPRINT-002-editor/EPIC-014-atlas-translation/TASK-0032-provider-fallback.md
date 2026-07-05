@@ -3,7 +3,7 @@ id: TASK-0032
 
 title: Implement ProviderFallback
 
-status: Ready
+status: Completed
 
 priority: High
 

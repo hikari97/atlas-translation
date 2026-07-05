@@ -3,7 +3,7 @@ id: TASK-0053
 
 title: Implement ProjectAssets
 
-status: Ready
+status: Completed
 
 priority: Critical
 

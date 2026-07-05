@@ -3,7 +3,7 @@ id: TASK-0205
 
 title: Implement WorkflowReplay
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0101
 
 title: Implement Plugin
 
-status: Ready
+status: Completed
 
 priority: Critical
 

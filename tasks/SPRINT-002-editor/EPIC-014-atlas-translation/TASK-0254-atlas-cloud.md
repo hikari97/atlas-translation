@@ -4,7 +4,7 @@ id: TASK-0254
 
 title: Implement AtlasCloud
 
-status: Ready
+status: Completed
 
 priority: Critical
 

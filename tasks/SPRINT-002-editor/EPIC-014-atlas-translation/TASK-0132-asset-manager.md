@@ -3,7 +3,7 @@ id: TASK-0132
 
 title: Implement AssetManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

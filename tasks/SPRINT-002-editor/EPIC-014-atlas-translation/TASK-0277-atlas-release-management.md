@@ -3,7 +3,7 @@ id: TASK-0277
 
 title: Implement AtlasReleaseManagement
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0173
 
 title: Implement AIPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

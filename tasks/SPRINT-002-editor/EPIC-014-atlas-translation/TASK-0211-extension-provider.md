@@ -3,7 +3,7 @@ id: TASK-0211
 
 title: Implement ExtensionProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

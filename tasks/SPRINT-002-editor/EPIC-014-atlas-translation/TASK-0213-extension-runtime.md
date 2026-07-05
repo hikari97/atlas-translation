@@ -3,7 +3,7 @@ id: TASK-0213
 
 title: Implement ExtensionRuntime
 
-status: Ready
+status: Completed
 
 priority: Critical
 

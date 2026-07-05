@@ -3,7 +3,7 @@ id: TASK-0219
 
 title: Implement ExtensionDependencyResolver
 
-status: Ready
+status: Completed
 
 priority: Critical
 

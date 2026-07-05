@@ -3,7 +3,7 @@ id: TASK-0125
 
 title: Implement Import Events
 
-status: Ready
+status: Completed
 
 priority: Medium
 

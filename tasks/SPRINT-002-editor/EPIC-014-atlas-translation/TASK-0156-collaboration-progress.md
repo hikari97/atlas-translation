@@ -3,7 +3,7 @@ id: TASK-0156
 
 title: Implement CollaborationProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

@@ -3,7 +3,7 @@ id: TASK-0045
 
 title: Implement WorkflowCondition
 
-status: Ready
+status: Completed
 
 priority: High
 

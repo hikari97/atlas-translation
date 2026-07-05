@@ -3,7 +3,7 @@ id: TASK-0167
 
 title: Implement CloudSync
 
-status: Ready
+status: Completed
 
 priority: Critical
 

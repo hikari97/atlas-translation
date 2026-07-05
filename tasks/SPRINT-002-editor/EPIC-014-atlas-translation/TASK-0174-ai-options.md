@@ -3,7 +3,7 @@ id: TASK-0174
 
 title: Implement AIOptions
 
-status: Ready
+status: Completed
 
 priority: Medium
 

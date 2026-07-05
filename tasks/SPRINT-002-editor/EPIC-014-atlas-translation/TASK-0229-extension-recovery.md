@@ -3,7 +3,7 @@ id: TASK-0229
 
 title: Implement ExtensionRecovery
 
-status: Ready
+status: Completed
 
 priority: Critical
 

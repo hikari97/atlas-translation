@@ -3,7 +3,7 @@ id: TASK-0063
 
 title: Implement EditorViewport
 
-status: Ready
+status: Completed
 
 priority: Critical
 

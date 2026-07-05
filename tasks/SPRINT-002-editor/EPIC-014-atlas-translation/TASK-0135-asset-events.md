@@ -3,7 +3,7 @@ id: TASK-0135
 
 title: Implement Asset Events
 
-status: Ready
+status: Completed
 
 priority: High
 

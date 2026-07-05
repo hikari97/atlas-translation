@@ -3,7 +3,7 @@ id: TASK-0165
 
 title: Implement Cloud Events
 
-status: Ready
+status: Completed
 
 priority: High
 

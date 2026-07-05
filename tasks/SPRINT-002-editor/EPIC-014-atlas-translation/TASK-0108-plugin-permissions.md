@@ -3,7 +3,7 @@ id: TASK-0108
 
 title: Implement Plugin Permissions
 
-status: Ready
+status: Completed
 
 priority: Critical
 

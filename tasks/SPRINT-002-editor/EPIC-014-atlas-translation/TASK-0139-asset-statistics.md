@@ -3,7 +3,7 @@ id: TASK-0139
 
 title: Implement AssetStatistics
 
-status: Ready
+status: Completed
 
 priority: Medium
 

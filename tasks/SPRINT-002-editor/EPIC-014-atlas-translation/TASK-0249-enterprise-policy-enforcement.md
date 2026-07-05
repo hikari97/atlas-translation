@@ -3,7 +3,7 @@ id: TASK-0249
 
 title: Implement EnterprisePolicyEnforcement
 
-status: Ready
+status: Completed
 
 priority: Critical
 

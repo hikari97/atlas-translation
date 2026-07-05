@@ -3,7 +3,7 @@ id: TASK-0204
 
 title: Implement WorkflowVersioning
 
-status: Ready
+status: Completed
 
 priority: High
 

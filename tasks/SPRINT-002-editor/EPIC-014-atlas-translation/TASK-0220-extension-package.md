@@ -3,7 +3,7 @@ id: TASK-0220
 
 title: Implement ExtensionPackage
 
-status: Ready
+status: Completed
 
 priority: High
 

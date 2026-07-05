@@ -3,7 +3,7 @@ id: TASK-0004
 
 title: Implement TranslationProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

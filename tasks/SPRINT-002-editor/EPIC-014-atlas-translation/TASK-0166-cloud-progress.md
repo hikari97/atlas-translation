@@ -3,7 +3,7 @@ id: TASK-0166
 
 title: Implement CloudProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

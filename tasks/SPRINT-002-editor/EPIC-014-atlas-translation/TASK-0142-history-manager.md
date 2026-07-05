@@ -3,7 +3,7 @@ id: TASK-0142
 
 title: Implement HistoryManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

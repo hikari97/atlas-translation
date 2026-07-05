@@ -3,7 +3,7 @@ id: TASK-0145
 
 title: Implement History Events
 
-status: Ready
+status: Completed
 
 priority: Medium
 

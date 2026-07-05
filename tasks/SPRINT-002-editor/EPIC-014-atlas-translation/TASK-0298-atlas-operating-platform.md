@@ -3,7 +3,7 @@ id: TASK-0298
 
 title: Implement AtlasOperatingPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

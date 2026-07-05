@@ -420,5 +420,5 @@ Sprint 6 □□□□□
 Sprint 7 □□□□□
 Sprint 8 □□□□□
 
-0 / 40 Tasks Completed
+40 / 40 Tasks Completed
 ```

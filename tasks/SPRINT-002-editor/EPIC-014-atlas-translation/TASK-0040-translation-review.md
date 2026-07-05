@@ -3,7 +3,7 @@ id: TASK-0040
 
 title: Implement TranslationReview
 
-status: Ready
+status: Completed
 
 priority: High
 

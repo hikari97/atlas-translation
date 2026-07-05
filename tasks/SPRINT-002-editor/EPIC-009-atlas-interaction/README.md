@@ -63,8 +63,9 @@ packages/
 
 ### Depends On
 
-- atlas-foundation
+- atlas-types
 - atlas-core
+- atlas-events
 
 ### Used By
 
@@ -72,6 +73,12 @@ packages/
 - atlas-selection
 - atlas-history
 - atlas-editor
+
+---
+
+## Status
+
+Completed — 40 / 40 tasks.
 
 ---
 

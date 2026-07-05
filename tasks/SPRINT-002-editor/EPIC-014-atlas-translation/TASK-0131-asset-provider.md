@@ -3,7 +3,7 @@ id: TASK-0131
 
 title: Implement AssetProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

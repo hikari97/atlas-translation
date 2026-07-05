@@ -3,7 +3,7 @@ id: TASK-0265
 
 title: Implement AtlasCluster
 
-status: Ready
+status: Completed
 
 priority: Critical
 

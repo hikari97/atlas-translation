@@ -3,7 +3,7 @@ id: TASK-0245
 
 title: Implement EnterpriseAudit
 
-status: Ready
+status: Completed
 
 priority: Critical
 

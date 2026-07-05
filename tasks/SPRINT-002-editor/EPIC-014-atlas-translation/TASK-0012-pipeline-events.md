@@ -3,7 +3,7 @@ id: TASK-0012
 
 title: Implement Pipeline Events
 
-status: Ready
+status: Completed
 
 priority: Medium
 

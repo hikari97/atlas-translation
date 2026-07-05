@@ -3,7 +3,7 @@ id: TASK-0112
 
 title: Implement ExportManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

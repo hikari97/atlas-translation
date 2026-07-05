@@ -3,7 +3,7 @@ id: TASK-0059
 
 title: Implement ProjectValidator
 
-status: Ready
+status: Completed
 
 priority: High
 

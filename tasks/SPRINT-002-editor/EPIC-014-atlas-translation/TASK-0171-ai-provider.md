@@ -3,7 +3,7 @@ id: TASK-0171
 
 title: Implement AIProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

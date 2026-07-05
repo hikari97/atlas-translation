@@ -3,7 +3,7 @@
 id: TASK-0001
 title: Initialize atlas-document Package
 
-status: Ready
+status: Completed
 
 priority: Critical
 

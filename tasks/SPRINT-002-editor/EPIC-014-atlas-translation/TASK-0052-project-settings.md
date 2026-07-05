@@ -3,7 +3,7 @@ id: TASK-0052
 
 title: Implement ProjectSettings
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0033
 
 title: Implement ProviderMetrics
 
-status: Ready
+status: Completed
 
 priority: Medium
 

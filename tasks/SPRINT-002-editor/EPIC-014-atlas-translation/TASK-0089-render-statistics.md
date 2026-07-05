@@ -3,7 +3,7 @@ id: TASK-0089
 
 title: Implement RenderStatistics
 
-status: Ready
+status: Completed
 
 priority: Medium
 

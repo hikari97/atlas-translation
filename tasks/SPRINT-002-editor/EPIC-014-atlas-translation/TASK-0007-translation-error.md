@@ -3,7 +3,7 @@ id: TASK-0007
 
 title: Implement TranslationError
 
-status: Ready
+status: Completed
 
 priority: Medium
 

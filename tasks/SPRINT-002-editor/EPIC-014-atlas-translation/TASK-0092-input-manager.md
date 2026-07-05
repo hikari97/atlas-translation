@@ -3,7 +3,7 @@ id: TASK-0092
 
 title: Implement InputManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0191
 
 title: Implement WorkflowProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

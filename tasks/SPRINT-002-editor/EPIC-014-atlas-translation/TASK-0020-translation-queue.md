@@ -3,7 +3,7 @@ id: TASK-0020
 
 title: Implement TranslationQueue
 
-status: Ready
+status: Completed
 
 priority: High
 

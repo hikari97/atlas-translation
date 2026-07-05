@@ -3,7 +3,7 @@
 id: TASK-0008
 title: Implement TranslationDocument
 
-status: Ready
+status: Completed
 
 priority: Critical
 

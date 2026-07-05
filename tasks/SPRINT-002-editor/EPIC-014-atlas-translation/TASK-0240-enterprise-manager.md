@@ -3,7 +3,7 @@ id: TASK-0240
 
 title: Implement EnterpriseManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

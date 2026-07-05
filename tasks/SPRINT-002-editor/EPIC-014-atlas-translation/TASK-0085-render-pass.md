@@ -3,7 +3,7 @@ id: TASK-0085
 
 title: Implement RenderPass
 
-status: Ready
+status: Completed
 
 priority: High
 

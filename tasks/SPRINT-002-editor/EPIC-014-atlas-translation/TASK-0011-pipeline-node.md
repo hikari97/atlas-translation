@@ -3,7 +3,7 @@ id: TASK-0011
 
 title: Implement PipelineNode
 
-status: Ready
+status: Completed
 
 priority: High
 

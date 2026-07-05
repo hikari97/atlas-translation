@@ -3,7 +3,7 @@ id: TASK-0120
 
 title: Implement ExportSession
 
-status: Ready
+status: Completed
 
 priority: High
 

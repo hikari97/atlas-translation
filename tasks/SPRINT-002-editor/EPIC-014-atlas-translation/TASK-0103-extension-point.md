@@ -3,7 +3,7 @@ id: TASK-0103
 
 title: Implement ExtensionPoint
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0037
 
 title: Implement StyleGuide
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0154
 
 title: Implement CollaborationOptions
 
-status: Ready
+status: Completed
 
 priority: Medium
 

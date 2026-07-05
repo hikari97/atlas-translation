@@ -3,7 +3,7 @@ id: TASK-0227
 
 title: Implement ExtensionDiagnostics
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0144
 
 title: Implement HistoryOptions
 
-status: Ready
+status: Completed
 
 priority: Medium
 

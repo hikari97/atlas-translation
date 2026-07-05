@@ -3,7 +3,7 @@ id: TASK-0070
 
 title: Implement Editor Events
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0105
 
 title: Implement PluginContext
 
-status: Ready
+status: Completed
 
 priority: Critical
 

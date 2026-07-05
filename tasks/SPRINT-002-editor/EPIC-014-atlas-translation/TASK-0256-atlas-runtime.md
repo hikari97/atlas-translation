@@ -3,7 +3,7 @@ id: TASK-0256
 
 title: Implement AtlasRuntime
 
-status: Ready
+status: Completed
 
 priority: Critical
 

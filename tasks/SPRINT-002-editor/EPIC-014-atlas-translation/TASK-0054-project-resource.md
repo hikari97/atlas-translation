@@ -3,7 +3,7 @@ id: TASK-0054
 
 title: Implement ProjectResource
 
-status: Ready
+status: Completed
 
 priority: High
 

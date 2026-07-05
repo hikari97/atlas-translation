@@ -3,7 +3,7 @@ id: TASK-0079
 
 title: Implement ShapeObject
 
-status: Ready
+status: Completed
 
 priority: Medium
 

@@ -3,7 +3,7 @@ id: TASK-0029
 
 title: Implement PromptBuilder
 
-status: Ready
+status: Completed
 
 priority: High
 

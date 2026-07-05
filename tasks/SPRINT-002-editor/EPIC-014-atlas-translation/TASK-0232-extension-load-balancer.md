@@ -3,7 +3,7 @@ id: TASK-0232
 
 title: Implement ExtensionLoadBalancer
 
-status: Ready
+status: Completed
 
 priority: Critical
 

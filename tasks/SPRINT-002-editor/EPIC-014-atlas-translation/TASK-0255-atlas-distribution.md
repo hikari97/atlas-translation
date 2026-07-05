@@ -3,7 +3,7 @@ id: TASK-0255
 
 title: Implement AtlasDistribution
 
-status: Ready
+status: Completed
 
 priority: Critical
 

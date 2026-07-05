@@ -3,7 +3,7 @@ id: TASK-0113
 
 title: Implement ExportPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

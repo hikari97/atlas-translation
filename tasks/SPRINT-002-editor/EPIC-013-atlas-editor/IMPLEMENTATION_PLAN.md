@@ -455,6 +455,20 @@ Final deliverables include:
 
 ---
 
+# Implementation Status
+
+Status: Completed
+
+Progress:
+
+```text
+40 / 40 tasks completed
+```
+
+The implementation is available in `packages/atlas-editor` and follows the planned dependency boundary. Specialized behavior remains delegated to the owning packages, while editor state transitions are applied through editor commands.
+
+---
+
 # References
 
 - README.md

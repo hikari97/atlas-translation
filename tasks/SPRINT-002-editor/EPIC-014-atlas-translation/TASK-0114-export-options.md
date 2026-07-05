@@ -3,7 +3,7 @@ id: TASK-0114
 
 title: Implement ExportOptions
 
-status: Ready
+status: Completed
 
 priority: Medium
 

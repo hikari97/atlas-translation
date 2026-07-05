@@ -3,7 +3,7 @@ id: TASK-0230
 
 title: Implement ExtensionCluster
 
-status: Ready
+status: Completed
 
 priority: Critical
 

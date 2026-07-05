@@ -3,7 +3,7 @@ id: TASK-0096
 
 title: Implement GestureManager
 
-status: Ready
+status: Completed
 
 priority: High
 

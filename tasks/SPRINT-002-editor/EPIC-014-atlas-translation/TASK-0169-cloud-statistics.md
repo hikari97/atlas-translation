@@ -3,7 +3,7 @@ id: TASK-0169
 
 title: Implement CloudStatistics
 
-status: Ready
+status: Completed
 
 priority: Medium
 

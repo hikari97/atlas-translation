@@ -3,7 +3,7 @@ id: TASK-0236
 
 title: Implement ExtensionGlobalRegistry
 
-status: Ready
+status: Completed
 
 priority: Critical
 

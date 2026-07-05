@@ -193,7 +193,7 @@ By the end of this epic the package should provide:
 Total:
 
 ```
-30 Tasks
+24 Tasks
 ```
 
 ---
@@ -202,7 +202,7 @@ Total:
 
 This epic is considered complete when:
 
-- All 30 tasks are completed.
+- All 24 task files are completed.
 - Public API is finalized.
 - Architecture review is approved.
 - Release certification is approved.

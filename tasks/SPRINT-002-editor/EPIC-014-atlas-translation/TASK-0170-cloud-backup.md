@@ -3,7 +3,7 @@ id: TASK-0170
 
 title: Implement CloudBackup
 
-status: Ready
+status: Completed
 
 priority: Critical
 

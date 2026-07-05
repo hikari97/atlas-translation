@@ -3,7 +3,7 @@ id: TASK-0065
 
 title: Implement EditorTool
 
-status: Ready
+status: Completed
 
 priority: Critical
 

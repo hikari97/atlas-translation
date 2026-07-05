@@ -3,7 +3,7 @@ id: TASK-0071
 
 title: Implement EditorObject
 
-status: Ready
+status: Completed
 
 priority: Critical
 

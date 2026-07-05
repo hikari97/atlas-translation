@@ -3,7 +3,7 @@ id: TASK-0006
 
 title: Implement TranslationCapabilities
 
-status: Ready
+status: Completed
 
 priority: High
 

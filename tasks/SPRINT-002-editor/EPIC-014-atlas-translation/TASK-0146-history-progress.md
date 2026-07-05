@@ -3,7 +3,7 @@ id: TASK-0146
 
 title: Implement HistoryProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

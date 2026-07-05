@@ -228,6 +228,14 @@ Sprint 8 — Performance
 
 ---
 
+# Current Status
+
+Completed.
+
+`packages/atlas-editor` now provides the editor orchestration runtime, command-driven state updates, subsystem integration adapters, runtime diagnostics, metrics, benchmark support, and package documentation.
+
+---
+
 # References
 
 - CONSTITUTION.md

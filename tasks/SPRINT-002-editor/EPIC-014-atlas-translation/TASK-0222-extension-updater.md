@@ -3,7 +3,7 @@ id: TASK-0222
 
 title: Implement ExtensionUpdater
 
-status: Ready
+status: Completed
 
 priority: High
 

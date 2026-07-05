@@ -3,7 +3,7 @@ id: TASK-0087
 
 title: Implement DirtyRegion
 
-status: Ready
+status: Completed
 
 priority: Critical
 

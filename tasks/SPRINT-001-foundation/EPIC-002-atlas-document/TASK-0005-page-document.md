@@ -3,7 +3,7 @@
 id: TASK-0005
 title: Implement PageDocument
 
-status: Ready
+status: Completed
 
 priority: Critical
 

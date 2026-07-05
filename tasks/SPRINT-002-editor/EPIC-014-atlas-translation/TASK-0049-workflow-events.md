@@ -3,7 +3,7 @@ id: TASK-0049
 
 title: Implement Workflow Events
 
-status: Ready
+status: Completed
 
 priority: High
 

@@ -3,7 +3,7 @@ id: TASK-0162
 
 title: Implement CloudManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

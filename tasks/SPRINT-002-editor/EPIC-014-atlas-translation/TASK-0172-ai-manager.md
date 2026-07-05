@@ -3,7 +3,7 @@ id: TASK-0172
 
 title: Implement AIManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

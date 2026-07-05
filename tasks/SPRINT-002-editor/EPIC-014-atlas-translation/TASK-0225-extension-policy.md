@@ -3,7 +3,7 @@ id: TASK-0225
 
 title: Implement ExtensionPolicy
 
-status: Ready
+status: Completed
 
 priority: Critical
 

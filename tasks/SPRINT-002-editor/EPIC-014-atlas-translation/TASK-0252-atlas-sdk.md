@@ -3,7 +3,7 @@ id: TASK-0252
 
 title: Implement AtlasSDK
 
-status: Ready
+status: Completed
 
 priority: Critical
 

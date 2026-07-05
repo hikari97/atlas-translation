@@ -3,7 +3,7 @@ id: TASK-0274
 
 title: Implement AtlasSuite
 
-status: Ready
+status: Completed
 
 priority: Critical
 

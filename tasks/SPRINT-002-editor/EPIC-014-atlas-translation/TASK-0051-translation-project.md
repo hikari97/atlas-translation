@@ -3,7 +3,7 @@ id: TASK-0051
 
 title: Implement TranslationProject
 
-status: Ready
+status: Completed
 
 priority: Critical
 

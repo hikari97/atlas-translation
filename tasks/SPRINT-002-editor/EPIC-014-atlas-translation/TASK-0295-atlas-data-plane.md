@@ -3,7 +3,7 @@ id: TASK-0295
 
 title: Implement AtlasDataPlane
 
-status: Ready
+status: Completed
 
 priority: Critical
 

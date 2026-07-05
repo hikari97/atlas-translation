@@ -3,7 +3,7 @@ id: TASK-0234
 
 title: Implement ExtensionServiceDiscovery
 
-status: Ready
+status: Completed
 
 priority: Critical
 

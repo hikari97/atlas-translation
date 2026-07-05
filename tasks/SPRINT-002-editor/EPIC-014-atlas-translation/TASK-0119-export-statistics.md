@@ -3,7 +3,7 @@ id: TASK-0119
 
 title: Implement ExportStatistics
 
-status: Ready
+status: Completed
 
 priority: Medium
 

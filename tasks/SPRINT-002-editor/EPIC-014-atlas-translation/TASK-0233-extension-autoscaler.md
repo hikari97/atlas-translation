@@ -3,7 +3,7 @@ id: TASK-0233
 
 title: Implement ExtensionAutoscaler
 
-status: Ready
+status: Completed
 
 priority: Critical
 

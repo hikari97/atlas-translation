@@ -3,7 +3,7 @@ id: TASK-0243
 
 title: Implement EnterpriseAuthorization
 
-status: Ready
+status: Completed
 
 priority: Critical
 

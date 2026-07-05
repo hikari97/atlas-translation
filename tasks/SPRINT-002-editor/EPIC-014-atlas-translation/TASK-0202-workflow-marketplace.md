@@ -3,7 +3,7 @@ id: TASK-0202
 
 title: Implement WorkflowMarketplace
 
-status: Ready
+status: Completed
 
 priority: Medium
 

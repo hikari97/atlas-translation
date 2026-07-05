@@ -20,7 +20,7 @@ Epic
 
 Status
 
-- Ready
+- Completed
 
 Priority
 
@@ -36,25 +36,25 @@ Story Points
 
 | ID       | Task                          | Status |
 | -------- | ----------------------------- | ------ |
-| TASK-001 | Collaboration Core            | Ready  |
-| TASK-002 | Collaboration Session         | Ready  |
-| TASK-003 | Presence                      | Ready  |
-| TASK-004 | Awareness                     | Ready  |
-| TASK-005 | Collaboration User            | Ready  |
-| TASK-006 | Shared Document               | Ready  |
-| TASK-007 | Collaboration Synchronization | Ready  |
-| TASK-008 | Conflict Resolution           | Ready  |
-| TASK-009 | Remote Cursor                 | Ready  |
-| TASK-010 | Remote Selection              | Ready  |
-| TASK-011 | Comments                      | Ready  |
-| TASK-012 | Suggestions                   | Ready  |
-| TASK-013 | Review                        | Ready  |
-| TASK-014 | Annotation                    | Ready  |
-| TASK-015 | Shared Clipboard              | Ready  |
-| TASK-016 | Follow User                   | Ready  |
-| TASK-017 | Collaboration Permissions     | Ready  |
-| TASK-018 | Collaboration Events          | Ready  |
-| TASK-019 | Collaboration History         | Ready  |
+| TASK-001 | Collaboration Core            | Done   |
+| TASK-002 | Collaboration Session         | Done   |
+| TASK-003 | Presence                      | Done   |
+| TASK-004 | Awareness                     | Done   |
+| TASK-005 | Collaboration User            | Done   |
+| TASK-006 | Shared Document               | Done   |
+| TASK-007 | Collaboration Synchronization | Done   |
+| TASK-008 | Conflict Resolution           | Done   |
+| TASK-009 | Remote Cursor                 | Done   |
+| TASK-010 | Remote Selection              | Done   |
+| TASK-011 | Comments                      | Done   |
+| TASK-012 | Suggestions                   | Done   |
+| TASK-013 | Review                        | Done   |
+| TASK-014 | Annotation                    | Done   |
+| TASK-015 | Shared Clipboard              | Done   |
+| TASK-016 | Follow User                   | Done   |
+| TASK-017 | Collaboration Permissions     | Done   |
+| TASK-018 | Collaboration Events          | Done   |
+| TASK-019 | Collaboration History         | Done   |
 
 ---
 
@@ -124,3 +124,29 @@ Collaboration History
 # Next Epic
 
 EPIC-016
+
+---
+
+# Completion Summary
+
+Status: Completed
+
+Implementation:
+
+- `packages/atlas-collaboration`
+
+Completed scope:
+
+- 18 physical task files completed.
+- 19 indexed tasks completed.
+- `TASK-016 — Follow User` is listed in this index but does not have a standalone task file; it is represented by the public `FollowUser` contract.
+
+Validation completed:
+
+- `npm run typecheck`
+- `npm run test:types`
+- `npm run build`
+- task API coverage audit
+- forbidden `any` scan
+- provider/transport implementation scan
+- internal package import scan

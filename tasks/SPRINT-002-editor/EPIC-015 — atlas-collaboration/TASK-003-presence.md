@@ -3,7 +3,7 @@ id: TASK-003
 
 title: Implement Presence
 
-status: Ready
+status: Completed
 
 priority: Critical
 

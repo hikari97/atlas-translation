@@ -3,7 +3,7 @@ id: TASK-0110
 
 title: Implement Plugin Sandbox
 
-status: Ready
+status: Completed
 
 priority: Critical
 

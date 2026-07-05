@@ -3,7 +3,7 @@ id: TASK-0057
 
 title: Implement Project Events
 
-status: Ready
+status: Completed
 
 priority: High
 

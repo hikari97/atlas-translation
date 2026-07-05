@@ -3,7 +3,7 @@ id: TASK-0116
 
 title: Implement ExportProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

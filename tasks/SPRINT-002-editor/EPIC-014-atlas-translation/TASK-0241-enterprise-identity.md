@@ -3,7 +3,7 @@ id: TASK-0241
 
 title: Implement EnterpriseIdentity
 
-status: Ready
+status: Completed
 
 priority: Critical
 

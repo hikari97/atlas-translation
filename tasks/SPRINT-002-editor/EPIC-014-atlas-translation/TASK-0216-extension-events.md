@@ -3,7 +3,7 @@ id: TASK-0216
 
 title: Implement Extension Events
 
-status: Ready
+status: Completed
 
 priority: High
 

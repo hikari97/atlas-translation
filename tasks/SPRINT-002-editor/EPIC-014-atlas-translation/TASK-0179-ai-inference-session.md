@@ -3,7 +3,7 @@ id: TASK-0179
 
 title: Implement AIInferenceSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

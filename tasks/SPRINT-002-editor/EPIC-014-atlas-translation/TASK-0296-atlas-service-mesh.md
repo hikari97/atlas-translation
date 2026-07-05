@@ -3,7 +3,7 @@ id: TASK-0296
 
 title: Implement AtlasServiceMesh
 
-status: Ready
+status: Completed
 
 priority: Critical
 

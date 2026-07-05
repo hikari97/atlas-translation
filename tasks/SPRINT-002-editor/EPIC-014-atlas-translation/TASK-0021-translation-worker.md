@@ -3,7 +3,7 @@ id: TASK-0021
 
 title: Implement TranslationWorker
 
-status: Ready
+status: Completed
 
 priority: Critical
 

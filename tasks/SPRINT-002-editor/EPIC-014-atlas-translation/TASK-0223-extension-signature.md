@@ -3,7 +3,7 @@ id: TASK-0223
 
 title: Implement ExtensionSignature
 
-status: Ready
+status: Completed
 
 priority: Critical
 

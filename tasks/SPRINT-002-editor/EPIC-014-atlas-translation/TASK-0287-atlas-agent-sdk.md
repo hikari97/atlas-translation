@@ -3,7 +3,7 @@ id: TASK-0287
 
 title: Implement AtlasAgentSDK
 
-status: Ready
+status: Completed
 
 priority: Critical
 

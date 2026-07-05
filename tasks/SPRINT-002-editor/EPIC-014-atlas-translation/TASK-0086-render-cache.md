@@ -3,7 +3,7 @@ id: TASK-0086
 
 title: Implement RenderCache
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0083
 
 title: Implement DrawCommand
 
-status: Ready
+status: Completed
 
 priority: Critical
 

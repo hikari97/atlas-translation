@@ -3,7 +3,7 @@ id: TASK-0080
 
 title: Implement ObjectHierarchy
 
-status: Ready
+status: Completed
 
 priority: Critical
 

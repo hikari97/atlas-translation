@@ -3,7 +3,7 @@ id: TASK-0151
 
 title: Implement CollaborationProvider
 
-status: Ready
+status: Completed
 
 priority: Critical
 

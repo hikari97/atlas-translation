@@ -3,7 +3,7 @@ id: TASK-0016
 
 title: Implement TranslationSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

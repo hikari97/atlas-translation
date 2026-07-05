@@ -3,7 +3,7 @@ id: TASK-0133
 
 title: Implement AssetPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

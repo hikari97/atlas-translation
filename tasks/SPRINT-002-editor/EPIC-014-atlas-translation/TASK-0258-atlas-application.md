@@ -3,7 +3,7 @@ id: TASK-0258
 
 title: Implement AtlasApplication
 
-status: Ready
+status: Completed
 
 priority: Critical
 

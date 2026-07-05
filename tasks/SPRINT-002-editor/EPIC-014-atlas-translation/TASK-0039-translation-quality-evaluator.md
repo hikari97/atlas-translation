@@ -3,7 +3,7 @@ id: TASK-0039
 
 title: Implement TranslationQualityEvaluator
 
-status: Ready
+status: Completed
 
 priority: Critical
 

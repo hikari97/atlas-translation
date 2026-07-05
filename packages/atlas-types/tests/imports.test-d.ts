@@ -1,0 +1,40 @@
+import type { ID, Rectangle } from '@atlas/atlas-types/foundation';
+import type { Page, Project, Workspace } from '@atlas/atlas-types/workspace';
+import type { Canvas, Editor, Selection } from '@atlas/atlas-types/editor';
+import type { Translation } from '@atlas/atlas-types/translation';
+import type { Asset, Image } from '@atlas/atlas-types/resource';
+import type { ExportJob, HistoryEntry, Plugin, WorkflowDefinition } from '@atlas/atlas-types/platform';
+
+declare const id: ID<'test'>;
+declare const rectangle: Rectangle;
+declare const workspace: Workspace;
+declare const project: Project;
+declare const page: Page;
+declare const editor: Editor;
+declare const canvas: Canvas;
+declare const selection: Selection;
+declare const translation: Translation;
+declare const asset: Asset;
+declare const image: Image;
+declare const exportJob: ExportJob;
+declare const historyEntry: HistoryEntry;
+declare const plugin: Plugin;
+declare const workflow: WorkflowDefinition;
+
+export type SubpathImportSmokeTest = {
+  readonly id: typeof id;
+  readonly rectangle: typeof rectangle;
+  readonly workspace: typeof workspace;
+  readonly project: typeof project;
+  readonly page: typeof page;
+  readonly editor: typeof editor;
+  readonly canvas: typeof canvas;
+  readonly selection: typeof selection;
+  readonly translation: typeof translation;
+  readonly asset: typeof asset;
+  readonly image: typeof image;
+  readonly exportJob: typeof exportJob;
+  readonly historyEntry: typeof historyEntry;
+  readonly plugin: typeof plugin;
+  readonly workflow: typeof workflow;
+};

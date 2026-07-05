@@ -3,7 +3,7 @@ id: TASK-0060
 
 title: Implement ProjectTemplate
 
-status: Ready
+status: Completed
 
 priority: Medium
 

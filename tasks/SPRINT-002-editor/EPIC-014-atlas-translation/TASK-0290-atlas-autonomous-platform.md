@@ -3,7 +3,7 @@ id: TASK-0290
 
 title: Implement AtlasAutonomousPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

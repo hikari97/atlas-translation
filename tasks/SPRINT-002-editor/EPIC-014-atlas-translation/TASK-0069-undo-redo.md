@@ -3,7 +3,7 @@ id: TASK-0069
 
 title: Implement UndoRedoManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

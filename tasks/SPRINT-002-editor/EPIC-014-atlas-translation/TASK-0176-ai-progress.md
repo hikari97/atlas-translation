@@ -3,7 +3,7 @@ id: TASK-0176
 
 title: Implement AIProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

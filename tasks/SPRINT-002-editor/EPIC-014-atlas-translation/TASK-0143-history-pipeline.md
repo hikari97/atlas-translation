@@ -3,7 +3,7 @@ id: TASK-0143
 
 title: Implement HistoryPipeline
 
-status: Ready
+status: Completed
 
 priority: Critical
 

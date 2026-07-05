@@ -3,7 +3,7 @@ id: TASK-0291
 
 title: Implement AtlasObservabilityPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

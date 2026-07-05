@@ -3,7 +3,7 @@ id: TASK-0278
 
 title: Implement AtlasDeliveryPlatform
 
-status: Ready
+status: Completed
 
 priority: Critical
 

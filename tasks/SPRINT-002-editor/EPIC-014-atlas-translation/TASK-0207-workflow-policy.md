@@ -3,7 +3,7 @@ id: TASK-0207
 
 title: Implement WorkflowPolicy
 
-status: Ready
+status: Completed
 
 priority: Critical
 

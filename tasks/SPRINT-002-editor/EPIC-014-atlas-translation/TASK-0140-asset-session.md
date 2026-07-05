@@ -3,7 +3,7 @@ id: TASK-0140
 
 title: Implement AssetSession
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0050
 
 title: Implement WorkflowHistory
 
-status: Ready
+status: Completed
 
 priority: Medium
 

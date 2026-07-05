@@ -3,7 +3,7 @@ id: TASK-0136
 
 title: Implement AssetProgress
 
-status: Ready
+status: Completed
 
 priority: Medium
 

@@ -1,7 +1,7 @@
 ---
 id: EPIC-001
 title: Atlas Types
-status: Planned
+status: Completed
 priority: Critical
 
 sprint: SPRINT-001

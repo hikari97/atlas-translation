@@ -3,7 +3,7 @@ id: TASK-0214
 
 title: Implement ExtensionSandbox
 
-status: Ready
+status: Completed
 
 priority: Critical
 

@@ -3,7 +3,7 @@ id: TASK-0122
 
 title: Implement ImportManager
 
-status: Ready
+status: Completed
 
 priority: Critical
 

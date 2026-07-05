@@ -3,7 +3,7 @@ id: TASK-0118
 
 title: Implement ExportCache
 
-status: Ready
+status: Completed
 
 priority: High
 

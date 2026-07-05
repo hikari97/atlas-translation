@@ -3,7 +3,7 @@ id: TASK-0009
 
 title: Implement PipelineStage
 
-status: Ready
+status: Completed
 
 priority: Critical
 

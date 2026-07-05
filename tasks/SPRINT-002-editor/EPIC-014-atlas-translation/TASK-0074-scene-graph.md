@@ -3,7 +3,7 @@ id: TASK-0074
 
 title: Implement SceneGraph
 
-status: Ready
+status: Completed
 
 priority: Critical
 

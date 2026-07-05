@@ -3,7 +3,7 @@ id: TASK-0109
 
 title: Implement PluginLoader
 
-status: Ready
+status: Completed
 
 priority: Critical
 
