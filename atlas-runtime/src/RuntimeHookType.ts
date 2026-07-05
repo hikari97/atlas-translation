@@ -1,0 +1,16 @@
+export type RuntimeHookType =
+  | 'before.runtime.start'
+  | 'after.runtime.start'
+  | 'before.runtime.stop'
+  | 'after.runtime.stop'
+  | 'before.service.start'
+  | 'after.service.start'
+  | 'before.service.stop'
+  | 'after.service.stop'
+  | 'before.module.register'
+  | 'after.module.register'
+  | 'diagnostics'
+  | 'metrics'
+  | 'audit'
+  | 'recovery'
+  | 'custom';

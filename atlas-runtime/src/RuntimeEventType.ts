@@ -1,0 +1,17 @@
+export type RuntimeEventType =
+  | 'runtime.started'
+  | 'runtime.stopped'
+  | 'runtime.restarted'
+  | 'runtime.lifecycle.transitioned'
+  | 'service.registered'
+  | 'service.started'
+  | 'service.stopped'
+  | 'service.failed'
+  | 'module.registered'
+  | 'module.initialized'
+  | 'module.disposed'
+  | 'diagnostic'
+  | 'metrics'
+  | 'audit'
+  | 'telemetry'
+  | 'custom';
