@@ -135,12 +135,6 @@ export function useJobStatusQuery(jobId: string, enabled: boolean) {
       return json.data as JobDto;
     },
     enabled: enabled && !!jobId,
-    refetchInterval: (query) => {
-      const state = query.state.data;
-      if (state && (state.status === 'completed' || state.status === 'failed')) {
-        return false; // Stop polling
-      }
-      return 1500; // Poll every 1.5s
-    },
+    refetchInterval: enabled ? 1500 : false, // Hanya poll jika enabled = true
   });
 }
