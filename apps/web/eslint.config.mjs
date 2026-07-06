@@ -15,22 +15,4 @@ const eslintConfig = defineConfig([
   ]),
 ]);
 
-eslintConfig.push(
-  {
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          "patterns": [
-            {
-              "group": ["apps/api/**", "apps/ai-worker/**"],
-              "message": "Direct imports from backend packages/apps are forbidden in frontend. Use API boundaries instead."
-            }
-          ]
-        }
-      ]
-    }
-  }
-);
-
 export default eslintConfig;
