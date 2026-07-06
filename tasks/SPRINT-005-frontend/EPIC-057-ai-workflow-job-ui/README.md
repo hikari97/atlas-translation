@@ -1,6 +1,6 @@
 ---
 title: EPIC-057-ai-workflow-job-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: ai-workflow-job-ui
 owner: H.Makki

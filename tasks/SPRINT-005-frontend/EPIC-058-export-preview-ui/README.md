@@ -1,6 +1,6 @@
 ---
 title: EPIC-058-export-preview-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: export-preview-ui
 owner: H.Makki

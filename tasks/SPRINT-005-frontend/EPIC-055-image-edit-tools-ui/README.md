@@ -1,6 +1,6 @@
 ---
 title: EPIC-055-image-edit-tools-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: image-edit-tools-ui
 owner: H.Makki

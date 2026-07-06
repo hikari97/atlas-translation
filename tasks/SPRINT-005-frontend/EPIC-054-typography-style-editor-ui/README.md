@@ -1,6 +1,6 @@
 ---
 title: EPIC-054-typography-style-editor-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: typography-style-editor-ui
 owner: H.Makki

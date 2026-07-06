@@ -1,6 +1,6 @@
 ---
 title: EPIC-059-settings-plugin-management-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: settings-plugin-management-ui
 owner: H.Makki

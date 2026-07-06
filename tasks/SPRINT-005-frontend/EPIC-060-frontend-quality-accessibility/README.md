@@ -1,6 +1,6 @@
 ---
 title: EPIC-060-frontend-quality-accessibility
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: frontend-quality-accessibility
 owner: H.Makki

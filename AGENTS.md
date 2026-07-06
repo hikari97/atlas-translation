@@ -36,8 +36,8 @@ Frontend
 - Next.js
 - Chakra UI
 - Konva
-- Zustand
-- React Query
+- Redux
+- TanStack Query v5
 
 Backend
 

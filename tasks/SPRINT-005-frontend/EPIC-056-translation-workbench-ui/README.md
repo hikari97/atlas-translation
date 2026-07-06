@@ -1,6 +1,6 @@
 ---
 title: EPIC-056-translation-workbench-ui
-status: Ready
+status: Completed
 sprint: SPRINT-005-frontend
 area: translation-workbench-ui
 owner: H.Makki
