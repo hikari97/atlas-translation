@@ -3,6 +3,7 @@ const Job = mongoose.model('Job');
 const Page = mongoose.model('Page');
 const Bubble = mongoose.model('Bubble');
 const ocrService = require('./ocrService');
+const { translatePageImage } = require('./aiWorkerClient');
 
 // Simpan active timeouts agar bisa di-cleanup
 const activeJobs = new Map();
@@ -23,12 +24,12 @@ const processJob = async (jobId) => {
         // Path gambar relatif /uploads/page-...
         // Kita ubah ke path lokal di server api
         const relativeImagePath = page.image.replace(/^\//, ''); // hapus leading slash
-        
+
         job.progress = 20;
         await job.save();
 
         const detectedBubbles = await ocrService.detectText(relativeImagePath);
-        
+
         job.progress = 60;
         await job.save();
 
@@ -47,7 +48,7 @@ const processJob = async (jobId) => {
             width: detected.width,
             height: detected.height,
             status: 'ocr',
-            confidence: 96
+            confidence: 96,
           });
           page.bubbles.push(bubble._id);
         }
@@ -56,31 +57,75 @@ const processJob = async (jobId) => {
         await page.save();
       }
     } else if (job.type === 'translation') {
-      await mockTranslationSideEffect(job.metadata.pageId);
+      const pageId = job.metadata.pageId;
+      const targetLanguage = job.metadata.targetLanguage || 'id';
+      const provider = job.metadata.provider || 'gemini';
+
+      const page = await Page.findById(pageId);
+
+      if (!page) {
+        throw new Error('Page not found.');
+      }
+
+      job.progress = 20;
+      await job.save();
+
+      const result = await translatePageImage({
+        page,
+        targetLanguage,
+        provider,
+      });
+
+      job.progress = 70;
+      await job.save();
+
+      await Bubble.deleteMany({ page: pageId });
+      page.bubbles = [];
+
+      for (const detected of result.bubbles || []) {
+        const bubble = await Bubble.create({
+          page: pageId,
+          originalText: detected.originalText || '',
+          translatedText: detected.translatedText || '',
+          x: detected.x || 0,
+          y: detected.y || 0,
+          width: detected.width || 100,
+          height: detected.height || 50,
+          status: 'translated',
+          confidence: detected.confidence || 0,
+        });
+
+        page.bubbles.push(bubble._id);
+      }
+
+      page.status = 'translated';
+      await page.save();
     }
 
     job.progress = 100;
     job.status = 'completed';
     job.completedAt = new Date();
     await job.save();
-
   } catch (err) {
     console.error(`Error processing job ${jobId}:`, err);
-    await Job.findByIdAndUpdate(jobId, { status: 'failed', message: err.message });
+    await Job.findByIdAndUpdate(jobId, {
+      status: 'failed',
+      message: err.message,
+    });
   }
 };
 
 const mockTranslationSideEffect = async (pageId) => {
   if (!pageId) return;
   const bubbles = await Bubble.find({ page: pageId });
-  
+
   // Karena teks aslinya sekarang dinamis berbahasa Inggris (hasil OCR),
   // kita buat translator simulasi yang menerjemahkan teks Inggris ke Indonesia
   // Jika teks tidak terdaftar, kita buat mock translation sederhana
   for (const bubble of bubbles) {
     let translation = 'Terjemahan bahasa Indonesia';
     const textLower = bubble.originalText.toLowerCase();
-    
+
     if (textLower.includes('wait')) {
       translation = 'Tunggu aku!';
     } else if (textLower.includes('destroy') || textLower.includes('kill')) {
@@ -99,6 +144,8 @@ const mockTranslationSideEffect = async (pageId) => {
 
 module.exports = {
   enqueue: (jobId) => {
-    processJob(jobId).catch((err) => console.error('Failed to start job:', err));
-  }
+    processJob(jobId).catch((err) =>
+      console.error('Failed to start job:', err),
+    );
+  },
 };
