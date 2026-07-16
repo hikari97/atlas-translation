@@ -11,18 +11,13 @@ app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ limit: '100mb', extended: true }));
 app.use(cors());
 app.use(morgan('dev'));
-app.use('/uploads', express.static('uploads'));
 
 app.get('/', (req, res) => {
   res.json({ success: true, message: 'Atlas Studio API', version: 'v1' });
 });
 
-// Load all models in correct order
+// Authentication is the only persisted application domain.
 require('./src/models/user');
-require('./src/models/job');
-require('./src/models/bubble');
-require('./src/models/page');
-require('./src/models/project');
 
 const routes = require('./src/routes');
 app.use('/', routes);

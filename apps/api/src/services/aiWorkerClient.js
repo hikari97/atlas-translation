@@ -47,6 +47,55 @@ async function translatePageImage({
   return payload;
 }
 
+async function translateImageBuffer({
+  buffer,
+  context,
+  filename,
+  mimeType,
+  provider,
+  sourceLanguage,
+  targetLanguage,
+}) {
+  const formData = new FormData();
+  formData.append('image', new Blob([buffer], { type: mimeType }), filename);
+  formData.append('provider', provider);
+  formData.append('target_language', targetLanguage);
+  formData.append('render', 'true');
+
+  if (context) {
+    formData.append('context', context);
+  }
+
+  if (sourceLanguage) {
+    formData.append('source_language', sourceLanguage);
+  }
+
+  const response = await fetch(`${AI_WORKER_URL}/v1/image/translate-upload`, {
+    method: 'POST',
+    body: formData,
+  });
+  const payload = await response.json().catch(() => null);
+
+  if (!response.ok || !isStatelessTranslationPayload(payload)) {
+    throw new Error(
+      payload?.detail || payload?.message || 'AI worker translation failed.',
+    );
+  }
+
+  return payload;
+}
+
+function isStatelessTranslationPayload(payload) {
+  return Boolean(
+    payload
+    && typeof payload.image === 'string'
+    && typeof payload.inpainted === 'string'
+    && typeof payload.context === 'string'
+    && Array.isArray(payload.text),
+  );
+}
+
 module.exports = {
+  translateImageBuffer,
   translatePageImage,
 };
