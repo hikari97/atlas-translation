@@ -1,12 +1,16 @@
-import { Container, Heading, Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import JobList from '../../components/ai/JobList';
+import PageHeader from '../../components/ui/PageHeader';
 
 export default function AIJobsPage() {
   return (
-    <Container maxW="container.lg" py={6}>
-      <Heading mb={2}>AI Workflow Jobs</Heading>
-      <Text color="gray.500" mb={6}>Monitor AI processing tasks</Text>
+    <Box>
+      <PageHeader
+        eyebrow="Processing"
+        title="AI workflow jobs"
+        description="Monitor OCR, translation, inpainting, and export tasks from one operational view."
+      />
       <JobList />
-    </Container>
+    </Box>
   );
 }

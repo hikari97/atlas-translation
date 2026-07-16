@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Heading, Text, VStack, Field, Textarea } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Box, Field, Heading, HStack, Text, Textarea, VStack } from '@chakra-ui/react';
 import type { BubbleDto } from '../../lib/data/fetchHooks';
+import StatusBadge from '../ui/StatusBadge';
 
 interface InspectorPanelProps {
   readonly bubble: BubbleDto | undefined;
@@ -8,33 +9,88 @@ interface InspectorPanelProps {
 }
 
 export default function InspectorPanel({ bubble, onUpdateText }: InspectorPanelProps) {
-  const [translatedText, setTranslatedText] = useState('');
-
-  useEffect(() => {
-    setTranslatedText(bubble?.translatedText || '');
-  }, [bubble]);
+  const [draft, setDraft] = useState<{ readonly bubbleId: string | undefined; readonly text: string }>({
+    bubbleId: undefined,
+    text: '',
+  });
+  const selectedBubbleId = bubble?._id;
+  const translatedText = draft.bubbleId === selectedBubbleId
+    ? draft.text
+    : bubble?.translatedText || '';
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const val = e.target.value;
-    setTranslatedText(val);
+    setDraft({ bubbleId: selectedBubbleId, text: val });
     if (onUpdateText && bubble) {
       onUpdateText(bubble._id, val);
     }
   };
 
   return (
-    <Box w="300px" p={4} borderLeftWidth="1px">
-      <Heading size="xs" mb={4}>Inspector</Heading>
+    <Box
+      bg="var(--atlas-surface)"
+      borderColor="var(--atlas-border)"
+      borderLeftWidth={{ base: 0, xl: '1px' }}
+      borderTopWidth={{ base: '1px', xl: 0 }}
+      p={4}
+      w={{ base: '100%', xl: '22rem' }}
+    >
+      <HStack align="flex-start" justify="space-between" mb={4}>
+        <Box>
+          <Heading fontSize="sm" letterSpacing="-0.01em">
+            Inspector
+          </Heading>
+          <Text color="var(--atlas-muted)" fontSize="xs">
+            Bubble text and metadata
+          </Text>
+        </Box>
+        {bubble && <StatusBadge status={bubble.status} />}
+      </HStack>
       <VStack align="stretch" gap={4}>
-        <Text fontSize="xs" color="gray.500">Selected Bubble ID: {bubble?._id || 'None'}</Text>
+        <Box bg="var(--atlas-surface-muted)" borderRadius="var(--atlas-radius-md)" p={3}>
+          <Text color="var(--atlas-muted)" fontSize="xs" fontWeight="800" mb={1}>
+            Selected bubble
+          </Text>
+          <Text color="var(--atlas-foreground)" fontFamily="mono" fontSize="xs" wordBreak="break-all">
+            {bubble?._id || 'None'}
+          </Text>
+        </Box>
         <Field.Root>
-          <Field.Label>Original Text (Read-only)</Field.Label>
-          <Textarea value={bubble?.originalText || ''} readOnly size="sm" />
+          <Field.Label>Original text</Field.Label>
+          <Textarea
+            borderRadius="var(--atlas-radius-sm)"
+            minH="7rem"
+            readOnly
+            size="sm"
+            value={bubble?.originalText || ''}
+          />
         </Field.Root>
         <Field.Root>
-          <Field.Label>Translated Text</Field.Label>
-          <Textarea placeholder="Translated text" value={translatedText} onChange={handleTextChange} disabled={!bubble} />
+          <Field.Label>Translated text</Field.Label>
+          <Textarea
+            borderRadius="var(--atlas-radius-sm)"
+            disabled={!bubble}
+            minH="9rem"
+            onChange={handleTextChange}
+            placeholder="Translated text"
+            value={translatedText}
+          />
         </Field.Root>
+        {bubble && (
+          <HStack
+            bg="var(--atlas-surface-muted)"
+            borderRadius="var(--atlas-radius-md)"
+            justify="space-between"
+            p={3}
+          >
+            <Text color="var(--atlas-muted)" fontSize="xs">
+              Confidence
+            </Text>
+            <Text color="var(--atlas-foreground)" fontSize="xs" fontVariantNumeric="tabular-nums" fontWeight="800">
+              {bubble.confidence}%
+            </Text>
+          </HStack>
+        )}
       </VStack>
     </Box>
   );

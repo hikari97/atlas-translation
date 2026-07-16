@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { Box, Container, Heading, Button, Card, Field, Input, VStack, Text } from '@chakra-ui/react';
+import { useState, type FormEvent } from 'react';
+import { Box, Button, Container, Field, Heading, HStack, Input, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useLoginMutation } from '../../lib/data/mutationHooks';
+import Surface from '../../components/ui/Surface';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -10,31 +11,140 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const loginMutation = useLoginMutation();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
     try {
       await loginMutation.mutateAsync({ email, password });
-      router.push('/dashboard');
-    } catch (err) {
+      await router.push('/dashboard');
+    } catch {
       // error handled by mutation
     }
   };
 
   return (
-    <Container maxW="sm" py={20}>
-      <Card.Root>
-        <Card.Body>
-          <VStack gap={4}>
-            <Heading size="lg">Sign In</Heading>
-            <Text color="gray.500">Enter your credentials to continue</Text>
-            {loginMutation.error && <Text color="red.500" fontSize="sm">{(loginMutation.error as Error).message}</Text>}
-            <Field.Root><Field.Label>Email</Field.Label><Input type="email" placeholder="email@example.com" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} /></Field.Root>
-            <Field.Root><Field.Label>Password</Field.Label><Input type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} /></Field.Root>
-            <Button w="full" colorScheme="blue" onClick={handleSubmit} loading={loginMutation.isPending}>Sign In</Button>
-            <Link href="/auth/register" style={{ width: '100%' }}><Button variant="outline" w="full">Create Account</Button></Link>
-            <Link href="/" style={{ width: '100%' }}><Button variant="ghost" w="full">Back to Home</Button></Link>
+    <Container
+      alignItems="center"
+      display="flex"
+      justifyContent="center"
+      maxW="6xl"
+      minH="100dvh"
+      py={{ base: 8, md: 16 }}
+    >
+      <Surface
+        display="grid"
+        gridTemplateColumns={{ base: '1fr', lg: '0.9fr 1.1fr' }}
+        maxW="58rem"
+        overflow="hidden"
+        w="full"
+      >
+        <Box
+          bg="var(--atlas-primary-soft)"
+          borderRightWidth={{ base: 0, lg: '1px' }}
+          borderBottomWidth={{ base: '1px', lg: 0 }}
+          borderColor="var(--atlas-border)"
+          p={{ base: 7, md: 10 }}
+        >
+          <VStack align="flex-start" gap={5}>
+            <Box
+              alignItems="center"
+              bg="var(--atlas-primary)"
+              borderRadius="var(--atlas-radius-md)"
+              color="white"
+              display="flex"
+              fontWeight="900"
+              h="3rem"
+              justifyContent="center"
+              letterSpacing="-0.04em"
+              w="3rem"
+            >
+              AS
+            </Box>
+            <Box>
+              <Heading
+                color="var(--atlas-foreground)"
+                fontSize={{ base: '2rem', md: '2.5rem' }}
+                fontWeight="850"
+                letterSpacing="-0.045em"
+                lineHeight="1"
+                mb={3}
+              >
+                Welcome back
+              </Heading>
+              <Text color="var(--atlas-muted)" lineHeight="1.7">
+                Continue translating comic pages and refining every bubble from one editor.
+              </Text>
+            </Box>
           </VStack>
-        </Card.Body>
-      </Card.Root>
+        </Box>
+
+        <Box asChild p={{ base: 7, md: 10 }}>
+          <form onSubmit={handleSubmit}>
+            <VStack align="stretch" gap={5}>
+              <Box>
+                <Heading fontSize="xl" letterSpacing="-0.02em">
+                  Sign in
+                </Heading>
+                <Text color="var(--atlas-muted)" fontSize="sm" mt={1}>
+                  Enter your Atlas Studio credentials.
+                </Text>
+              </Box>
+              {loginMutation.error && (
+                <Box
+                  bg="rgba(180, 35, 24, 0.08)"
+                  borderColor="rgba(180, 35, 24, 0.22)"
+                  borderRadius="var(--atlas-radius-sm)"
+                  borderWidth="1px"
+                  color="var(--atlas-danger)"
+                  fontSize="sm"
+                  p={3}
+                >
+                  {(loginMutation.error as Error).message}
+                </Box>
+              )}
+              <Field.Root required>
+                <Field.Label>Email</Field.Label>
+                <Input
+                  autoComplete="email"
+                  borderRadius="var(--atlas-radius-sm)"
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
+                  placeholder="email@example.com"
+                  type="email"
+                  value={email}
+                />
+              </Field.Root>
+              <Field.Root required>
+                <Field.Label>Password</Field.Label>
+                <Input
+                  autoComplete="current-password"
+                  borderRadius="var(--atlas-radius-sm)"
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPassword(event.target.value)}
+                  type="password"
+                  value={password}
+                />
+              </Field.Root>
+              <Button
+                className="atlas-button-motion"
+                color="white"
+                colorPalette="blue"
+                loading={loginMutation.isPending}
+                type="submit"
+                w="full"
+              >
+                Sign in
+              </Button>
+              <HStack gap={3} justify="space-between" wrap="wrap">
+                <Button asChild className="atlas-button-motion" size="sm" variant="outline">
+                  <Link href="/auth/register">Create account</Link>
+                </Button>
+                <Button asChild size="sm" variant="ghost">
+                  <Link href="/">Back to home</Link>
+                </Button>
+              </HStack>
+            </VStack>
+          </form>
+        </Box>
+      </Surface>
     </Container>
   );
 }

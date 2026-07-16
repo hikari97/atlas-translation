@@ -122,7 +122,7 @@ export interface JobDto {
   readonly status: 'pending' | 'running' | 'completed' | 'failed';
   readonly progress: number;
   readonly message: string;
-  readonly metadata: Record<string, any>;
+  readonly metadata: Record<string, unknown>;
 }
 
 export function useJobStatusQuery(jobId: string, enabled: boolean) {

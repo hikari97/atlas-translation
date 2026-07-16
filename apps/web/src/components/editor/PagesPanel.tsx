@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-import { Box, VStack, HStack, Text, Heading, Badge, Button } from '@chakra-ui/react';
+import { Box, Button, Heading, HStack, Text, VStack } from '@chakra-ui/react';
 import { useCreatePageMutation } from '../../lib/data/mutationHooks';
+import StatusBadge from '../ui/StatusBadge';
 
 interface PageItem {
   readonly _id: string;
@@ -27,14 +28,11 @@ export default function PagesPanel({ projectId, pages = [], activePageId, onSele
     const files = e.target.files;
     if (!files || files.length === 0 || !projectId) return;
 
-    // Urutkan file secara ascending berdasarkan nama file
     const sortedFiles = Array.from(files).sort((a, b) => {
-      // Natural sort (page9.jpg < page10.jpg)
       return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
     });
 
     try {
-      // Kirim seluruh files yang sudah diurutkan dalam satu request
       await createPageMutation.mutateAsync({ projectId, files: sortedFiles });
     } catch (err) {
       console.error('Failed to upload pages:', err);
@@ -44,38 +42,92 @@ export default function PagesPanel({ projectId, pages = [], activePageId, onSele
   };
 
   return (
-    <Box w="240px" p={4} borderRightWidth="1px" display="flex" flexDirection="column" h="100%">
+    <Box
+      bg="var(--atlas-surface)"
+      borderColor="var(--atlas-border)"
+      borderRightWidth={{ base: 0, lg: '1px' }}
+      display="flex"
+      flexDirection="column"
+      h="100%"
+      minW={{ base: '100%', lg: '17rem' }}
+      p={4}
+      w={{ base: '100%', lg: '17rem' }}
+    >
       <HStack justify="space-between" mb={4}>
-        <Heading size="xs">Pages ({pages.length})</Heading>
-        <Button size="xs" colorScheme="blue" onClick={handleUploadClick} loading={createPageMutation.isPending}>
-          + Add
+        <Box>
+          <Heading fontSize="sm" letterSpacing="-0.01em">
+            Pages
+          </Heading>
+          <Text color="var(--atlas-muted)" fontSize="xs">
+            {pages.length} total
+          </Text>
+        </Box>
+        <Button
+          className="atlas-button-motion"
+          color="white"
+          colorPalette="blue"
+          loading={createPageMutation.isPending}
+          onClick={handleUploadClick}
+          size="xs"
+        >
+          Add
         </Button>
         <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
           accept="image/*"
+          hidden
           multiple
-          style={{ display: 'none' }}
+          onChange={handleFileChange}
+          ref={fileInputRef}
+          type="file"
         />
       </HStack>
       <VStack align="stretch" gap={3} flex="1" overflowY="auto">
-        {pages.map((p) => (
+        {pages.length === 0 && (
           <Box
-            key={p._id}
-            p={3}
-            borderWidth={1}
-            borderRadius="md"
-            borderColor={p._id === activePageId ? 'blue.500' : 'gray.200'}
-            onClick={() => onSelectPage(p._id)}
-            cursor="pointer"
+            bg="var(--atlas-surface-muted)"
+            borderRadius="var(--atlas-radius-md)"
+            color="var(--atlas-muted)"
+            fontSize="sm"
+            lineHeight="1.6"
+            p={4}
           >
-            <HStack justify="space-between">
-              <Text fontSize="sm">Page {p.pageNumber}</Text>
-              <Badge>{p.status}</Badge>
-            </HStack>
+            Upload comic pages to begin editing.
           </Box>
-        ))}
+        )}
+        {pages.map((page) => {
+          const active = page._id === activePageId;
+
+          return (
+            <Box
+              key={page._id}
+              bg={active ? 'var(--atlas-primary-soft)' : 'var(--atlas-surface-solid)'}
+              borderColor={active ? 'var(--atlas-primary)' : 'var(--atlas-border)'}
+              borderRadius="var(--atlas-radius-md)"
+              borderWidth="1px"
+              className="atlas-focus-ring"
+              cursor="pointer"
+              onClick={() => onSelectPage(page._id)}
+              p={3}
+              transition="all 180ms ease"
+              _hover={{
+                borderColor: 'var(--atlas-primary)',
+                transform: 'translateY(-1px)',
+              }}
+            >
+              <HStack align="flex-start" justify="space-between">
+                <Box>
+                  <Text color="var(--atlas-foreground)" fontSize="sm" fontWeight="800">
+                    Page {page.pageNumber}
+                  </Text>
+                  <Text color="var(--atlas-muted)" fontSize="xs">
+                    Canvas source
+                  </Text>
+                </Box>
+                <StatusBadge status={page.status} />
+              </HStack>
+            </Box>
+          );
+        })}
       </VStack>
     </Box>
   );

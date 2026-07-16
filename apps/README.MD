@@ -154,6 +154,58 @@ These tools are intended for development and maintenance only.
 
 # Application Communication
 
+## Stateless editor flow
+
+The direct editor does not create Project, Page, Bubble, or Job records.
+
+```text
+Browser File memory
+        ↓ multipart
+Backend memory buffer
+        ↓ multipart
+AI Worker temporary processing
+        ↓ JSON + base64
+Browser editor state
+        ↓
+User download
+```
+
+Uploaded images and generated results are never written to persistent backend
+storage. The AI Worker may use an isolated temporary directory during inference;
+that directory is deleted before the request finishes.
+
+The public stateless translation response is intentionally frontend-ready:
+
+```json
+{
+  "image": "data:image/png;base64,...",
+  "inpainted": "data:image/png;base64,...",
+  "context": "",
+  "text": [
+    {
+      "x": 623.0,
+      "y": 326.5,
+      "width": 50.0,
+      "height": 141.0,
+      "text": "Tanjiro",
+      "originalText": "炭治郎",
+      "textAlign": "center",
+      "strokeColor": "#f9f7f9",
+      "lineWidth": 10,
+      "fillColor": "#0e0c0f",
+      "font": "36px WildWords",
+      "addFontBackground": false,
+      "addFontBorder": false,
+      "addBackgroundColor": "#ffffff",
+      "rotation": 0.0,
+      "angle": 0.0,
+      "layout": "h",
+      "textDir": "ltr"
+    }
+  ]
+}
+```
+
 ```text
                 User
                   │
@@ -299,3 +351,9 @@ These applications should reuse existing packages whenever possible.
 Applications are responsible for delivering Atlas Studio to users.
 
 A clean separation between applications and packages ensures that the platform remains scalable, maintainable, and ready for future expansion.
+
+# how to RUN ai-worker
+
+cd apps/ai-worker
+source .venv/bin/activate
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, VStack, HStack, Text, Heading, Badge } from '@chakra-ui/react';
+import { Box, Heading, HStack, Text, VStack } from '@chakra-ui/react';
+import { LuEye } from 'react-icons/lu';
 
 interface LayerItem {
   readonly id: string;
@@ -19,22 +20,42 @@ export default function LayersPanel({ activeLayerId, onSelectLayer }: LayersPane
   ]);
 
   return (
-    <Box w="240px" p={4} borderTopWidth="1px">
-      <Heading size="xs" mb={4}>Layers</Heading>
+    <Box
+      bg="var(--atlas-surface)"
+      borderColor="var(--atlas-border)"
+      borderTopWidth="1px"
+      p={4}
+      w={{ base: '100%', lg: '17rem' }}
+    >
+      <Heading fontSize="sm" letterSpacing="-0.01em" mb={4}>
+        Layers
+      </Heading>
       <VStack align="stretch" gap={2}>
-        {layers.map((l) => (
-          <Box
-            key={l.id}
-            p={2}
-            borderWidth={1}
-            borderRadius="md"
-            borderColor={l.id === activeLayerId ? 'blue.500' : 'gray.200'}
-            onClick={() => onSelectLayer(l.id)}
-            cursor="pointer"
-          >
-            <Text fontSize="xs">{l.name}</Text>
-          </Box>
-        ))}
+        {layers.map((layer) => {
+          const active = layer.id === activeLayerId;
+
+          return (
+            <Box
+              key={layer.id}
+              bg={active ? 'var(--atlas-primary-soft)' : 'var(--atlas-surface-solid)'}
+              borderColor={active ? 'var(--atlas-primary)' : 'var(--atlas-border)'}
+              borderRadius="var(--atlas-radius-md)"
+              borderWidth="1px"
+              cursor="pointer"
+              onClick={() => onSelectLayer(layer.id)}
+              p={3}
+              transition="all 180ms ease"
+              _hover={{ borderColor: 'var(--atlas-primary)' }}
+            >
+              <HStack justify="space-between">
+                <Text color="var(--atlas-foreground)" fontSize="xs" fontWeight="750">
+                  {layer.name}
+                </Text>
+                {layer.visible && <LuEye color="var(--atlas-muted)" size={14} />}
+              </HStack>
+            </Box>
+          );
+        })}
       </VStack>
     </Box>
   );

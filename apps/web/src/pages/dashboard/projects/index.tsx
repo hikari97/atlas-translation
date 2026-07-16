@@ -1,8 +1,13 @@
 import { useState } from 'react';
-import { Box, Container, Heading, Text, Button, Card, Grid, Badge, HStack, VStack, Field, Input, Flex } from '@chakra-ui/react';
+import { Box, Button, Field, Flex, Grid, HStack, Heading, Input, Skeleton, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useProjectsQuery } from '../../../lib/data/fetchHooks';
 import { useCreateProjectMutation } from '../../../lib/data/mutationHooks';
+import EmptyState from '../../../components/ui/EmptyState';
+import PageHeader from '../../../components/ui/PageHeader';
+import StatusBadge from '../../../components/ui/StatusBadge';
+import Surface from '../../../components/ui/Surface';
+import OpenEditorButton from '../../../components/projects/OpenEditorButton';
 
 export default function ProjectsPage() {
   const { data: projects, isPending, refetch } = useProjectsQuery();
@@ -23,69 +28,124 @@ export default function ProjectsPage() {
   };
 
   return (
-    <Container maxW="container.lg" py={6}>
-      <Flex justify="space-between" align="center" mb={6}>
-        <Box>
-          <Heading>Projects</Heading>
-          <Text color="gray.500">Manage your localization projects</Text>
-        </Box>
-        <Button colorScheme="blue" onClick={() => setShowCreate(!showCreate)}>
-          {showCreate ? 'Cancel' : 'New Project'}
-        </Button>
-      </Flex>
+    <Box>
+      <PageHeader
+        eyebrow="Project library"
+        title="Manage localization projects"
+        description="Create projects, open the editor, and keep each page organized for translation review."
+        action={
+          <Button
+            className="atlas-button-motion"
+            color={showCreate ? 'var(--atlas-foreground)' : 'white'}
+            colorPalette={showCreate ? 'gray' : 'blue'}
+            onClick={() => setShowCreate(!showCreate)}
+            variant={showCreate ? 'outline' : 'solid'}
+          >
+            {showCreate ? 'Cancel' : 'New project'}
+          </Button>
+        }
+      />
 
-      {/* Inline Create Form */}
       {showCreate && (
-        <Box p={5} borderWidth={1} borderRadius="lg" bg="white" mb={6} boxShadow="sm">
-          <Heading size="xs" textTransform="uppercase" color="gray.500" mb={4}>
-            Create New Project
-          </Heading>
-          <VStack gap={4} align="stretch">
-            <Field.Root>
-              <Field.Label>Project Name</Field.Label>
-              <Input
-                value={name}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-                placeholder="e.g. Naruto Ch 1"
-              />
-            </Field.Root>
-            <HStack justify="flex-end" gap={2}>
-              <Button variant="outline" size="sm" onClick={() => setShowCreate(false)}>Cancel</Button>
-              <Button colorScheme="blue" size="sm" onClick={handleCreate} loading={createMutation.isPending}>
-                Create
-              </Button>
-            </HStack>
-          </VStack>
-        </Box>
+        <Surface mb={6} p={{ base: 5, md: 6 }}>
+          <Flex align={{ base: 'flex-start', md: 'center' }} direction={{ base: 'column', md: 'row' }} gap={5} justify="space-between">
+            <Box maxW="28rem">
+              <Heading fontSize="lg" letterSpacing="-0.01em">
+                Create a new project
+              </Heading>
+              <Text color="var(--atlas-muted)" fontSize="sm" mt={1}>
+                Name the project now. Pages and metadata can be added after creation.
+              </Text>
+            </Box>
+            <VStack align="stretch" flex="1" gap={3} maxW="32rem" w="full">
+              <Field.Root>
+                <Field.Label>Project name</Field.Label>
+                <Input
+                  borderRadius="var(--atlas-radius-sm)"
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)}
+                  placeholder="Chapter 01 localization"
+                  value={name}
+                />
+              </Field.Root>
+              <HStack justify="flex-end" gap={2}>
+                <Button size="sm" variant="ghost" onClick={() => setShowCreate(false)}>
+                  Cancel
+                </Button>
+                <Button
+                  className="atlas-button-motion"
+                  color="white"
+                  colorPalette="blue"
+                  loading={createMutation.isPending}
+                  onClick={handleCreate}
+                  size="sm"
+                >
+                  Create project
+                </Button>
+              </HStack>
+            </VStack>
+          </Flex>
+        </Surface>
       )}
 
-      {isPending && <Text>Loading projects...</Text>}
-
-      {projects && projects.length === 0 && (
-        <Text color="gray.400">No projects yet. Create your first project!</Text>
+      {isPending && (
+        <Grid gap={4} templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}>
+          {[1, 2, 3, 4].map((item) => (
+            <Surface key={item} p={5}>
+              <Skeleton height="1.4rem" mb={4} width="52%" />
+              <Skeleton height="0.9rem" mb={5} width="80%" />
+              <HStack>
+                <Skeleton height="2rem" width="6rem" />
+                <Skeleton height="2rem" width="6rem" />
+              </HStack>
+            </Surface>
+          ))}
+        </Grid>
       )}
 
-      <Grid templateColumns="repeat(2, 1fr)" gap={6}>
-        {projects?.map((p) => (
-          <Card.Root key={p._id}>
-            <Card.Body>
-              <HStack justify="space-between">
-                <Heading size="sm">{p.name}</Heading>
-                <Badge>{p.status}</Badge>
-              </HStack>
-              {p.description && <Text fontSize="sm" color="gray.500" mt={2}>{p.description}</Text>}
-              <HStack mt={3} gap={2}>
-                <Link href={`/dashboard/projects/${p._id}`} passHref>
-                  <Button variant="outline" size="sm">View Details</Button>
-                </Link>
-                <Link href={`/editor/${p._id}`} passHref>
-                  <Button colorScheme="blue" size="sm">Open Editor</Button>
-                </Link>
-              </HStack>
-            </Card.Body>
-          </Card.Root>
-        ))}
-      </Grid>
-    </Container>
+      {!isPending && projects && projects.length === 0 && (
+        <EmptyState
+          title="No projects yet"
+          description="Create your first localization project and upload pages when you are ready."
+          action={
+            <Button className="atlas-button-motion" color="white" colorPalette="blue" size="sm" onClick={() => setShowCreate(true)}>
+              Create project
+            </Button>
+          }
+        />
+      )}
+
+      {!isPending && projects && projects.length > 0 && (
+        <Grid gap={4} templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}>
+          {projects.map((project) => (
+            <Surface key={project._id} p={5}>
+              <VStack align="stretch" gap={4}>
+                <HStack align="flex-start" justify="space-between">
+                  <Box minW={0}>
+                    <Heading fontSize="lg" letterSpacing="-0.015em" lineClamp={1}>
+                      {project.name}
+                    </Heading>
+                    <Text color="var(--atlas-muted)" fontSize="sm" mt={1}>
+                      {project.description || 'No description added yet.'}
+                    </Text>
+                  </Box>
+                  <StatusBadge status={project.status} />
+                </HStack>
+                <HStack color="var(--atlas-muted)" fontSize="sm" gap={4}>
+                  <Text>{project.sourceLanguage || 'source'} source</Text>
+                  <Text>{project.targetLanguage || 'target'} target</Text>
+                  <Text>{project.pages.length} pages</Text>
+                </HStack>
+                <HStack gap={2} wrap="wrap">
+                  <Button asChild className="atlas-button-motion" size="sm" variant="outline">
+                    <Link href={`/dashboard/projects/${project._id}`}>View details</Link>
+                  </Button>
+                  <OpenEditorButton href={`/editor/${project._id}`} size="sm" />
+                </HStack>
+              </VStack>
+            </Surface>
+          ))}
+        </Grid>
+      )}
+    </Box>
   );
 }

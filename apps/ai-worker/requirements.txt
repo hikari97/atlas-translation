@@ -9,3 +9,6 @@ opencv-python-headless
 Pillow
 onnxruntime
 google-genai
+PyMuPDF
+rarfile
+pytesseract
