@@ -13,9 +13,9 @@ exports.translateImage = async (req, res, next) => {
       buffer: req.file.buffer,
       context: req.body.context || '',
       filename: req.file.originalname,
-      model: req.body.model || 'google/gemini-3.1-flash-lite-image',
+      model: req.body.model || undefined,
       mimeType: req.file.mimetype,
-      provider: req.body.provider || 'openrouter',
+      provider: req.body.provider || 'gemini',
       sourceLanguage: req.body.sourceLanguage || undefined,
       targetLanguage: req.body.targetLanguage || 'id',
     });

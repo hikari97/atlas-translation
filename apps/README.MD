@@ -176,19 +176,22 @@ that directory is deleted before the request finishes.
 
 ## OpenRouter image localization
 
-The stateless image editor sends the selected model id to the AI Worker. The
-worker makes two non-persistent OpenRouter image-editing requests: one returns
-the translated composition (`image`) and one returns a text-free composition
-(`inpainted`). The supported choices are:
+The stateless image editor sends the selected provider and model to the AI
+Worker. For OpenRouter choices, the worker makes two non-persistent image-editing
+requests: one returns the translated composition (`image`) and one returns a
+text-free composition (`inpainted`). The supported choices are:
 
-- `google/gemini-3.1-flash-lite-image`
+- Direct Gemini, configured with `LLM_PROVIDER=gemini`, `GEMINI_API_KEY`, and
+  `MODEL_GEMINI`
 - `openai/gpt-5-image`
 - `x-ai/grok-imagine-image-quality`
 
-Set `OPENROUTER_API_KEY` in `apps/ai-worker/.env` before running the worker.
-The browser never receives that key. When a selected model returns structured
-text metadata, the editor uses the clean image plus editable Konva text layers;
-otherwise it displays the model's translated image directly.
+Set `OPENROUTER_API_KEY` only when using a model routed through OpenRouter. The
+browser never receives that key or `GEMINI_API_KEY`. The direct Gemini selection
+uses the existing Gemini provider and its configured model; it does not call
+OpenRouter. When a selected model returns structured text metadata, the editor
+uses the clean image plus editable Konva text layers; otherwise it displays the
+model's translated image directly.
 
 The public stateless translation response is intentionally frontend-ready:
 

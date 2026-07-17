@@ -1,3 +1,6 @@
+import {
+  getImageLocalizationModel,
+} from './imageLocalizationModels';
 import type { ImageLocalizationModelId } from './imageLocalizationModels';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
@@ -50,10 +53,14 @@ export async function translateImageStateless({
   sourceLanguage,
   targetLanguage,
 }: TranslateImageInput): Promise<StatelessTranslationResult> {
+  const selectedModel = getImageLocalizationModel(model);
   const formData = new FormData();
   formData.append('image', file);
-  formData.append('provider', 'openrouter');
-  formData.append('model', model);
+  formData.append('provider', selectedModel.provider);
+
+  if (selectedModel.provider === 'openrouter') {
+    formData.append('model', selectedModel.id);
+  }
   formData.append('targetLanguage', targetLanguage);
 
   if (context) {

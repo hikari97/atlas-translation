@@ -5,6 +5,7 @@ from app.image_localization import (
     ImageLocalizationRequest,
     create_image_localization_provider,
 )
+from app.image_localization.direct_provider import resolve_direct_provider
 from app.pipeline.image_translation import (
     build_stateless_translation_response,
     translate_image_bytes,
@@ -48,7 +49,7 @@ async def translate_uploaded_image(
     image: UploadFile = File(...),
     source_language: str | None = Form(default=None),
     target_language: str = Form(default="id"),
-    provider: str = Form(default="openrouter"),
+    provider: str = Form(default="gemini"),
     model: str = Form(default=DEFAULT_OPENROUTER_IMAGE_MODEL),
     context: str = Form(default=""),
     render: bool = Form(default=True),
@@ -73,12 +74,13 @@ async def translate_uploaded_image(
             )
             return localization_result.to_public_contract()
 
+        direct_provider = resolve_direct_provider(provider)
         result = translate_image_bytes(
             image_bytes=image_bytes,
             filename=image.filename or "image.png",
             target_language=target_language,
             source_language=source_language,
-            provider=provider,
+            provider=direct_provider,
             render=render,
         )
         return build_stateless_translation_response(
