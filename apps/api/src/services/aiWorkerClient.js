@@ -51,6 +51,7 @@ async function translateImageBuffer({
   buffer,
   context,
   filename,
+  model,
   mimeType,
   provider,
   sourceLanguage,
@@ -59,6 +60,7 @@ async function translateImageBuffer({
   const formData = new FormData();
   formData.append('image', new Blob([buffer], { type: mimeType }), filename);
   formData.append('provider', provider);
+  formData.append('model', model);
   formData.append('target_language', targetLanguage);
   formData.append('render', 'true');
 

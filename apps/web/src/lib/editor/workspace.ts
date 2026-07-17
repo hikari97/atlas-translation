@@ -27,6 +27,7 @@ export interface EditorPage {
   readonly fileName: string;
   readonly image: string;
   readonly inpaintedImageUrl?: string;
+  readonly translatedImageUrl?: string;
   readonly pageNumber: number;
   readonly status: 'pending' | 'processing' | 'translated' | 'failed';
 }
@@ -82,6 +83,7 @@ export class ApplyTranslationResultCommand implements EditorWorkspaceCommand {
   public constructor(
     private readonly pageId: string,
     private readonly bubbles: readonly StatelessTextResult[],
+    private readonly translatedImageUrl: string,
     private readonly inpaintedImageUrl: string,
   ) {}
 
@@ -96,6 +98,7 @@ export class ApplyTranslationResultCommand implements EditorWorkspaceCommand {
           ...page,
           bubbles: this.bubbles.map(toEditorBubble),
           inpaintedImageUrl: this.inpaintedImageUrl,
+          translatedImageUrl: this.translatedImageUrl,
           status: 'translated' as const,
         };
       }),

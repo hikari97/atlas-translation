@@ -174,6 +174,22 @@ Uploaded images and generated results are never written to persistent backend
 storage. The AI Worker may use an isolated temporary directory during inference;
 that directory is deleted before the request finishes.
 
+## OpenRouter image localization
+
+The stateless image editor sends the selected model id to the AI Worker. The
+worker makes two non-persistent OpenRouter image-editing requests: one returns
+the translated composition (`image`) and one returns a text-free composition
+(`inpainted`). The supported choices are:
+
+- `google/gemini-3.1-flash-lite-image`
+- `openai/gpt-5-image`
+- `x-ai/grok-imagine-image-quality`
+
+Set `OPENROUTER_API_KEY` in `apps/ai-worker/.env` before running the worker.
+The browser never receives that key. When a selected model returns structured
+text metadata, the editor uses the clean image plus editable Konva text layers;
+otherwise it displays the model's translated image directly.
+
 The public stateless translation response is intentionally frontend-ready:
 
 ```json

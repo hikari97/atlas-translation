@@ -25,6 +25,10 @@ import {
 } from 'react-icons/lu';
 import EditorSidePanel from '../../components/editor/EditorSidePanel';
 import TranslateSettingsPanel from '../../components/editor/TranslateSettingsPanel';
+import {
+  DEFAULT_IMAGE_LOCALIZATION_MODEL,
+} from '../../lib/data/imageLocalizationModels';
+import type { ImageLocalizationModelId } from '../../lib/data/imageLocalizationModels';
 import type { ComicCanvasHandle } from '../../components/ComicCanvas';
 import { translateImageStateless } from '../../lib/data/statelessTranslation';
 import type { BubbleTextAlign, BubbleTypographySettings } from '../../lib/editor/typography';
@@ -88,7 +92,7 @@ export default function EditorWorkspacePage() {
   const [showSettingsPanel, setShowSettingsPanel] = useState(false);
   const [zoom, setZoom] = useState(100);
   const [previewMode, setPreviewMode] = useState<'original' | 'translated'>('original');
-  const [provider, setProvider] = useState('gemini');
+  const [model, setModel] = useState<ImageLocalizationModelId>(DEFAULT_IMAGE_LOCALIZATION_MODEL);
   const [targetLanguage, setTargetLanguage] = useState('id');
   const [activePageId, setActivePageId] = useState<string | undefined>(undefined);
   const [activeBubbleId, setActiveBubbleId] = useState<string | undefined>(undefined);
@@ -114,9 +118,11 @@ export default function EditorWorkspacePage() {
     activeBubble,
     activeBubble ? bubbleTypographyOverrides[activeBubble._id] : undefined,
   );
-  const translatedBackgroundUrl = activePage?.inpaintedImageUrl;
-  const isTranslatedPreview = previewMode === 'translated' && Boolean(translatedBackgroundUrl);
-  const imageUrl = isTranslatedPreview ? translatedBackgroundUrl : activePage?.image;
+  const translatedPreviewImageUrl = activePage?.bubbles.length
+    ? activePage.inpaintedImageUrl
+    : activePage?.translatedImageUrl || activePage?.inpaintedImageUrl;
+  const isTranslatedPreview = previewMode === 'translated' && Boolean(translatedPreviewImageUrl);
+  const imageUrl = isTranslatedPreview ? translatedPreviewImageUrl : activePage?.image;
   const jobStatus = isTranslating
     ? { message: 'AI Worker sedang memproses gambar', progress: 55 }
     : undefined;
@@ -187,12 +193,13 @@ export default function EditorWorkspacePage() {
     try {
       const result = await translateImageStateless({
         file: activePage.file,
-        provider,
+        model,
         targetLanguage,
       });
       executeCommand(new ApplyTranslationResultCommand(
         activePage._id,
         result.text,
+        result.image,
         result.inpainted,
       ));
       setPreviewMode('translated');
@@ -506,7 +513,7 @@ export default function EditorWorkspacePage() {
                 <Button
                   bg={previewMode === 'translated' ? 'var(--editor-primary-soft)' : 'transparent'}
                   color={previewMode === 'translated' ? 'var(--editor-primary)' : 'var(--editor-muted)'}
-                  disabled={!translatedBackgroundUrl}
+                  disabled={!translatedPreviewImageUrl}
                   fontWeight="800"
                   minW="7.5rem"
                   onClick={() => setPreviewMode('translated')}
@@ -520,9 +527,9 @@ export default function EditorWorkspacePage() {
               <TranslateSettingsPanel
                 open={showSettingsPanel}
                 onClose={() => setShowSettingsPanel(false)}
-                onProviderChange={setProvider}
+                onModelChange={setModel}
                 onTargetLanguageChange={setTargetLanguage}
-                provider={provider}
+                model={model}
                 targetLanguage={targetLanguage}
               />
 

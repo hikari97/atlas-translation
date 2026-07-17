@@ -1,3 +1,5 @@
+import type { ImageLocalizationModelId } from './imageLocalizationModels';
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
 
 export interface StatelessTextResult {
@@ -31,7 +33,7 @@ export interface StatelessTranslationResult {
 interface TranslateImageInput {
   readonly file: File;
   readonly context?: string;
-  readonly provider: string;
+  readonly model: ImageLocalizationModelId;
   readonly sourceLanguage?: string;
   readonly targetLanguage: string;
 }
@@ -44,13 +46,14 @@ function getToken(): string {
 export async function translateImageStateless({
   file,
   context,
-  provider,
+  model,
   sourceLanguage,
   targetLanguage,
 }: TranslateImageInput): Promise<StatelessTranslationResult> {
   const formData = new FormData();
   formData.append('image', file);
-  formData.append('provider', provider);
+  formData.append('provider', 'openrouter');
+  formData.append('model', model);
   formData.append('targetLanguage', targetLanguage);
 
   if (context) {

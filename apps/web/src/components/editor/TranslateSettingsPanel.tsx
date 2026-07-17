@@ -14,26 +14,33 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { LuMessageCircle, LuPalette, LuSave, LuSettings, LuX } from 'react-icons/lu';
+import {
+  IMAGE_LOCALIZATION_MODELS,
+  isImageLocalizationModelId,
+} from '../../lib/data/imageLocalizationModels';
+import type { ImageLocalizationModelId } from '../../lib/data/imageLocalizationModels';
 
 interface TranslateSettingsPanelProps {
   readonly open: boolean;
-  readonly provider: string;
+  readonly model: ImageLocalizationModelId;
   readonly targetLanguage: string;
   readonly onClose: () => void;
-  readonly onProviderChange: (value: string) => void;
+  readonly onModelChange: (value: ImageLocalizationModelId) => void;
   readonly onTargetLanguageChange: (value: string) => void;
 }
 
 export default function TranslateSettingsPanel({
   open,
-  provider,
+  model,
   targetLanguage,
   onClose,
-  onProviderChange,
+  onModelChange,
   onTargetLanguageChange,
 }: TranslateSettingsPanelProps) {
-  const handleProviderChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    onProviderChange(event.target.value);
+  const handleModelChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    if (isImageLocalizationModelId(event.target.value)) {
+      onModelChange(event.target.value);
+    }
   };
 
   const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -117,12 +124,14 @@ export default function TranslateSettingsPanel({
               <NativeSelect.Field
                 borderColor="var(--editor-border-strong)"
                 borderRadius="10px"
-                onChange={handleProviderChange}
-                value={provider}
+                onChange={handleModelChange}
+                value={model}
               >
-                <option value="gemini">Gemini</option>
-                <option value="openai">OpenAI</option>
-                <option value="openrouter">OpenRouter</option>
+                {IMAGE_LOCALIZATION_MODELS.map((imageModel) => (
+                  <option key={imageModel.id} value={imageModel.id}>
+                    {imageModel.label}
+                  </option>
+                ))}
               </NativeSelect.Field>
               <NativeSelect.Indicator />
             </NativeSelect.Root>
