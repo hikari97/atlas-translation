@@ -156,9 +156,12 @@ Create the AI worker environment once:
 
 ```bash
 python3.12 -m venv apps/ai-worker/.venv
-source apps/ai-worker/.venv/bin/activate
-pip install -r apps/ai-worker/requirements.txt
+apps/ai-worker/.venv/bin/python -m pip install -r apps/ai-worker/requirements.txt
 ```
+
+The AI workspace launcher uses this local virtual environment automatically, so
+shell activation is not required. Set `ATLAS_AI_PYTHON` only when a different
+compatible Python executable is intentionally needed.
 
 Common root commands:
 
