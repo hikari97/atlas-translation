@@ -112,18 +112,67 @@ Atlas Studio aims to become a professional solution for:
 ## Repository Structure
 
 ```text
-atlas/
-
-apps/
-packages/
-plugins/
-docs/
-schemas/
-tasks/
-tooling/
-
-README.md
+atlas-image-translate/
+├── apps/
+│   ├── web/
+│   ├── api/
+│   └── ai-worker/
+├── packages/
+├── plugins/
+├── docs/
+├── schemas/
+├── tasks/
+├── tooling/
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── turbo.json
+├── tsconfig.base.json
+└── tsconfig.json
 ```
+
+---
+
+## Monorepo Development
+
+Atlas Studio uses pnpm workspaces for dependency linking, Turborepo for task
+orchestration, and TypeScript Project References for package build order.
+
+Requirements:
+
+- Node.js 22 or newer
+- pnpm 11.4 or newer
+- Python 3.12 for `apps/ai-worker`
+
+Install every JavaScript and TypeScript workspace from the repository root:
+
+```bash
+corepack enable
+corepack prepare pnpm@11.4.0 --activate
+pnpm install
+```
+
+Create the AI worker environment once:
+
+```bash
+python3.12 -m venv apps/ai-worker/.venv
+source apps/ai-worker/.venv/bin/activate
+pip install -r apps/ai-worker/requirements.txt
+```
+
+Common root commands:
+
+```bash
+pnpm dev          # web, API, and AI worker
+pnpm dev:web      # Next.js only
+pnpm dev:api      # Express only
+pnpm dev:ai       # FastAPI only
+pnpm build        # dependency-aware production builds
+pnpm check        # lint and TypeScript checks
+```
+
+Dependencies must be installed from the root. Internal `@atlas/*` dependencies
+use the `workspace:*` protocol and are synchronized with `pnpm sync:monorepo`.
 
 ---
 
@@ -134,7 +183,6 @@ README.md
 | apps/web       | Next.js frontend      |
 | apps/api       | Backend API           |
 | apps/ai-worker | AI processing service |
-| apps/tools     | Internal tools        |
 
 ---
 
@@ -147,10 +195,9 @@ README.md
 | atlas-command    | Command system          |
 | atlas-events     | Event system            |
 | atlas-core       | Business logic          |
-| atlas-plugin-sdk | Plugin API              |
-| atlas-sdk        | Public SDK              |
+| atlas-plugin     | Plugin contracts         |
+| atlas-translation | Translation workflows  |
 | atlas-ui         | Shared UI components    |
-| shared           | Utilities & helpers     |
 
 ---
 

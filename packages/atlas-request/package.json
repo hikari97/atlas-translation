@@ -31,9 +31,9 @@
     "test:types": "tsc -p tsconfig.test.json"
   },
   "dependencies": {
-    "@atlas/atlas-http": "file:../atlas-http",
-    "@atlas/atlas-router": "file:../atlas-router",
-    "@atlas/atlas-types": "file:../atlas-types"
+    "@atlas/atlas-http": "workspace:*",
+    "@atlas/atlas-router": "workspace:*",
+    "@atlas/atlas-types": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.1",

@@ -32,10 +32,10 @@
     "test:types": "tsc -p tsconfig.test.json"
   },
   "dependencies": {
-    "@atlas/atlas-command": "file:../atlas-command",
-    "@atlas/atlas-document": "file:../atlas-document",
-    "@atlas/atlas-events": "file:../atlas-events",
-    "@atlas/atlas-types": "file:../atlas-types"
+    "@atlas/atlas-command": "workspace:*",
+    "@atlas/atlas-document": "workspace:*",
+    "@atlas/atlas-events": "workspace:*",
+    "@atlas/atlas-types": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.1",

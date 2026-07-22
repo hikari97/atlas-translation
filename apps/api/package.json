@@ -1,11 +1,13 @@
 {
-  "name": "api",
+  "name": "@atlas/api",
   "version": "1.0.0",
   "description": "Atlas Studio API Server",
+  "private": true,
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "typecheck": "node --check app.js"
   },
   "engines": {
     "node": ">=18.17.0"

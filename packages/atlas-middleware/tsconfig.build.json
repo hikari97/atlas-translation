@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../atlas-http/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-request/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-response/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-router/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-types/tsconfig.build.json"
+    }
+  ]
+}

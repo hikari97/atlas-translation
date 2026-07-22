@@ -1,0 +1,44 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../atlas-command/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-core/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-document/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-events/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-history/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-input/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-interaction/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-plugin/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-renderer/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-selection/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-types/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-ui/tsconfig.build.json"
+    }
+  ]
+}

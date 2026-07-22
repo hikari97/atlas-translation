@@ -1,0 +1,28 @@
+{
+  "name": "atlas-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Atlas Studio monorepo",
+  "packageManager": "pnpm@11.4.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=11.4.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev --filter=@atlas/web --filter=@atlas/api --filter=@atlas/ai-worker",
+    "dev:web": "turbo run dev --filter=@atlas/web",
+    "dev:api": "turbo run dev --filter=@atlas/api",
+    "dev:ai": "turbo run dev --filter=@atlas/ai-worker",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "typecheck:projects": "tsc -b --pretty false",
+    "test:types": "turbo run test:types",
+    "check": "turbo run lint typecheck test:types && pnpm typecheck:projects",
+    "sync:monorepo": "node tooling/sync-monorepo.mjs"
+  },
+  "devDependencies": {
+    "turbo": "^2.9.15",
+    "typescript": "^5.9.3"
+  }
+}

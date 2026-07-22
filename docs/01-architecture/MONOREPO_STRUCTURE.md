@@ -1,6 +1,6 @@
 # Monorepo Structure
 
-> Status: Draft
+> Status: Stable
 
 Version: 1.0.0
 
@@ -38,14 +38,15 @@ atlas-studio/
 ├── apps/
 ├── packages/
 ├── plugins/
-├── tools/
-├── scripts/
 ├── docs/
+├── schemas/
 ├── tasks/
-├── .github/
+├── tooling/
 ├── package.json
+├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml
 ├── turbo.json
+├── tsconfig.json
 ├── tsconfig.base.json
 └── README.md
 ```
@@ -58,18 +59,16 @@ atlas-studio/
 
 Contains runnable applications.
 
-Examples
+Current applications
 
 ```text
 apps/
 
-desktop/
-
 web/
 
-cli/
+api/
 
-docs/
+ai-worker/
 ```
 
 Applications may depend on packages.
@@ -166,34 +165,14 @@ No source code should exist here.
 
 ---
 
-## scripts/
-
-Contains automation scripts.
-
-Examples
-
-```text
-scripts/
-
-build
-
-release
-
-lint
-
-test
-```
-
----
-
-## tools/
+## tooling/
 
 Contains developer tooling.
 
 Examples
 
 ```text
-tools/
+tooling/
 
 codegen/
 
@@ -202,6 +181,30 @@ templates/
 codemods/
 
 generators/
+```
+
+The checked-in `sync-monorepo.mjs` command keeps internal workspace ranges and
+TypeScript Project References aligned with package manifests.
+
+---
+
+# Workspace Toolchain
+
+- pnpm is the only JavaScript package manager for the repository.
+- `pnpm-lock.yaml` is the only dependency lockfile.
+- Turborepo schedules tasks using package dependency order.
+- Internal `@atlas/*` dependencies use `workspace:*`.
+- TypeScript packages extend the root `tsconfig.base.json`. Their generated
+  `tsconfig.build.json` files enable composite builds and declare project
+  references to internal dependencies.
+
+All dependency installation and shared tasks run from the repository root.
+
+```bash
+pnpm install
+pnpm dev
+pnpm build
+pnpm check
 ```
 
 ---
@@ -226,6 +229,8 @@ README.md
 CHANGELOG.md
 
 tsconfig.json
+
+tsconfig.build.json
 
 tsup.config.ts
 ```

@@ -1,0 +1,24 @@
+.DS_Store
+node_modules/
+**/node_modules/
+.turbo/
+**/.turbo/
+.pnpm-store/
+**/.next/
+**/dist/
+**/coverage/
+*.log
+*.tsbuildinfo
+
+# Local environment files remain private; checked-in examples are allowed.
+.env
+**/.env
+.env.local
+**/.env.local
+!.env.example
+!**/.env.example
+
+# Python artifacts and virtual environments.
+**/__pycache__/
+**/*.py[cod]
+**/.venv/

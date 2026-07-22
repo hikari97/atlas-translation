@@ -1,0 +1,12 @@
+{
+  "name": "@atlas/ai-worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Atlas Studio FastAPI AI worker",
+  "scripts": {
+    "dev": "python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload",
+    "start": "python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000",
+    "build": "python3 -m compileall -q app cypy",
+    "typecheck": "python3 -m compileall -q app cypy"
+  }
+}

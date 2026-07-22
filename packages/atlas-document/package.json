@@ -100,7 +100,7 @@
     "test:types": "tsc -p tsconfig.test.json"
   },
   "dependencies": {
-    "@atlas/atlas-types": "file:../atlas-types"
+    "@atlas/atlas-types": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.1",

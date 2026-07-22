@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { fileURLToPath } from 'node:url';
+
+const monorepoRoot = fileURLToPath(new URL('../..', import.meta.url));
 
 const legacyDashboardRoutes = [
   '/dashboard/projects/:path*',
@@ -11,6 +14,9 @@ const legacyDashboardRoutes = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  turbopack: {
+    root: monorepoRoot,
+  },
   async redirects() {
     return [
       ...legacyDashboardRoutes.map((source) => ({

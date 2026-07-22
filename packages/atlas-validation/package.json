@@ -15,16 +15,25 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md", "ARCHITECTURE.md", "API.md", "PERFORMANCE.md", "RELEASE_CERTIFICATION.md", "REVIEW_REPORT.md", "examples"],
+  "files": [
+    "dist",
+    "README.md",
+    "ARCHITECTURE.md",
+    "API.md",
+    "PERFORMANCE.md",
+    "RELEASE_CERTIFICATION.md",
+    "REVIEW_REPORT.md",
+    "examples"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "test:types": "tsc -p tsconfig.test.json"
   },
   "dependencies": {
-    "@atlas/atlas-controller": "file:../atlas-controller",
-    "@atlas/atlas-request": "file:../atlas-request",
-    "@atlas/atlas-types": "file:../atlas-types"
+    "@atlas/atlas-controller": "workspace:*",
+    "@atlas/atlas-request": "workspace:*",
+    "@atlas/atlas-types": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.1",

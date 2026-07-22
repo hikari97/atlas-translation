@@ -1,0 +1,125 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "packages/atlas-authentication/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-backend-builder/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-cache/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-collaboration/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-command/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-config/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-container/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-controller/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-core/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-database/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-document/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-editor/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-events/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-history/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-http/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-input/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-interaction/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-mail/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-middleware/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-module/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-notification/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-openapi/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-orm/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-plugin/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-queue/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-renderer/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-request/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-response/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-router/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-runtime/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-scheduler/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-search/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-selection/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-storage/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-translation/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-types/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-ui/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-validation/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-websocket/tsconfig.build.json"
+    },
+    {
+      "path": "packages/atlas-worker/tsconfig.build.json"
+    }
+  ]
+}

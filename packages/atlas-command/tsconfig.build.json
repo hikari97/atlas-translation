@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../atlas-document/tsconfig.build.json"
+    },
+    {
+      "path": "../atlas-types/tsconfig.build.json"
+    }
+  ]
+}

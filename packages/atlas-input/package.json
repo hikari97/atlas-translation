@@ -15,17 +15,29 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md", "ARCHITECTURE.md", "API.md", "CHANGELOG.md", "CONTRIBUTING.md", "PERFORMANCE.md", "RELEASE_CERTIFICATION.md", "REVIEW_REPORT.md", "docs", "examples"],
+  "files": [
+    "dist",
+    "README.md",
+    "ARCHITECTURE.md",
+    "API.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "PERFORMANCE.md",
+    "RELEASE_CERTIFICATION.md",
+    "REVIEW_REPORT.md",
+    "docs",
+    "examples"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "test:types": "tsc -p tsconfig.test.json"
   },
   "dependencies": {
-    "@atlas/atlas-core": "file:../atlas-core",
-    "@atlas/atlas-events": "file:../atlas-events",
-    "@atlas/atlas-interaction": "file:../atlas-interaction",
-    "@atlas/atlas-types": "file:../atlas-types"
+    "@atlas/atlas-core": "workspace:*",
+    "@atlas/atlas-events": "workspace:*",
+    "@atlas/atlas-interaction": "workspace:*",
+    "@atlas/atlas-types": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.1",
