@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 cypy_cache/
 data/
+assets/models/

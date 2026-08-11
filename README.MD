@@ -163,6 +163,10 @@ The AI workspace launcher uses this local virtual environment automatically, so
 shell activation is not required. Set `ATLAS_AI_PYTHON` only when a different
 compatible Python executable is intentionally needed.
 
+Comic text and speech bubbles are detected locally with the pinned INT8 ONNX
+artifact from `ogkalu/comic-text-and-bubble-detector`. The verified model is
+downloaded and cached automatically on the first image-processing request.
+
 Common root commands:
 
 ```bash

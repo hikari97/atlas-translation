@@ -2,7 +2,6 @@ import base64
 import json
 import os
 import tempfile
-import threading
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -37,13 +36,10 @@ from cypy.core.utils import (
     mask_luar_box_utama,
     tulis_teks_di_balon,
 )
-from cypy.core.yolo_onnx import YOLOONNX
-
+from app.detection import Detection, DetectionLabel, get_text_region_detector
 from app.pipeline.text_style_detection import detect_text_style
 from app.pipeline.inpainting import create_inpainted_image
 
-
-_yolo_lock = threading.Lock()
 
 DEFAULT_RESPONSE_FONT_SIZE = 36
 DEFAULT_RESPONSE_FONT_FAMILY = "WildWords"
@@ -68,14 +64,6 @@ def download_image(image_url: str, workdir: Path) -> Path:
     image_path.write_bytes(response.content)
 
     return image_path
-
-
-@lru_cache(maxsize=1)
-def get_yolo_model() -> YOLOONNX:
-    if not os.path.exists(config.MODEL_YOLO):
-        raise FileNotFoundError(f"YOLO model not found: {config.MODEL_YOLO}")
-
-    return YOLOONNX(config.MODEL_YOLO)
 
 
 def get_llm_provider(provider_name: str):
@@ -272,6 +260,86 @@ def is_reasonable_text_or_bubble_box(
         return False
 
     return True
+
+
+def is_reasonable_model_detection_box(
+    box: list[int],
+    image_width: int,
+    image_height: int,
+) -> bool:
+    """Applies broad safety limits without rejecting valid vertical comic text."""
+    x1, y1, x2, y2 = box
+    width = max(1, x2 - x1)
+    height = max(1, y2 - y1)
+    width_ratio = width / max(1, image_width)
+    height_ratio = height / max(1, image_height)
+    area_ratio = (width * height) / max(1, image_width * image_height)
+    aspect_ratio = width / max(1, height)
+
+    if width < 8 or height < 8:
+        return False
+
+    if width_ratio >= 0.96 or height_ratio >= 0.96 or area_ratio >= 0.35:
+        return False
+
+    return 0.05 <= aspect_ratio <= 20.0
+
+
+def select_model_detection_boxes(
+    detections: list[Detection],
+    image_width: int,
+    image_height: int,
+) -> tuple[list[list[int]], list[list[int]]]:
+    """Pairs text with its bubble and separates trusted text from fallback boxes."""
+    bubbles = [
+        detection
+        for detection in detections
+        if detection.label == DetectionLabel.BUBBLE
+    ]
+    text_detections = [
+        detection
+        for detection in detections
+        if detection.label in {DetectionLabel.TEXT_BUBBLE, DetectionLabel.TEXT_FREE}
+    ]
+    matched_bubble_indexes: set[int] = set()
+    trusted_boxes: list[list[int]] = []
+
+    for text_detection in text_detections:
+        text_box = text_detection.box.to_xyxy()
+        selected_box = text_box
+
+        if text_detection.label == DetectionLabel.TEXT_BUBBLE:
+            center_x, center_y = box_center(text_box)
+            matching_bubbles = [
+                (index, bubble.box.to_xyxy())
+                for index, bubble in enumerate(bubbles)
+                if (
+                    point_inside_box(center_x, center_y, bubble.box.to_xyxy())
+                    or intersection_over_min_area(text_box, bubble.box.to_xyxy()) >= 0.65
+                )
+            ]
+
+            if matching_bubbles:
+                matched_index, selected_box = min(
+                    matching_bubbles,
+                    key=lambda item: box_area(item[1]),
+                )
+                matched_bubble_indexes.add(matched_index)
+
+        if is_reasonable_model_detection_box(
+            selected_box,
+            image_width,
+            image_height,
+        ):
+            trusted_boxes.append(selected_box)
+
+    fallback_bubbles = [
+        bubble.box.to_xyxy()
+        for index, bubble in enumerate(bubbles)
+        if index not in matched_bubble_indexes
+    ]
+
+    return nms_boxes(trusted_boxes, iou_threshold=0.45), fallback_bubbles
 
 
 def expand_box(
@@ -1344,8 +1412,8 @@ def detect_bubble_boxes_opencv(img: np.ndarray) -> list[list[int]]:
 # HYBRID DETECTOR
 # ==========================================================
 
-def detect_bubble_boxes(img: np.ndarray, image_path: str) -> list[list[int]]:
-    yolo_model = get_yolo_model()
+def detect_bubble_boxes(img: np.ndarray) -> list[list[int]]:
+    detector = get_text_region_detector()
 
     image_height, image_width = img.shape[:2]
 
@@ -1360,16 +1428,10 @@ def detect_bubble_boxes(img: np.ndarray, image_path: str) -> list[list[int]]:
     else:
         y_starts = list(range(0, image_height, step))
 
-    prediction_stages = [
-        {"conf": 0.25, "iou": 0.45},
-        {"conf": 0.15, "iou": 0.45},
-        {"conf": 0.08, "iou": 0.45},
-        {"conf": 0.04, "iou": 0.45},
-    ]
+    raw_trusted_boxes: list[list[int]] = []
+    raw_fallback_boxes: list[list[int]] = []
 
-    raw_boxes: list[list[int]] = []
-
-    print(f"[DEBUG] total YOLO slices = {len(y_starts)}", flush=True)
+    print(f"[DEBUG] total detector slices = {len(y_starts)}", flush=True)
 
     for slice_index, y_start in enumerate(y_starts, start=1):
         y_end = min(image_height, y_start + slice_height)
@@ -1378,120 +1440,111 @@ def detect_bubble_boxes(img: np.ndarray, image_path: str) -> list[list[int]]:
         if crop.size == 0:
             continue
 
-        tmp_path = None
+        detections = detector.detect(crop)
+        trusted_local_boxes, fallback_local_boxes = select_model_detection_boxes(
+            detections,
+            image_width,
+            y_end - y_start,
+        )
 
-        try:
-            with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
-                tmp_path = tmp.name
-
-            cv2.imwrite(tmp_path, crop)
-
-            slice_boxes_count = 0
-
-            for stage in prediction_stages:
-                with _yolo_lock:
-                    results = yolo_model.predict(
-                        source=tmp_path,
-                        conf=stage["conf"],
-                        iou=stage["iou"],
-                        verbose=False,
-                    )
-
-                for box in results[0].boxes:
-                    local_raw_box = [int(v) for v in box.xyxy[0]]
-
-                    local_box = normalize_box(
-                        local_raw_box,
-                        image_width,
-                        y_end - y_start,
-                    )
-
-                    if local_box is None:
-                        continue
-
-                    lx1, ly1, lx2, ly2 = local_box
-
-                    global_box = normalize_box(
-                        [lx1, ly1 + y_start, lx2, ly2 + y_start],
-                        image_width,
-                        image_height,
-                    )
-
-                    if global_box is None:
-                        continue
-
-                    raw_boxes.append(global_box)
-                    slice_boxes_count += 1
-
-            if slice_boxes_count > 0:
-                print(
-                    f"[DEBUG] YOLO slice #{slice_index} y={y_start}-{y_end}, "
-                    f"raw boxes={slice_boxes_count}",
-                    flush=True,
+        for local_boxes, destination in (
+            (trusted_local_boxes, raw_trusted_boxes),
+            (fallback_local_boxes, raw_fallback_boxes),
+        ):
+            for raw_local_box in local_boxes:
+                local_box = normalize_box(
+                    raw_local_box,
+                    image_width,
+                    y_end - y_start,
                 )
 
-        finally:
-            if tmp_path and os.path.exists(tmp_path):
-                os.remove(tmp_path)
+                if local_box is None:
+                    continue
 
-    unique_yolo_boxes: list[list[int]] = []
-    seen = set()
+                lx1, ly1, lx2, ly2 = local_box
+                global_box = normalize_box(
+                    [lx1, ly1 + y_start, lx2, ly2 + y_start],
+                    image_width,
+                    image_height,
+                )
 
-    for box in raw_boxes:
-        key = tuple(box)
+                if global_box is not None:
+                    destination.append(global_box)
 
-        if key in seen:
-            continue
+        if detections:
+            label_counts: dict[str, int] = {}
 
-        seen.add(key)
-        unique_yolo_boxes.append(box)
+            for detection in detections:
+                label_counts[detection.label.value] = (
+                    label_counts.get(detection.label.value, 0) + 1
+                )
 
-    yolo_boxes = [
+            print(
+                f"[DEBUG] detector slice #{slice_index} y={y_start}-{y_end}, "
+                f"detections={label_counts}",
+                flush=True,
+            )
+
+    detector_boxes = [
         box
-        for box in unique_yolo_boxes
-        if is_reasonable_text_or_bubble_box(box, image_width, image_height)
+        for box in raw_trusted_boxes
+        if is_reasonable_model_detection_box(box, image_width, image_height)
     ]
 
-    yolo_boxes = nms_boxes(yolo_boxes, iou_threshold=0.45)
-    yolo_boxes.sort(key=lambda b: (b[1], b[0]))
+    detector_boxes = nms_boxes(detector_boxes, iou_threshold=0.45)
+    detector_boxes.sort(key=lambda b: (b[1], b[0]))
 
     print(
-        "[DEBUG] YOLO boxes:",
-        len(yolo_boxes),
-        yolo_boxes[:30],
+        "[DEBUG] trusted model detector boxes:",
+        len(detector_boxes),
+        detector_boxes[:30],
         flush=True,
     )
 
-    opencv_boxes = detect_bubble_boxes_opencv(img)
-    direct_ocr_boxes = detect_text_regions_direct_ocr(img)
-    gemini_boxes = detect_text_regions_gemini(img)
+    legacy_fallback_enabled = (
+        os.getenv("ENABLE_LEGACY_DETECTION_FALLBACK", "false").lower()
+        in {"1", "true", "yes"}
+    )
+
+    if legacy_fallback_enabled or not detector_boxes:
+        opencv_boxes = detect_bubble_boxes_opencv(img)
+        direct_ocr_boxes = detect_text_regions_direct_ocr(img)
+        gemini_boxes = detect_text_regions_gemini(img)
+    else:
+        opencv_boxes = []
+        direct_ocr_boxes = []
+        gemini_boxes = []
+        print(
+            "[DEBUG] legacy detection fallback disabled; using model detections",
+            flush=True,
+        )
 
     print("[DEBUG] OpenCV boxes:", len(opencv_boxes), opencv_boxes[:30], flush=True)
     print("[DEBUG] DirectOCR boxes:", len(direct_ocr_boxes), direct_ocr_boxes[:30], flush=True)
     print("[DEBUG] Gemini boxes:", len(gemini_boxes), gemini_boxes[:30], flush=True)
 
-    boxes = nms_boxes(
-        yolo_boxes + opencv_boxes + direct_ocr_boxes + gemini_boxes,
+    fallback_boxes = nms_boxes(
+        raw_fallback_boxes + opencv_boxes + direct_ocr_boxes + gemini_boxes,
         iou_threshold=0.35,
     )
 
-    boxes = [
+    fallback_boxes = [
         box
-        for box in boxes
+        for box in fallback_boxes
         if is_reasonable_text_or_bubble_box(box, image_width, image_height)
     ]
 
-    boxes = nms_boxes(boxes, iou_threshold=0.35)
-    boxes.sort(key=lambda b: (b[1], b[0]))
+    fallback_boxes = nms_boxes(fallback_boxes, iou_threshold=0.35)
+    fallback_boxes.sort(key=lambda b: (b[1], b[0]))
 
     print(
-        "[DEBUG] final boxes before OCR filter:",
-        len(boxes),
-        boxes[:60],
+        "[DEBUG] fallback boxes before OCR filter:",
+        len(fallback_boxes),
+        fallback_boxes[:60],
         flush=True,
     )
 
-    ocr_filtered_boxes = filter_boxes_by_ocr_text(img, boxes)
+    ocr_filtered_boxes = filter_boxes_by_ocr_text(img, fallback_boxes)
 
     print(
         "[DEBUG] final boxes after OCR filter:",
@@ -1500,16 +1553,19 @@ def detect_bubble_boxes(img: np.ndarray, image_path: str) -> list[list[int]]:
         flush=True,
     )
 
-    if not ocr_filtered_boxes and boxes:
+    if not ocr_filtered_boxes and fallback_boxes:
         print(
-            "[DEBUG] OCR filter removed all boxes, fallback pakai boxes awal",
+            "[DEBUG] OCR filter removed all fallback boxes, using initial fallback",
             flush=True,
         )
-        ocr_filtered_boxes = boxes[: int(os.getenv("MAX_OCR_REGIONS", "18"))]
+        ocr_filtered_boxes = fallback_boxes[: int(os.getenv("MAX_OCR_REGIONS", "18"))]
 
-    save_debug_boxes(img, ocr_filtered_boxes, "debug_boxes.png")
+    final_boxes = nms_boxes(detector_boxes + ocr_filtered_boxes, iou_threshold=0.35)
+    final_boxes.sort(key=lambda box: (box[1], box[0]))
 
-    return ocr_filtered_boxes
+    save_debug_boxes(img, final_boxes, "debug_boxes.png")
+
+    return final_boxes
 
 
 # ==========================================================
@@ -1654,7 +1710,7 @@ def make_region_response(
     image_height: int,
     translated_text: str,
     original_text: str = "",
-    source: str = "hybrid_yolo_opencv_ocr_gemini",
+    source: str = "hybrid_model_opencv_ocr_gemini",
     confidence: float = 0.95,
 ) -> dict:
     bx1, by1, bx2, by2 = bubble_box
@@ -1843,7 +1899,7 @@ def render_translations_to_image(
             image_height=image_height,
             translated_text=translated_text,
             original_text=original_text,
-            source="hybrid_yolo_opencv_ocr_gemini",
+            source="hybrid_model_opencv_ocr_gemini",
             confidence=0.95,
         )
         region.update(
@@ -1969,7 +2025,7 @@ def translate_image_from_path(
         flush=True,
     )
 
-    boxes = detect_bubble_boxes(img, str(image_path))
+    boxes = detect_bubble_boxes(img)
 
     print("[DEBUG] total boxes:", len(boxes), flush=True)
     print("[DEBUG] boxes:", boxes[:40], flush=True)

@@ -17,8 +17,9 @@
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "typecheck:projects": "tsc -b --pretty false",
+    "test": "turbo run test",
     "test:types": "turbo run test:types",
-    "check": "turbo run lint typecheck test:types && pnpm typecheck:projects",
+    "check": "turbo run lint typecheck test test:types && pnpm typecheck:projects",
     "sync:monorepo": "node tooling/sync-monorepo.mjs"
   },
   "devDependencies": {
