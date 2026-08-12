@@ -90,7 +90,7 @@ export default function TranslateSettingsPanel({
                 Translate settings
               </Heading>
               <Text color="var(--editor-muted)" fontSize="xs" mt={1}>
-                Atur model, bahasa, dan tampilan teks hasil translate.
+                Configure the model, language, and translated text appearance.
               </Text>
             </Box>
           </HStack>

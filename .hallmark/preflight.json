@@ -1,0 +1,8 @@
+{
+  "date": "2026-08-12",
+  "framework": "Next.js 16 with Chakra UI",
+  "font_stack": "Geist and system sans",
+  "palette": "Atlas light blue CSS custom properties",
+  "motion": "CSS motion only; no motion library installed",
+  "spacing": "Chakra spacing with Atlas semantic tokens"
+}

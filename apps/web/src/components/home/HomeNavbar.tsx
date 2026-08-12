@@ -2,87 +2,72 @@ import { Box, Button, Container, Flex, HStack, Skeleton, Text } from '@chakra-ui
 import Link from 'next/link';
 import UserMenu from '../shell/UserMenu';
 import type { AuthSession } from '../../lib/auth/useAuthSession';
+import { getLandingPrimaryAction, getLandingSecondaryAction } from './landingActions';
 
 interface HomeNavbarProps {
   readonly session: AuthSession;
 }
 
-const authenticatedLinks = [
-  { href: '/dashboard', label: 'Dashboard' },
-  { href: '/dashboard/images', label: 'Image editor' },
-] as const;
-
 export default function HomeNavbar({ session }: HomeNavbarProps) {
+  const primaryAction = getLandingPrimaryAction(session.status);
+  const secondaryAction = getLandingSecondaryAction(session.status);
+
   return (
     <Box
       as="header"
-      backdropFilter="blur(18px)"
-      bg="var(--atlas-surface)"
-      borderBottomWidth="1px"
-      borderColor="var(--atlas-border)"
+      bg="var(--color-paper)"
+      borderBottom="var(--rule-hairline)"
       position="sticky"
       top={0}
-      zIndex={20}
+      zIndex="var(--z-sticky)"
     >
-      <Container maxW="var(--atlas-container)" px={{ base: 4, md: 6 }} py={3}>
-        <Flex align="center" gap={4} justify="space-between">
-          <HStack asChild className="atlas-focus-ring" gap={3}>
+      <Container maxW="var(--atlas-container)" px={{ base: 4, md: 6 }} py={{ base: 3, md: 4 }}>
+        <Flex align="center" gap={3} justify="space-between">
+          <HStack asChild className="landing-wordmark" gap={3}>
             <Link href="/">
               <Box
                 alignItems="center"
-                bg="var(--atlas-primary)"
-                borderRadius="var(--atlas-radius-sm)"
-                color="white"
+                border="1px solid var(--color-accent)"
+                borderRadius="var(--radius-sm)"
+                color="var(--color-accent-deep)"
                 display="flex"
                 fontSize="sm"
-                fontWeight="900"
+                fontWeight="700"
                 h="2.35rem"
                 justifyContent="center"
-                letterSpacing="-0.04em"
                 w="2.35rem"
               >
                 AS
               </Box>
-              <Box>
-                <Text fontWeight="850" letterSpacing="-0.02em" lineHeight="1">
-                  Atlas Studio
-                </Text>
-                {session.status === 'authenticated' && (
-                  <Text color="var(--atlas-muted)" fontSize="xs" lineHeight="1.35">
-                    Workspace active
-                  </Text>
-                )}
-              </Box>
+              <Text color="var(--color-ink)" fontFamily="var(--font-display)" fontSize="lg" lineHeight="1" whiteSpace="nowrap">
+                Atlas Studio
+              </Text>
             </Link>
           </HStack>
 
-          {session.status === 'authenticated' && (
-            <HStack as="nav" display={{ base: 'none', md: 'flex' }} gap={1}>
-              {authenticatedLinks.map((item) => (
-                <Button asChild key={item.href} size="sm" variant="ghost">
-                  <Link href={item.href}>{item.label}</Link>
-                </Button>
-              ))}
-            </HStack>
-          )}
-
           <HStack gap={2}>
             {session.status === 'checking' && (
-              <Skeleton borderRadius="var(--atlas-radius-sm)" h="2.5rem" w="8rem" />
+              <Skeleton borderRadius="var(--radius-sm)" h="2.5rem" w="8rem" />
             )}
-            {session.status === 'anonymous' && (
+            {session.status !== 'checking' && (
               <>
-                <Button asChild size="sm" variant="ghost">
-                  <Link href="/auth/login">Sign in</Link>
+                <Button
+                  asChild
+                  color="var(--color-ink-soft)"
+                  display={{ base: 'none', sm: 'inline-flex' }}
+                  size="sm"
+                  variant="ghost"
+                >
+                  <Link href={secondaryAction.href}>{secondaryAction.label}</Link>
                 </Button>
                 <Button
                   asChild
-                  className="atlas-button-motion"
-                  color="white"
-                  colorPalette="blue"
+                  bg="var(--color-accent)"
+                  className="landing-primary-action"
+                  color="var(--color-accent-ink)"
                   size="sm"
                 >
-                  <Link href="/auth/register">Register</Link>
+                  <Link href={primaryAction.href}>{primaryAction.label}</Link>
                 </Button>
               </>
             )}

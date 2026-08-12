@@ -135,6 +135,6 @@ export function useJobStatusQuery(jobId: string, enabled: boolean) {
       return json.data as JobDto;
     },
     enabled: enabled && !!jobId,
-    refetchInterval: enabled ? 1500 : false, // Hanya poll jika enabled = true
+    refetchInterval: enabled ? 1500 : false, // Poll only while the query is enabled.
   });
 }

@@ -123,7 +123,7 @@ export default function EditorWorkspacePage() {
   const isTranslatedPreview = previewMode === 'translated' && Boolean(translatedPreviewImageUrl);
   const imageUrl = isTranslatedPreview ? translatedPreviewImageUrl : activePage?.image;
   const jobStatus = isTranslating
-    ? { message: 'AI Worker sedang memproses gambar', progress: 55 }
+    ? { message: 'AI Worker is processing the image', progress: 55 }
     : undefined;
 
   const executeCommand = (command: EditorWorkspaceCommand) => {
@@ -558,10 +558,10 @@ export default function EditorWorkspacePage() {
                     </Box>
                     <Box>
                       <Text color="var(--editor-text)" fontSize="lg" fontWeight="850">
-                        Pilih gambar untuk mulai translate
+                        Select an image to start translating
                       </Text>
                       <Text color="var(--editor-muted)" fontSize="sm" mt={1}>
-                        Gambar hanya disimpan di memori browser selama editor terbuka.
+                        The image remains in browser memory only while the editor is open.
                       </Text>
                       {translationError && (
                         <Text color="var(--atlas-danger)" fontSize="sm">

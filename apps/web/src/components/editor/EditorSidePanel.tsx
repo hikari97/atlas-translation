@@ -406,7 +406,7 @@ function PagesPanel({
           justify="center"
           minH="5rem"
         >
-          <Text>Belum ada halaman.</Text>
+          <Text>No pages added yet.</Text>
         </VStack>
       )}
     </VStack>
@@ -460,7 +460,7 @@ function BubblePanel({
         minH="5.5rem"
         textAlign="center"
       >
-        <Text fontSize="sm">Pilih bubble di preview untuk mengedit teks.</Text>
+        <Text fontSize="sm">Select a bubble in the preview to edit its text.</Text>
       </VStack>
     );
   }
