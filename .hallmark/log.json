@@ -1,6 +1,13 @@
 [
   {
     "date": "2026-08-12",
+    "macrostructure": "Split Studio",
+    "theme": "Newsprint sapphire",
+    "enrichment": "F5 Tier-A CSS proof",
+    "brief": "Luxury landing colour and CTA redesign"
+  },
+  {
+    "date": "2026-08-12",
     "macrostructure": "Workbench",
     "theme": "Atelier",
     "enrichment": "Tier-A CSS UI",

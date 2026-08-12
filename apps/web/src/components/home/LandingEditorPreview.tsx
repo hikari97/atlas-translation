@@ -14,8 +14,8 @@ export default function LandingEditorPreview() {
       aria-label="Preview of the Atlas Studio image localization editor"
       as="figure"
       bg="var(--color-paper-raised)"
-      border="var(--rule-hairline)"
-      borderRadius="var(--radius-xl)"
+      border="var(--rule-ink)"
+      borderRadius="var(--radius-lg)"
       boxShadow="var(--shadow-editor)"
       className="landing-editor-preview"
       m={0}
@@ -74,6 +74,7 @@ export default function LandingEditorPreview() {
         <Box bg="var(--color-paper-soft)" p={{ base: 3, md: 5 }}>
           <Box
             bg="var(--color-paper-blue)"
+            border="var(--rule-hairline)"
             borderRadius="var(--radius-lg)"
             className="landing-comic-canvas"
             h="full"

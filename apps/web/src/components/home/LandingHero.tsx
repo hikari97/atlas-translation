@@ -1,6 +1,5 @@
 import { Box, Button, Container, Flex, Grid, Heading, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import { LuArrowRight } from 'react-icons/lu';
 import type { AuthSession } from '../../lib/auth/useAuthSession';
 import LandingEditorPreview from './LandingEditorPreview';
 import { getLandingPrimaryAction, getLandingSecondaryAction } from './landingActions';
@@ -38,7 +37,7 @@ export default function LandingHero({ session }: LandingHeroProps) {
               minW={0}
               overflowWrap="anywhere"
             >
-              Translate every page. Keep nothing behind.
+              <Box as="span" color="var(--color-accent)">Translate</Box> every page. Keep nothing behind.
             </Heading>
             <Text color="var(--color-muted)" fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.75" maxW="60ch">
               Detect dialogue, remove the original lettering, translate the image with your chosen AI model, and refine every line before downloading the final page.
@@ -50,20 +49,19 @@ export default function LandingHero({ session }: LandingHeroProps) {
                 className="landing-primary-action"
                 color="var(--color-accent-ink)"
                 h="3.25rem"
-                px={6}
+                px={0}
               >
-                <Link href={primaryAction.href}>
-                  {primaryAction.label} <LuArrowRight />
-                </Link>
+                <Link href={primaryAction.href}>{primaryAction.label}</Link>
               </Button>
               <Button
                 asChild
                 borderColor="var(--color-rule-strong)"
                 className="landing-secondary-action"
                 color="var(--color-ink)"
+                alignSelf={{ base: 'center', sm: 'auto' }}
                 h="3.25rem"
-                px={6}
-                variant="outline"
+                px={2}
+                variant="ghost"
               >
                 <Link href={secondaryAction.href}>{secondaryAction.label}</Link>
               </Button>

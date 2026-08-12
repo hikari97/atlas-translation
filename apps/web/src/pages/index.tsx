@@ -8,7 +8,7 @@ export default function HomePage() {
   const session = useAuthSession();
 
   return (
-    <Box bg="var(--color-paper)" className="landing-page" minH="100dvh">
+    <Box className="landing-page" minH="100dvh">
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>

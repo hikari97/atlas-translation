@@ -15,14 +15,13 @@ export default function HomeNavbar({ session }: HomeNavbarProps) {
   return (
     <Box
       as="header"
-      bg="var(--color-paper)"
-      borderBottom="var(--rule-hairline)"
+      bg="transparent"
       position="sticky"
       top={0}
       zIndex="var(--z-sticky)"
     >
-      <Container maxW="var(--atlas-container)" px={{ base: 4, md: 6 }} py={{ base: 3, md: 4 }}>
-        <Flex align="center" gap={3} justify="space-between">
+      <Container maxW="var(--atlas-container)" px={{ base: 3, md: 6 }} py={{ base: 3, md: 4 }}>
+        <Flex align="center" className="landing-nav-shell" gap={{ base: 2, md: 4 }} justify="space-between" minH="4rem" px={{ base: 3, md: 5 }}>
           <HStack asChild className="landing-wordmark" gap={3}>
             <Link href="/">
               <Box
@@ -39,10 +38,15 @@ export default function HomeNavbar({ session }: HomeNavbarProps) {
               >
                 AS
               </Box>
-              <Text color="var(--color-ink)" fontFamily="var(--font-display)" fontSize="lg" lineHeight="1" whiteSpace="nowrap">
+              <Text color="var(--color-ink)" display={{ base: 'none', sm: 'block' }} fontFamily="var(--font-display)" fontSize="lg" lineHeight="1" whiteSpace="nowrap">
                 Atlas Studio
               </Text>
             </Link>
+          </HStack>
+
+          <HStack as="nav" display={{ base: 'none', lg: 'flex' }} gap={6}>
+            <Link className="landing-nav-link" href="#workflow">Process</Link>
+            <Link className="landing-nav-link" href="#privacy">Privacy</Link>
           </HStack>
 
           <HStack gap={2}>
@@ -55,6 +59,7 @@ export default function HomeNavbar({ session }: HomeNavbarProps) {
                   asChild
                   color="var(--color-ink-soft)"
                   display={{ base: 'none', sm: 'inline-flex' }}
+                  px={2}
                   size="sm"
                   variant="ghost"
                 >
@@ -65,6 +70,7 @@ export default function HomeNavbar({ session }: HomeNavbarProps) {
                   bg="var(--color-accent)"
                   className="landing-primary-action"
                   color="var(--color-accent-ink)"
+                  px={0}
                   size="sm"
                 >
                   <Link href={primaryAction.href}>{primaryAction.label}</Link>

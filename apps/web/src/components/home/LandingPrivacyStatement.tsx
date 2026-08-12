@@ -1,6 +1,6 @@
 import { Box, Button, Container, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import { LuArrowRight, LuLockKeyhole } from 'react-icons/lu';
+import { LuLockKeyhole } from 'react-icons/lu';
 import type { AuthSession } from '../../lib/auth/useAuthSession';
 import { getLandingPrimaryAction } from './landingActions';
 
@@ -12,7 +12,7 @@ export default function LandingPrivacyStatement({ session }: LandingPrivacyState
   const primaryAction = getLandingPrimaryAction(session.status);
 
   return (
-    <Box as="section" py={{ base: 20, md: 32 }}>
+    <Box as="section" bg="var(--color-paper-raised)" borderTop="var(--rule-ink)" id="privacy" py={{ base: 20, md: 32 }}>
       <Container maxW="var(--atlas-container)" px={{ base: 4, md: 6 }}>
         <Flex align={{ base: 'flex-start', lg: 'flex-end' }} direction={{ base: 'column', lg: 'row' }} gap={{ base: 10, lg: 16 }} justify="space-between">
           <VStack align="flex-start" gap={6} maxW="52rem">
@@ -29,6 +29,8 @@ export default function LandingPrivacyStatement({ session }: LandingPrivacyState
               letterSpacing="-0.04em"
               lineHeight="1.03"
               maxW="18ch"
+              minW={0}
+              overflowWrap="anywhere"
             >
               Your image is a session, not an archive.
             </Heading>
@@ -44,11 +46,9 @@ export default function LandingPrivacyStatement({ session }: LandingPrivacyState
             color="var(--color-accent-ink)"
             flexShrink={0}
             h="3.5rem"
-            px={7}
+            px={0}
           >
-            <Link href={primaryAction.href}>
-              {primaryAction.label} <LuArrowRight />
-            </Link>
+            <Link href={primaryAction.href}>{primaryAction.label}</Link>
           </Button>
         </Flex>
       </Container>

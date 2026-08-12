@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Heading, HStack, Text } from '@chakra-ui/react';
+import { Box, Container, Grid, Heading, HStack, Text, VStack } from '@chakra-ui/react';
 import { LuDownload, LuLanguages, LuScanText, LuWandSparkles } from 'react-icons/lu';
 
 const workflow = [
@@ -46,6 +46,8 @@ export default function LandingWorkbench() {
                 letterSpacing="-0.035em"
                 lineHeight="1.05"
                 maxW="12ch"
+                minW={0}
+                overflowWrap="anywhere"
               >
                 One page in. One finished page out.
               </Heading>
@@ -63,23 +65,25 @@ export default function LandingWorkbench() {
                     alignItems="start"
                     as="li"
                     borderBottom="var(--rule-hairline)"
-                    gap={{ base: 4, md: 7 }}
+                    gap={{ base: 5, md: 8 }}
                     key={step.title}
                     py={{ base: 6, md: 8 }}
-                    templateColumns={{ base: '2.5rem minmax(0, 1fr)', md: '3.5rem minmax(10rem, 0.7fr) minmax(0, 1.3fr)' }}
+                    templateColumns={{ base: 'minmax(0, 1fr)', md: 'minmax(12rem, 0.75fr) minmax(0, 1.25fr)' }}
                   >
-                    <Text color="var(--color-accent-deep)" fontSize="sm" fontVariantNumeric="tabular-nums" pt={1}>
-                      {String(index + 1).padStart(2, '0')}
-                    </Text>
-                    <HStack align="flex-start" color="var(--color-ink)" gap={3}>
-                      <Box color="var(--color-accent-deep)" flexShrink={0} mt={1}>
-                        <Icon size={18} />
-                      </Box>
-                      <Heading as="h3" fontFamily="var(--font-display)" fontSize="var(--text-lg)" fontStyle="normal" fontWeight="400" lineHeight="1.15">
-                        {step.title}
-                      </Heading>
-                    </HStack>
-                    <Text color="var(--color-muted)" gridColumn={{ base: '2', md: 'auto' }} lineHeight="1.7" maxW="68ch">
+                    <VStack align="flex-start" gap={3} minW={0}>
+                      <Text color="var(--color-accent-deep)" fontSize="sm" fontVariantNumeric="tabular-nums">
+                        {String(index + 1).padStart(2, '0')}
+                      </Text>
+                      <HStack align="flex-start" color="var(--color-ink)" gap={3}>
+                        <Box color="var(--color-accent-deep)" flexShrink={0} mt={1}>
+                          <Icon size={18} />
+                        </Box>
+                        <Heading as="h3" fontFamily="var(--font-display)" fontSize="var(--text-lg)" fontStyle="normal" fontWeight="400" lineHeight="1.15">
+                          {step.title}
+                        </Heading>
+                      </HStack>
+                    </VStack>
+                    <Text color="var(--color-muted)" lineHeight="1.7" maxW="68ch">
                       {step.description}
                     </Text>
                   </Grid>
@@ -90,7 +94,7 @@ export default function LandingWorkbench() {
         </Container>
       </Box>
 
-      <Box as="section" bg="var(--color-ink)" color="var(--color-accent-ink)" py={{ base: 16, md: 20 }}>
+      <Box as="section" bg="var(--color-paper-blue)" borderBottom="var(--rule-accent)" borderTop="var(--rule-accent)" color="var(--color-ink)" py={{ base: 16, md: 20 }}>
         <Container maxW="var(--atlas-container)" px={{ base: 4, md: 6 }}>
           <Grid
             alignItems="end"
@@ -106,24 +110,26 @@ export default function LandingWorkbench() {
               letterSpacing="-0.035em"
               lineHeight="1.05"
               maxW="17ch"
+              minW={0}
+              overflowWrap="anywhere"
             >
               Choose the image intelligence that suits the page.
             </Heading>
-            <Text color="var(--color-rule)" lineHeight="1.7" maxW="56ch">
+            <Text color="var(--color-muted)" lineHeight="1.7" maxW="56ch">
               Gemini can run through the configured direct provider. OpenAI and Grok image models are available through the provider interface.
             </Text>
           </Grid>
           <Grid
-            borderBottom="var(--rule-dark)"
-            borderTop="var(--rule-dark)"
+            borderBottom="var(--rule-accent)"
+            borderTop="var(--rule-accent)"
             gap={0}
             mt={{ base: 10, md: 14 }}
             templateColumns={{ base: 'minmax(0, 1fr)', md: 'repeat(3, minmax(0, 1fr))' }}
           >
             {models.map((model) => (
               <Box
-                borderBottom={{ base: 'var(--rule-dark)', md: 'none' }}
-                borderRight={{ base: 'none', md: 'var(--rule-dark)' }}
+                borderBottom={{ base: 'var(--rule-accent)', md: 'none' }}
+                borderRight={{ base: 'none', md: 'var(--rule-accent)' }}
                 key={model}
                 py={6}
                 px={{ base: 0, md: 6 }}
