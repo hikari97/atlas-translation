@@ -4,6 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const { getMongoDbUri } = require('./src/config/database');
+
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -26,7 +28,7 @@ const errorHandler = require('./src/middleware/errorHandler');
 app.use(errorHandler);
 
 mongoose
-  .connect(process.env.MONGO_URI || 'mongodb://localhost:27017/atlas-studio')
+  .connect(getMongoDbUri())
   .then(() => {
     console.log('✅ Connected to MongoDB');
     app.listen(port, () => {

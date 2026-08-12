@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
-    "typecheck": "node --check app.js"
+    "typecheck": "node --check app.js && node --check src/config/database.js",
+    "test": "node --test test/*.test.js"
   },
   "engines": {
     "node": ">=18.17.0"
