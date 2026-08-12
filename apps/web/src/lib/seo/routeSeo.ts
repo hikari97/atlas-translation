@@ -17,7 +17,7 @@ const routeSeo: Readonly<Record<string, RouteSeoConfig>> = {
     description:
       'Translate manga, comics, and webtoons with AI-powered text detection, clean inpainting, editable lettering, and instant image downloads.',
     noIndex: false,
-    title: 'AI Comic & Manga Translator | Atlas Studio',
+    title: 'Image Translation | Atlas Studio',
   },
   '/404': privateRoute('Page Not Found | Atlas Studio'),
   '/500': privateRoute('Server Error | Atlas Studio'),

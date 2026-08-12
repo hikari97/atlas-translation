@@ -60,7 +60,7 @@ export default function PageSeo({ pathname }: PageSeoProps) {
       <meta content={config.description} key="og:description" property="og:description" />
       <meta content={socialImageUrl} key="og:image" property="og:image" />
       <meta content="630" key="og:image:height" property="og:image:height" />
-      <meta content="Atlas Studio AI comic localization editor" key="og:image:alt" property="og:image:alt" />
+      <meta content="Atlas Studio image translation editor" key="og:image:alt" property="og:image:alt" />
       <meta content="1200" key="og:image:width" property="og:image:width" />
       <meta content="en_US" key="og:locale" property="og:locale" />
       <meta content={SITE_NAME} key="og:site_name" property="og:site_name" />
@@ -71,7 +71,7 @@ export default function PageSeo({ pathname }: PageSeoProps) {
       <meta content="summary_large_image" key="twitter:card" name="twitter:card" />
       <meta content={config.description} key="twitter:description" name="twitter:description" />
       <meta content={socialImageUrl} key="twitter:image" name="twitter:image" />
-      <meta content="Atlas Studio AI comic localization editor" key="twitter:image:alt" name="twitter:image:alt" />
+      <meta content="Atlas Studio image translation editor" key="twitter:image:alt" name="twitter:image:alt" />
       <meta content={config.title} key="twitter:title" name="twitter:title" />
 
       {structuredData && (
