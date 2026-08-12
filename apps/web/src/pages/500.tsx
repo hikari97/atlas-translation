@@ -10,7 +10,7 @@ export default function ServerError() {
           <Text color="var(--atlas-danger)" fontWeight="850" letterSpacing="0.12em">
             500
           </Text>
-          <Heading fontSize="3xl" letterSpacing="-0.04em">
+          <Heading as="h1" fontSize="3xl" letterSpacing="-0.04em">
             Server error
           </Heading>
           <Text color="var(--atlas-muted)" lineHeight="1.7">

@@ -10,7 +10,7 @@ export default function NotFound() {
           <Text color="var(--atlas-primary)" fontWeight="850" letterSpacing="0.12em">
             404
           </Text>
-          <Heading fontSize="3xl" letterSpacing="-0.04em">
+          <Heading as="h1" fontSize="3xl" letterSpacing="-0.04em">
             Page not found
           </Heading>
           <Text color="var(--atlas-muted)" lineHeight="1.7">

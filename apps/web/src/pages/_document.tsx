@@ -7,16 +7,10 @@ export default function Document() {
       suppressHydrationWarning
     >
       <Head>
-        <meta
-          name="description"
-          content="Atlas Studio is an AI comic localization workspace for OCR, translation, editing, and export."
-        />
         <meta name="theme-color" content="#2563eb" />
-        <meta property="og:title" content="Atlas Studio" />
-        <meta
-          property="og:description"
-          content="A production workspace for AI-assisted comic localization."
-        />
+        <meta name="color-scheme" content="light" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <body className="antialiased">
         <Main />

@@ -8,6 +8,7 @@ import { queryClient } from '../lib/data/queryClient';
 import { ErrorBoundary } from '../components/ErrorBoundary';
 import AppLayout from '../components/shell/AppLayout';
 import { Provider as ChakraRootProvider } from '../components/ui/provider';
+import PageSeo from '../components/seo/PageSeo';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ErrorBoundary>
+      <PageSeo pathname={router.pathname} />
       <ReduxProvider store={store}>
         <QueryClientProvider client={queryClient}>
           <ChakraRootProvider defaultTheme="light" enableSystem={false} forcedTheme="light">

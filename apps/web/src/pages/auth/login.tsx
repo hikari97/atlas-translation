@@ -85,6 +85,7 @@ export default function LoginPage() {
             </Box>
             <Box>
               <Heading
+                as="h1"
                 color="var(--atlas-foreground)"
                 fontSize={{ base: '2rem', md: '2.5rem' }}
                 fontWeight="850"

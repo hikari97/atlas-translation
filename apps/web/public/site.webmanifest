@@ -1,0 +1,9 @@
+{
+  "name": "Atlas Studio",
+  "short_name": "Atlas Studio",
+  "description": "AI-powered manga, comic, and image translation platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f9fe",
+  "theme_color": "#2563eb"
+}

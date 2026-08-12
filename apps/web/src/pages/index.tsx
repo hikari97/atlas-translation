@@ -1,7 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
-import Head from 'next/head';
 import AuthenticatedHomeContent from '../components/home/AuthenticatedHomeContent';
-import HomeLoadingState from '../components/home/HomeLoadingState';
 import HomeNavbar from '../components/home/HomeNavbar';
 import PublicLandingContent from '../components/home/PublicLandingContent';
 import { useAuthSession } from '../lib/auth/useAuthSession';
@@ -12,22 +10,13 @@ export default function HomePage() {
 
   return (
     <Box minH="100dvh">
-      <Head>
-        <title>{isAuthenticated ? 'Home · Atlas Studio' : 'Atlas Studio · AI comic localization'}</title>
-        <meta
-          content="Translate comic and manga images, generate clean artwork, edit text, and download the result from one focused workspace."
-          name="description"
-        />
-      </Head>
-
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
       <HomeNavbar session={session} />
 
       <Box as="main" id="main-content">
-        {session.status === 'checking' && <HomeLoadingState />}
-        {session.status === 'anonymous' && <PublicLandingContent />}
+        {session.status !== 'authenticated' && <PublicLandingContent />}
         {isAuthenticated && <AuthenticatedHomeContent profile={session.profile} />}
       </Box>
 

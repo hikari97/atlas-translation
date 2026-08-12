@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Box, Button, Flex, Grid, Heading, HStack, Text, VStack } from '@chakra-ui/react';
@@ -24,16 +23,7 @@ export default function DashboardPage() {
   }, [router]);
 
   return (
-    <>
-      <Head>
-        <title>Dashboard · Atlas Studio</title>
-        <meta
-          content="View your Atlas Studio profile, credit balance, and available comic localization tools."
-          name="description"
-        />
-      </Head>
-
-      <VStack align="stretch" gap={{ base: 7, md: 9 }}>
+    <VStack align="stretch" gap={{ base: 7, md: 9 }}>
         <Flex
           align={{ base: 'flex-start', md: 'flex-end' }}
           direction={{ base: 'column', md: 'row' }}
@@ -146,7 +136,6 @@ export default function DashboardPage() {
             <Link href="/dashboard/images">Start a session</Link>
           </Button>
         </Surface>
-      </VStack>
-    </>
+    </VStack>
   );
 }

@@ -223,7 +223,12 @@ Buat `apps/web/.env.local` dengan isi berikut:
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
+
+Pada production, `NEXT_PUBLIC_SITE_URL` wajib berisi origin publik tanpa trailing
+slash, misalnya `https://atlas.example.com`. Nilai ini digunakan untuk canonical
+URL, Open Graph, structured data, dan sitemap.
 
 Kemudian atur `apps/api/.env`:
 

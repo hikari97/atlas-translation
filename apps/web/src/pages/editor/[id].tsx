@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import {
   Box,
@@ -346,10 +345,6 @@ export default function EditorWorkspacePage() {
       h="100dvh"
       overflow="hidden"
     >
-      <Head>
-        <title>Atlas AI Translator</title>
-      </Head>
-
       <Flex
         as="header"
         align={{ base: 'stretch', md: 'center' }}
@@ -380,7 +375,7 @@ export default function EditorWorkspacePage() {
             AT
           </Box>
           <Box minW={0}>
-            <Heading color="var(--editor-text)" fontSize={{ base: 'xl', md: '2xl' }} letterSpacing="-0.04em" lineHeight="1">
+            <Heading as="h1" color="var(--editor-text)" fontSize={{ base: 'xl', md: '2xl' }} letterSpacing="-0.04em" lineHeight="1">
               Atlas AI Translator
             </Heading>
             <Text color="var(--editor-muted)" fontSize="sm" lineClamp={1} mt={1}>

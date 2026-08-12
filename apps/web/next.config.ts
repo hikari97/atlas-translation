@@ -17,6 +17,26 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: monorepoRoot,
   },
+  async headers() {
+    return [
+      {
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }],
+        source: '/auth/:path*',
+      },
+      {
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }],
+        source: '/dashboard/:path*',
+      },
+      {
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }],
+        source: '/editor/:path*',
+      },
+      {
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }],
+        source: '/api/:path*',
+      },
+    ];
+  },
   async redirects() {
     return [
       ...legacyDashboardRoutes.map((source) => ({
