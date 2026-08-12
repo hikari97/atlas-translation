@@ -31,7 +31,8 @@ def build_translation_prompt(
     language_name = get_language_name(request.target_language)
     source_language = request.source_language or "the detected source language"
     metadata_instruction = (
-        "After generating the image, respond with only this valid JSON object, without markdown: "
+        "Return both the edited image and a text response. The text response must contain only "
+        "this valid JSON object, without markdown: "
         '{"context":"short processing summary","text":[{"x":0.0,"y":0.0,'
         '"width":0.0,"height":0.0,"text":"translated string",'
         '"originalText":"source string","textAlign":"center",'

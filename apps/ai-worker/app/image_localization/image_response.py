@@ -1,4 +1,4 @@
-"""Validation and normalization of image data returned by OpenRouter."""
+"""Validation and normalization of image data returned by image providers."""
 
 from __future__ import annotations
 
@@ -151,7 +151,7 @@ def normalize_image_bytes(image_bytes: bytes) -> tuple[str, ImageSize]:
             output = io.BytesIO()
             normalized_image.save(output, format="PNG")
     except (UnidentifiedImageError, OSError) as exc:
-        raise RuntimeError("OpenRouter returned an unreadable generated image.") from exc
+        raise RuntimeError("The image provider returned an unreadable generated image.") from exc
 
     encoded_image = base64.b64encode(output.getvalue()).decode("ascii")
     return f"data:image/png;base64,{encoded_image}", image_size

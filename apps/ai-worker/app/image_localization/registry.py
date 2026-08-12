@@ -4,11 +4,17 @@ from __future__ import annotations
 
 from collections.abc import Callable
 
+from app.image_localization.gemini import GeminiImageLocalizationProvider
 from app.image_localization.openrouter import OpenRouterImageLocalizationProvider
 from app.image_localization.provider import ImageLocalizationProvider
 
 
 ProviderFactory = Callable[[], ImageLocalizationProvider]
+
+
+def create_gemini_provider() -> ImageLocalizationProvider:
+    """Creates the direct Gemini provider using the worker environment."""
+    return GeminiImageLocalizationProvider.from_environment()
 
 
 def create_openrouter_provider() -> ImageLocalizationProvider:
@@ -17,6 +23,7 @@ def create_openrouter_provider() -> ImageLocalizationProvider:
 
 
 IMAGE_LOCALIZATION_PROVIDERS: dict[str, ProviderFactory] = {
+    "gemini": create_gemini_provider,
     "openrouter": create_openrouter_provider,
 }
 

@@ -253,7 +253,8 @@ Gemini langsung:
 ```env
 LLM_PROVIDER=gemini
 GEMINI_API_KEY=your-gemini-api-key
-MODEL_GEMINI=gemini-3.1-flash-lite
+MODEL_GEMINI=gemini-3.1-flash-lite-image
+GEMINI_IMAGE_TIMEOUT_SECONDS=240
 ```
 
 OpenRouter:

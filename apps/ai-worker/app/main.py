@@ -5,10 +5,7 @@ from app.image_localization import (
     ImageLocalizationRequest,
     create_image_localization_provider,
 )
-from app.image_localization.direct_provider import resolve_direct_provider
 from app.pipeline.image_translation import (
-    build_stateless_translation_response,
-    translate_image_bytes,
     translate_image_from_url,
 )
 
@@ -60,34 +57,18 @@ async def translate_uploaded_image(
         if not image_bytes:
             raise ValueError("Uploaded image is empty.")
 
-        if provider.strip().lower() == "openrouter":
-            localization_provider = create_image_localization_provider(provider)
-            localization_result = localization_provider.localize(
-                ImageLocalizationRequest(
-                    image_bytes=image_bytes,
-                    mime_type=image.content_type or "image/png",
-                    model=model,
-                    source_language=source_language,
-                    target_language=target_language,
-                    context=context,
-                )
+        localization_provider = create_image_localization_provider(provider)
+        localization_result = localization_provider.localize(
+            ImageLocalizationRequest(
+                image_bytes=image_bytes,
+                mime_type=image.content_type or "image/png",
+                model=model,
+                source_language=source_language,
+                target_language=target_language,
+                context=context,
             )
-            return localization_result.to_public_contract()
-
-        direct_provider = resolve_direct_provider(provider)
-        result = translate_image_bytes(
-            image_bytes=image_bytes,
-            filename=image.filename or "image.png",
-            target_language=target_language,
-            source_language=source_language,
-            provider=direct_provider,
-            render=render,
         )
-        return build_stateless_translation_response(
-            result=result,
-            target_language=target_language,
-            context=context,
-        )
+        return localization_result.to_public_contract()
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
     except Exception as exc:
