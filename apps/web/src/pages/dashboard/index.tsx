@@ -8,13 +8,14 @@ import CreditBalanceCard from '../../components/dashboard/CreditBalanceCard';
 import ImageEditorLaunchCard from '../../components/dashboard/ImageEditorLaunchCard';
 import ProfileOverviewCard from '../../components/dashboard/ProfileOverviewCard';
 import Surface from '../../components/ui/Surface';
+import { getProfileFirstName } from '../../lib/auth/profilePresentation';
 import { useAuthProfileQuery } from '../../lib/data/authProfile';
 
 export default function DashboardPage() {
   const router = useRouter();
   const profileQuery = useAuthProfileQuery();
   const profile = profileQuery.data;
-  const firstName = profile?.name.split(/\s+/)[0] || 'there';
+  const firstName = getProfileFirstName(profile?.name);
 
   useEffect(() => {
     if (router.isReady && !localStorage.getItem('token')) {

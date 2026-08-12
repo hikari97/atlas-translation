@@ -1,20 +1,12 @@
 import { Box, HStack, Skeleton, Text, VStack } from '@chakra-ui/react';
 import { LuBadgeCheck, LuMail } from 'react-icons/lu';
 import type { AuthProfile } from '../../lib/data/authProfile';
+import { getProfileInitials } from '../../lib/auth/profilePresentation';
 import Surface from '../ui/Surface';
 
 interface ProfileOverviewCardProps {
   readonly isLoading: boolean;
   readonly profile: AuthProfile | undefined;
-}
-
-function getInitials(name: string): string {
-  return name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase())
-    .join('') || 'AS';
 }
 
 export default function ProfileOverviewCard({
@@ -62,7 +54,7 @@ export default function ProfileOverviewCard({
           letterSpacing="-0.04em"
           w="4rem"
         >
-          {getInitials(profile?.name || 'Atlas Studio')}
+          {getProfileInitials(profile?.name || 'Atlas Studio')}
         </Box>
         <VStack align="flex-start" flex="1" gap={1} minW={0}>
           {isLoading && !profile ? (

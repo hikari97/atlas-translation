@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { isActiveNavigationItem, navigationItems } from './navigation';
 import UserMenu from './UserMenu';
+import { useAuthSession } from '../../lib/auth/useAuthSession';
 
 export default function Topbar() {
   const router = useRouter();
+  const session = useAuthSession();
 
   return (
     <Box
@@ -61,7 +63,7 @@ export default function Topbar() {
           </Link>
         </HStack>
         <HStack gap={2}>
-          <UserMenu />
+          <UserMenu profile={session.profile} />
         </HStack>
       </Flex>
       <HStack

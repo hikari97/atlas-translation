@@ -18,7 +18,7 @@ interface ProfileResponse {
   readonly success?: unknown;
 }
 
-function isAuthProfile(value: unknown): value is AuthProfile {
+export function isAuthProfile(value: unknown): value is AuthProfile {
   if (!value || typeof value !== 'object') {
     return false;
   }
@@ -31,6 +31,30 @@ function isAuthProfile(value: unknown): value is AuthProfile {
 
 function getToken(): string {
   return typeof window === 'undefined' ? '' : localStorage.getItem('token') || '';
+}
+
+/** Returns the locally cached profile when it matches the public auth contract. */
+export function getStoredAuthProfile(): AuthProfile | undefined {
+  if (typeof window === 'undefined') {
+    return undefined;
+  }
+
+  const storedProfile = localStorage.getItem('user');
+  if (!storedProfile) {
+    return undefined;
+  }
+
+  try {
+    const parsedProfile: unknown = JSON.parse(storedProfile);
+    return isAuthProfile(parsedProfile) ? parsedProfile : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/** Reports whether the browser currently has an authentication token. */
+export function hasStoredAuthToken(): boolean {
+  return typeof window !== 'undefined' && Boolean(getToken());
 }
 
 async function fetchAuthProfile(): Promise<AuthProfile> {
