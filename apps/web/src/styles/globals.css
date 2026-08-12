@@ -112,33 +112,30 @@ body {
 
 .landing-primary-action {
   border: var(--rule-accent);
-  border-radius: var(--radius-sm);
-  gap: 0;
-  overflow: hidden;
-  padding-inline: var(--space-lg) 0;
+  border-radius: var(--radius-md);
+  box-shadow:
+    inset 0 1px 0 var(--color-action-highlight),
+    var(--shadow-action);
+  gap: var(--space-sm);
+  justify-content: center;
+  padding-inline: var(--space-md);
   transition:
     background-color var(--dur-short) var(--ease-out),
+    box-shadow var(--dur-micro) var(--ease-out),
     transform var(--dur-micro) var(--ease-out);
 }
 
-.landing-primary-action:hover {
-  background: var(--color-accent-deep);
+@media (hover: hover) and (pointer: fine) {
+  .landing-primary-action:hover {
+    background: var(--color-accent-deep);
+  }
 }
 
 .landing-primary-action:active {
-  transform: translateY(1px);
-}
-
-.landing-primary-action::after {
-  align-items: center;
-  align-self: stretch;
-  border-inline-start: 1px solid color-mix(in oklch, var(--color-accent-ink) 32%, transparent);
-  content: "↗";
-  display: flex;
-  font-size: 1rem;
-  justify-content: center;
-  margin-inline-start: var(--space-lg);
-  min-width: 3rem;
+  box-shadow:
+    inset 0 1px 0 var(--color-action-highlight),
+    var(--shadow-action-pressed);
+  transform: translateY(0.1875rem);
 }
 
 .landing-primary-action:disabled,
@@ -146,6 +143,27 @@ body {
   cursor: not-allowed;
   opacity: 0.55;
   transform: none;
+}
+
+.landing-primary-action[aria-busy="true"],
+.landing-primary-action[data-state="loading"] {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.landing-primary-action[data-state="error"] {
+  background: var(--color-action-error);
+  border-color: var(--color-action-error);
+  text-decoration: underline;
+  text-underline-offset: var(--space-3xs);
+}
+
+.landing-primary-action[data-state="success"] {
+  background: var(--color-action-success);
+  border-color: var(--color-action-success);
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-underline-offset: var(--space-3xs);
 }
 
 .landing-secondary-action {

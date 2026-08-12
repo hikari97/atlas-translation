@@ -1,5 +1,6 @@
 import { Box, Button, Container, Flex, HStack, Skeleton, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import { LuArrowUpRight } from 'react-icons/lu';
 import UserMenu from '../shell/UserMenu';
 import type { AuthSession } from '../../lib/auth/useAuthSession';
 import { getLandingPrimaryAction, getLandingSecondaryAction } from './landingActions';
@@ -70,10 +71,13 @@ export default function HomeNavbar({ session }: HomeNavbarProps) {
                   bg="var(--color-accent)"
                   className="landing-primary-action"
                   color="var(--color-accent-ink)"
-                  px={0}
+                  minH="2.75rem"
                   size="sm"
                 >
-                  <Link href={primaryAction.href}>{primaryAction.label}</Link>
+                  <Link href={primaryAction.href}>
+                    {primaryAction.label}
+                    <LuArrowUpRight aria-hidden="true" size={14} strokeWidth={1.75} />
+                  </Link>
                 </Button>
               </>
             )}

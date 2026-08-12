@@ -1,6 +1,6 @@
 import { Box, Button, Container, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import { LuLockKeyhole } from 'react-icons/lu';
+import { LuArrowUpRight, LuLockKeyhole } from 'react-icons/lu';
 import type { AuthSession } from '../../lib/auth/useAuthSession';
 import { getLandingPrimaryAction } from './landingActions';
 
@@ -46,9 +46,11 @@ export default function LandingPrivacyStatement({ session }: LandingPrivacyState
             color="var(--color-accent-ink)"
             flexShrink={0}
             h="3.5rem"
-            px={0}
           >
-            <Link href={primaryAction.href}>{primaryAction.label}</Link>
+            <Link href={primaryAction.href}>
+              {primaryAction.label}
+              <LuArrowUpRight aria-hidden="true" size={16} strokeWidth={1.75} />
+            </Link>
           </Button>
         </Flex>
       </Container>

@@ -1,5 +1,6 @@
 import { Box, Button, Container, Flex, Grid, Heading, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
+import { LuArrowUpRight } from 'react-icons/lu';
 import type { AuthSession } from '../../lib/auth/useAuthSession';
 import LandingEditorPreview from './LandingEditorPreview';
 import { getLandingPrimaryAction, getLandingSecondaryAction } from './landingActions';
@@ -49,9 +50,11 @@ export default function LandingHero({ session }: LandingHeroProps) {
                 className="landing-primary-action"
                 color="var(--color-accent-ink)"
                 h="3.25rem"
-                px={0}
               >
-                <Link href={primaryAction.href}>{primaryAction.label}</Link>
+                <Link href={primaryAction.href}>
+                  {primaryAction.label}
+                  <LuArrowUpRight aria-hidden="true" size={16} strokeWidth={1.75} />
+                </Link>
               </Button>
               <Button
                 asChild
