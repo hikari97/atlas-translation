@@ -4,7 +4,7 @@ description: AI-powered manga, comic, and image translation platform
 version: 0.1.0
 status: Development
 owner: H.Makki
-last_updated: 2026-07-01
+last_updated: 2026-08-12
 ---
 
 ---
@@ -133,53 +133,225 @@ atlas-image-translate/
 
 ---
 
-## Monorepo Development
+## Installation
 
-Atlas Studio uses pnpm workspaces for dependency linking, Turborepo for task
-orchestration, and TypeScript Project References for package build order.
+Jalankan seluruh perintah pada bagian ini dari root repository. Atlas Studio
+menggunakan pnpm workspaces, Turborepo, dan virtual environment Python terpisah
+untuk AI worker.
 
-Requirements:
+### 1. Prasyarat
 
-- Node.js 22 or newer
-- pnpm 11.4 or newer
-- Python 3.12 for `apps/ai-worker`
+Pastikan perangkat memiliki:
 
-Install every JavaScript and TypeScript workspace from the repository root:
+- Git
+- Node.js 22 atau lebih baru
+- Corepack dan pnpm 11.4.0
+- Python 3.12
+- MongoDB lokal atau MongoDB Atlas
+- Tesseract OCR
+- API key Gemini atau OpenRouter
+- Koneksi internet saat instalasi dan pemrosesan gambar pertama
+
+Periksa versi runtime:
 
 ```bash
-corepack enable
-corepack prepare pnpm@11.4.0 --activate
-pnpm install
+node --version
+python3.12 --version
 ```
 
-Create the AI worker environment once:
+Versi Node harus menunjukkan `v22` atau lebih baru. Instal Tesseract sesuai
+sistem operasi:
+
+```bash
+# macOS dengan Homebrew
+brew install tesseract
+
+# Ubuntu/Debian
+sudo apt update
+sudo apt install tesseract-ocr
+```
+
+Pada Windows, instal Tesseract dan pastikan executable `tesseract` tersedia di
+`PATH`.
+
+### 2. Clone dan instal workspace
+
+```bash
+git clone https://github.com/hikari97/atlas-translation.git atlas-image-translate
+cd atlas-image-translate
+
+corepack enable
+corepack prepare pnpm@11.4.0 --activate
+pnpm install --frozen-lockfile
+```
+
+Semua dependency JavaScript dan TypeScript harus diinstal dari root repository,
+bukan dari masing-masing aplikasi.
+
+### 3. Siapkan AI worker
+
+macOS dan Linux:
 
 ```bash
 python3.12 -m venv apps/ai-worker/.venv
+apps/ai-worker/.venv/bin/python -m pip install --upgrade pip
 apps/ai-worker/.venv/bin/python -m pip install -r apps/ai-worker/requirements.txt
 ```
 
-The AI workspace launcher uses this local virtual environment automatically, so
-shell activation is not required. Set `ATLAS_AI_PYTHON` only when a different
-compatible Python executable is intentionally needed.
+Windows PowerShell:
 
-Comic text and speech bubbles are detected locally with the pinned INT8 ONNX
-artifact from `ogkalu/comic-text-and-bubble-detector`. The verified model is
-downloaded and cached automatically on the first image-processing request.
-
-Common root commands:
-
-```bash
-pnpm dev          # web, API, and AI worker
-pnpm dev:web      # Next.js only
-pnpm dev:api      # Express only
-pnpm dev:ai       # FastAPI only
-pnpm build        # dependency-aware production builds
-pnpm check        # lint and TypeScript checks
+```powershell
+py -3.12 -m venv apps/ai-worker/.venv
+apps/ai-worker/.venv/Scripts/python.exe -m pip install --upgrade pip
+apps/ai-worker/.venv/Scripts/python.exe -m pip install -r apps/ai-worker/requirements.txt
 ```
 
-Dependencies must be installed from the root. Internal `@atlas/*` dependencies
-use the `workspace:*` protocol and are synchronized with `pnpm sync:monorepo`.
+Launcher AI worker otomatis menggunakan virtual environment tersebut. Aktivasi
+manual tidak diperlukan. Variabel `ATLAS_AI_PYTHON` hanya diperlukan bila Anda
+secara sengaja ingin memakai executable Python 3.12 lain.
+
+### 4. Konfigurasi environment
+
+Buat file environment untuk API dan AI worker:
+
+```bash
+cp apps/api/env.example apps/api/.env
+cp apps/ai-worker/.env.example apps/ai-worker/.env
+```
+
+Buat `apps/web/.env.local` dengan isi berikut:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1
+```
+
+Kemudian atur `apps/api/.env`:
+
+```env
+PORT=3001
+MONGODB_URI=mongodb://127.0.0.1:27017/atlas-studio
+JWT_SECRET=ganti-dengan-secret-yang-panjang-dan-acak
+JWT_EXPIRES_IN=7d
+AI_WORKER_URL=http://localhost:8000
+API_PUBLIC_URL=http://localhost:3001
+```
+
+Untuk MongoDB Atlas, ganti `MONGODB_URI` dengan connection string dari Atlas:
+
+```env
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>/atlas-studio
+```
+
+Pastikan IP perangkat diizinkan melalui MongoDB Atlas Network Access. Gunakan
+nilai yang sudah di-URL-encode jika username atau password mengandung karakter
+khusus. Jangan commit file `.env` atau membagikan connection string.
+
+Pilih provider AI di `apps/ai-worker/.env`.
+
+Gemini langsung:
+
+```env
+LLM_PROVIDER=gemini
+GEMINI_API_KEY=your-gemini-api-key
+MODEL_GEMINI=gemini-3.1-flash-lite
+```
+
+OpenRouter:
+
+```env
+LLM_PROVIDER=openrouter
+OPENROUTER_API_KEY=your-openrouter-api-key
+OPENROUTER_APP_URL=http://localhost:3000
+OPENROUTER_APP_TITLE=Atlas Studio
+```
+
+Konfigurasi detector pada `.env.example` dapat dibiarkan menggunakan nilai
+default. Model INT8 ONNX `ogkalu/comic-text-and-bubble-detector` akan diunduh,
+diverifikasi dengan SHA-256, lalu disimpan di cache lokal ketika gambar pertama
+diproses. File model tidak disimpan ke Git.
+
+### 5. Jalankan aplikasi
+
+Jalankan seluruh service sekaligus:
+
+```bash
+pnpm dev
+```
+
+Service development tersedia di:
+
+| Service | URL |
+| --- | --- |
+| Web dashboard | `http://localhost:3000` |
+| Express API | `http://localhost:3001` |
+| FastAPI AI worker | `http://localhost:8000` |
+| AI worker documentation | `http://localhost:8000/docs` |
+
+Periksa bahwa API dan AI worker sudah aktif:
+
+```bash
+curl http://localhost:3001/
+curl http://localhost:8000/health
+```
+
+Setelah itu buka `http://localhost:3000`, register akun baru, lalu masuk ke
+dashboard dan image editor.
+
+### 6. Jalankan service secara terpisah
+
+```bash
+pnpm dev:web      # Next.js frontend
+pnpm dev:api      # Express API
+pnpm dev:ai       # FastAPI AI worker
+```
+
+### 7. Validasi instalasi
+
+```bash
+pnpm check
+pnpm build
+```
+
+`pnpm check` menjalankan lint, typecheck, dan test seluruh workspace. Perintah
+`pnpm build` menjalankan production build sesuai urutan dependency monorepo.
+
+### Troubleshooting
+
+#### `No module named uvicorn`
+
+Virtual environment AI worker belum dibuat atau dependency Python belum
+terinstal. Ulangi langkah 3 dan pastikan Python yang dipakai adalah versi 3.12.
+
+#### `MongoDB connection error: ECONNREFUSED 127.0.0.1:27017`
+
+API tidak sedang menerima connection string Atlas atau MongoDB lokal belum
+berjalan. Pastikan variabelnya bernama `MONGODB_URI` di `apps/api/.env`, bukan di
+root repository, kemudian restart API.
+
+#### `querySrv ECONNREFUSED` atau koneksi Atlas timeout
+
+Periksa koneksi internet, DNS, username/password, nama cluster, dan MongoDB
+Atlas Network Access. Pastikan database user memiliki izin ke database yang
+digunakan.
+
+#### Perintah `pnpm` menggunakan versi Node yang salah
+
+Aktifkan Node 22 pada terminal yang sama, lalu jalankan kembali `corepack enable`
+dan `corepack prepare pnpm@11.4.0 --activate` sebelum instalasi.
+
+#### Tesseract tidak ditemukan
+
+Pastikan perintah `tesseract --version` berhasil dijalankan dari terminal,
+kemudian restart AI worker.
+
+## Monorepo Development
+
+Internal dependency `@atlas/*` menggunakan protokol `workspace:*` dan dapat
+disinkronkan dengan:
+
+```bash
+pnpm sync:monorepo
+```
 
 ---
 
