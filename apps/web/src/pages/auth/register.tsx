@@ -1,22 +1,47 @@
-import { useState, type FormEvent } from 'react';
-import { Box, Button, Container, Field, Heading, HStack, Input, Text, VStack } from '@chakra-ui/react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { Box, Button, Container, Heading, HStack, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { LuLockKeyhole, LuMail, LuUserRound } from 'react-icons/lu';
 import { useRegisterMutation } from '../../lib/data/mutationHooks';
 import Surface from '../../components/ui/Surface';
+import { AuthField, AuthPasswordField } from '../../components/auth/AuthField';
+import AuthFormError from '../../components/auth/AuthFormError';
+import {
+  MINIMUM_PASSWORD_LENGTH,
+  validateRegisterForm,
+  type RegisterFormErrors,
+} from '../../lib/auth/formValidation';
 
 export default function RegisterPage() {
   const router = useRouter();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errors, setErrors] = useState<RegisterFormErrors>({});
   const registerMutation = useRegisterMutation();
+
+  const updateField = (
+    field: keyof RegisterFormErrors,
+    setter: (value: string) => void,
+  ) => (event: ChangeEvent<HTMLInputElement>) => {
+    setter(event.target.value);
+    setErrors((current) => ({ ...current, [field]: undefined }));
+    registerMutation.reset();
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const nextErrors = validateRegisterForm({ confirmPassword, email, name, password });
+
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      return;
+    }
 
     try {
-      await registerMutation.mutateAsync({ name, email, password });
+      await registerMutation.mutateAsync({ name: name.trim(), email: email.trim(), password });
       await router.push('/dashboard');
     } catch {
       // error handled by mutation
@@ -80,7 +105,7 @@ export default function RegisterPage() {
         </Box>
 
         <Box asChild p={{ base: 7, md: 10 }}>
-          <form onSubmit={handleSubmit}>
+          <form noValidate onSubmit={handleSubmit}>
             <VStack align="stretch" gap={5}>
               <Box>
                 <Heading fontSize="xl" letterSpacing="-0.02em">
@@ -90,50 +115,49 @@ export default function RegisterPage() {
                   Add your details to begin using Atlas Studio.
                 </Text>
               </Box>
-              {registerMutation.error && (
-                <Box
-                  bg="rgba(180, 35, 24, 0.08)"
-                  borderColor="rgba(180, 35, 24, 0.22)"
-                  borderRadius="var(--atlas-radius-sm)"
-                  borderWidth="1px"
-                  color="var(--atlas-danger)"
-                  fontSize="sm"
-                  p={3}
-                >
-                  {(registerMutation.error as Error).message}
-                </Box>
-              )}
-              <Field.Root required>
-                <Field.Label>Name</Field.Label>
-                <Input
-                  autoComplete="name"
-                  borderRadius="var(--atlas-radius-sm)"
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)}
-                  placeholder="Your name"
-                  value={name}
-                />
-              </Field.Root>
-              <Field.Root required>
-                <Field.Label>Email</Field.Label>
-                <Input
-                  autoComplete="email"
-                  borderRadius="var(--atlas-radius-sm)"
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
-                  placeholder="email@example.com"
-                  type="email"
-                  value={email}
-                />
-              </Field.Root>
-              <Field.Root required>
-                <Field.Label>Password</Field.Label>
-                <Input
-                  autoComplete="new-password"
-                  borderRadius="var(--atlas-radius-sm)"
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPassword(event.target.value)}
-                  type="password"
-                  value={password}
-                />
-              </Field.Root>
+              {registerMutation.error && <AuthFormError message={(registerMutation.error as Error).message} />}
+              <AuthField
+                autoComplete="name"
+                error={errors.name}
+                icon={<LuUserRound size={18} />}
+                label="Full name"
+                name="name"
+                onChange={updateField('name', setName)}
+                placeholder="Your full name"
+                value={name}
+              />
+              <AuthField
+                autoComplete="email"
+                error={errors.email}
+                icon={<LuMail size={18} />}
+                label="Email address"
+                name="email"
+                onChange={updateField('email', setEmail)}
+                placeholder="you@example.com"
+                type="email"
+                value={email}
+              />
+              <AuthPasswordField
+                autoComplete="new-password"
+                error={errors.password}
+                helperText={`Use at least ${MINIMUM_PASSWORD_LENGTH} characters.`}
+                icon={<LuLockKeyhole size={18} />}
+                label="Password"
+                name="password"
+                onChange={updateField('password', setPassword)}
+                placeholder="Create a secure password"
+                value={password}
+              />
+              <AuthPasswordField
+                autoComplete="new-password"
+                error={errors.confirmPassword}
+                icon={<LuLockKeyhole size={18} />}
+                label="Confirm password"
+                name="confirmPassword"
+                onChange={updateField('confirmPassword', setConfirmPassword)}
+                placeholder="Repeat your password"
+                value={confirmPassword}
+              />
               <Button
                 className="atlas-button-motion"
                 color="white"

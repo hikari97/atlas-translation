@@ -1,21 +1,44 @@
-import { useState, type FormEvent } from 'react';
-import { Box, Button, Container, Field, Heading, HStack, Input, Text, VStack } from '@chakra-ui/react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { Box, Button, Container, Heading, HStack, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { LuLockKeyhole, LuMail } from 'react-icons/lu';
 import { useLoginMutation } from '../../lib/data/mutationHooks';
 import Surface from '../../components/ui/Surface';
+import { AuthField, AuthPasswordField } from '../../components/auth/AuthField';
+import AuthFormError from '../../components/auth/AuthFormError';
+import { validateLoginForm, type LoginFormErrors } from '../../lib/auth/formValidation';
 
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState<LoginFormErrors>({});
   const loginMutation = useLoginMutation();
+
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+    setErrors((current) => ({ ...current, email: undefined }));
+    loginMutation.reset();
+  };
+
+  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+    setErrors((current) => ({ ...current, password: undefined }));
+    loginMutation.reset();
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const nextErrors = validateLoginForm({ email, password });
+
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      return;
+    }
 
     try {
-      await loginMutation.mutateAsync({ email, password });
+      await loginMutation.mutateAsync({ email: email.trim(), password });
       await router.push('/dashboard');
     } catch {
       // error handled by mutation
@@ -79,7 +102,7 @@ export default function LoginPage() {
         </Box>
 
         <Box asChild p={{ base: 7, md: 10 }}>
-          <form onSubmit={handleSubmit}>
+          <form noValidate onSubmit={handleSubmit}>
             <VStack align="stretch" gap={5}>
               <Box>
                 <Heading fontSize="xl" letterSpacing="-0.02em">
@@ -89,40 +112,28 @@ export default function LoginPage() {
                   Enter your Atlas Studio credentials.
                 </Text>
               </Box>
-              {loginMutation.error && (
-                <Box
-                  bg="rgba(180, 35, 24, 0.08)"
-                  borderColor="rgba(180, 35, 24, 0.22)"
-                  borderRadius="var(--atlas-radius-sm)"
-                  borderWidth="1px"
-                  color="var(--atlas-danger)"
-                  fontSize="sm"
-                  p={3}
-                >
-                  {(loginMutation.error as Error).message}
-                </Box>
-              )}
-              <Field.Root required>
-                <Field.Label>Email</Field.Label>
-                <Input
-                  autoComplete="email"
-                  borderRadius="var(--atlas-radius-sm)"
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
-                  placeholder="email@example.com"
-                  type="email"
-                  value={email}
-                />
-              </Field.Root>
-              <Field.Root required>
-                <Field.Label>Password</Field.Label>
-                <Input
-                  autoComplete="current-password"
-                  borderRadius="var(--atlas-radius-sm)"
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPassword(event.target.value)}
-                  type="password"
-                  value={password}
-                />
-              </Field.Root>
+              {loginMutation.error && <AuthFormError message={(loginMutation.error as Error).message} />}
+              <AuthField
+                autoComplete="email"
+                error={errors.email}
+                icon={<LuMail size={18} />}
+                label="Email address"
+                name="email"
+                onChange={handleEmailChange}
+                placeholder="you@example.com"
+                type="email"
+                value={email}
+              />
+              <AuthPasswordField
+                autoComplete="current-password"
+                error={errors.password}
+                icon={<LuLockKeyhole size={18} />}
+                label="Password"
+                name="password"
+                onChange={handlePasswordChange}
+                placeholder="Enter your password"
+                value={password}
+              />
               <Button
                 className="atlas-button-motion"
                 color="white"
