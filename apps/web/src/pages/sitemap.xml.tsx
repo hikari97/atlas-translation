@@ -7,14 +7,17 @@ export default function SitemapXmlPage() {
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const siteUrl = getRequestSiteUrl(req.headers);
+  const publicPaths = ['/', '/privacy-policy', '/terms-and-conditions', '/cookie-policy'] as const;
   const content = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    '  <url>',
-    `    <loc>${siteUrl}</loc>`,
-    '    <changefreq>weekly</changefreq>',
-    '    <priority>1.0</priority>',
-    '  </url>',
+    ...publicPaths.flatMap((path) => [
+      '  <url>',
+      `    <loc>${siteUrl}${path === '/' ? '' : path}</loc>`,
+      `    <changefreq>${path === '/' ? 'weekly' : 'monthly'}</changefreq>`,
+      `    <priority>${path === '/' ? '1.0' : '0.4'}</priority>`,
+      '  </url>',
+    ]),
     '</urlset>',
     '',
   ].join('\n');

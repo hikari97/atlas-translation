@@ -17,8 +17,11 @@ function serializeStructuredData(value: object): string {
 export default function PageSeo({ pathname }: PageSeoProps) {
   const config = getRouteSeo(pathname);
   const siteUrl = getConfiguredSiteUrl();
-  const isPublicHome = pathname === '/' && !config.noIndex;
-  const canonicalUrl = isPublicHome && siteUrl ? siteUrl : undefined;
+  const isPublicPage = !config.noIndex;
+  const isPublicHome = pathname === '/' && isPublicPage;
+  const canonicalUrl = isPublicPage && siteUrl
+    ? `${siteUrl}${pathname === '/' ? '' : pathname}`
+    : undefined;
   const socialImageUrl = siteUrl ? `${siteUrl}${SOCIAL_IMAGE_PATH}` : SOCIAL_IMAGE_PATH;
   const robotsContent = config.noIndex
     ? 'noindex, nofollow, noarchive'

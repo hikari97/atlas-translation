@@ -14,6 +14,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isStandalone = router.pathname === '/'
     || router.pathname.startsWith('/auth/')
+    || router.pathname === '/privacy-policy'
+    || router.pathname === '/terms-and-conditions'
+    || router.pathname === '/cookie-policy'
     || router.pathname === '/dashboard/images'
     || router.pathname.startsWith('/editor/');
 

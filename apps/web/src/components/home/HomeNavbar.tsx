@@ -46,8 +46,8 @@ export default function HomeNavbar({ session }: HomeNavbarProps) {
           </HStack>
 
           <HStack as="nav" display={{ base: 'none', lg: 'flex' }} gap={6}>
-            <Link className="landing-nav-link" href="#workflow">Process</Link>
-            <Link className="landing-nav-link" href="#privacy">Privacy</Link>
+            <Link className="landing-nav-link" href="/#workflow">Process</Link>
+            <Link className="landing-nav-link" href="/#privacy">Privacy</Link>
           </HStack>
 
           <HStack gap={2}>

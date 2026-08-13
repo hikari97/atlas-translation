@@ -26,6 +26,21 @@ const routeSeo: Readonly<Record<string, RouteSeoConfig>> = {
     'Create an Account | Atlas Studio',
     'Create an Atlas Studio account and start localizing comic images with AI.',
   ),
+  '/privacy-policy': {
+    description: 'Learn how Atlas Studio handles account information, uploaded images, AI processing, and browser storage.',
+    noIndex: false,
+    title: 'Privacy Policy | Atlas Studio',
+  },
+  '/terms-and-conditions': {
+    description: 'Read the terms that apply when accessing and using Atlas Studio image translation tools.',
+    noIndex: false,
+    title: 'Terms and Conditions | Atlas Studio',
+  },
+  '/cookie-policy': {
+    description: 'Learn how Atlas Studio uses local browser storage and whether the website sets cookies.',
+    noIndex: false,
+    title: 'Cookie Policy | Atlas Studio',
+  },
   '/dashboard': privateRoute('Dashboard | Atlas Studio'),
   '/dashboard/ai-jobs': privateRoute('AI Jobs | Atlas Studio'),
   '/dashboard/export': privateRoute('Export | Atlas Studio'),
